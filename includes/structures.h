@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/15 17:24:45 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/16 20:00:28 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,24 @@ typedef struct s_philo
 
 	t_state	state;
 	pthread_mutex_t	mutex_state;
-	// conexion a data struct s_data (t_data)	*data;
-
+	
+	struct s_data	*data; 		// conexion nivel superior a data struct
 }	t_philo;
 
 typedef struct s_mutex
 {
-	pthread_mutex_t	die_time;			// se van a modficicar ??
-	pthread_mutex_t	eat_time;			// se van a modficicar ??
+	pthread_mutex_t	die_time;		// se van a modficicar ??
+	pthread_mutex_t	eat_time;		// se van a modficicar ??
 	pthread_mutex_t	sleep_time;		// se van a modficicar ??
 
 	pthread_mutex_t	start_time;		
 	pthread_mutex_t	keep_iter;
 
 	pthread_mutex_t	*forks;	
-	//pthread_mutex_t	mutex_num_philos;	// ??
-	//pthread_mutex_t	mutex_print;		// ??
+	pthread_mutex_t	print_log;	// ACTIVAR ORDEN IMPRESION
+	
+	//pthread_mutex_t	mutex_num_philos;	// se van a modficicar ??
+	
 }	t_mutex;
 
 
@@ -79,23 +81,14 @@ typedef struct s_data
  
 	// MUTEX
 	t_mutex		*mutex;
-	//pthread_mutex_t	mutex_die_time;
-	//pthread_mutex_t	mutex_eat_time;
-	//pthread_mutex_t	mutex_sleep_time;	
-	//pthread_mutex_t	mutex_num_philos;	// ??
-	//pthread_mutex_t	mutex_start_time;
-	//pthread_mutex_t	mutex_keep_iter;		
-	//pthread_mutex_t	*mutex_forks;	
-	//pthread_mutex_t	mutex_print;		// ??
 
 	// CONEXION ARRAY PHILOS
 	t_philo		*philos;
 
 	// THREADS
-	pthread_t	monit_all_alive;
-	pthread_t	monit_all_full;
+	pthread_t	monitor_death;		// Thread para detectar muerte
+	pthread_t	monitor_meals;		// Thread para detectar cuando todos comieron suficiente 
 	pthread_t	*philo_threads;	
-	
 }	t_data;
 
 # endif

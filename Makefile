@@ -22,10 +22,10 @@ EXT_LIBRARYS 	:= -pthread
 # SRC --------------------------------------------------------------------------------
 SRC_DIR			:= ./src
 SRC_FILES 		:= $(addprefix $(SRC_DIR)/, 00_main.c \
-				01_init.c \
+				01_init.c 02_philo.c  \
 				04_mutex_functions.c  \
 				08_time.c \
-				11_utils.c 12_utils_debug.c \
+				10_free_manager.c 11_utils.c 12_utils_debug.c \
 				) 
 OBJ_FILES 		:= $(SRC_FILES:%.c=%.o)
 
@@ -53,3 +53,20 @@ re: fclean all
 	@make -s clean
 
 .PHONY: all library clean fclean re debug
+
+# DEBUG -----------------------------------------
+
+# Análisis completo (Memcheck + threads)
+# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --tool=memcheck ./philo 4 400 200 200
+
+# debugging específico de pthread:
+# valgrind --tool=helgrind --history-level=full ./philo 4 400 200 200
+ 
+# Problemas con threads (Helgrind):
+# valgrind --tool=helgrind ./philo 4 400 200 200
+
+# Data races y condiciones de carrera:
+# valgrind --tool=drd ./philo 4 400 200 200
+
+# Memory Leaks básico  
+# valgrind --leak-check=full --show-leak-kinds=all ./philo 4 400 200 200

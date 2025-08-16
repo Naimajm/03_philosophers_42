@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 12:24:45 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/16 12:28:38 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void print_data(t_data *data)
 	if (!data)
 		return ;
 	
-	printf("┌──────────────┐\n");
-	printf("| data         |\n");		
-	printf("└──────────────┘\n");     
+	printf("┌────────────┐\n");
+	printf("| DATA       |\n");		
+	printf("└────────────┘\n");     
 	
 	printf("\t num_philos \t-> %i\n", data->num_philos);    
 	printf("\t die_time \t-> %i\n", data->die_time);  
@@ -76,8 +76,6 @@ void print_philos_array(t_data *data)
 
 static void print_forks_assignment(t_data *data, int index_philo)
 {
-    //int index = 0;
-    
     if (!data || !data->philos)
 		return ;
 
