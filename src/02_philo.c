@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 19:59:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/16 21:05:17 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ int wait_for_threads(t_data *data);
 int	initialize_threads(t_data *data)
 {
 	int index;
-	int	num_philos;
-	t_philo	*philo;
 
+	if (!data)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	index = 0;
-	num_philos = data->num_philos;
-	philo = data->philos;
 	// RESERVA MEMORIA THREADS
-	data->philo_threads = (pthread_t *) malloc(sizeof(pthread_t) * num_philos);
+	data->philo_threads = (pthread_t *) malloc(sizeof(pthread_t) * data->num_philos);
 	if (!data->philo_threads)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO), FAILURE);	
 	
@@ -33,13 +31,11 @@ int	initialize_threads(t_data *data)
 	data->start_time = my_watch();
 
 	// CREACION THREADS -> FUNCION PPAL + ESTRUCTURA PHILO [INDICE]
-	while (index < num_philos)
+	while (index < data->num_philos)
 	{
-		// INICIO HILOS PHILOS
-		if (pthread_create(&data->philo_threads[index], NULL, daily_routine, philo))
+		if (pthread_create(&data->philo_threads[index], NULL, &daily_routine, &data->philos[index]))
 			return (FAILURE);
 		index++;
-		philo++; 
 	}
 	return (SUCCESS);
 }
@@ -60,8 +56,7 @@ void *daily_routine(void * args)
     printf("FIN HILO [%i]\n", philo->id);
 	pthread_mutex_unlock(&data->mutex->print_log);
 
-	t_philo *philo = (t_philo *)args;
-    
+	    
     /* while (should_continue(philo))
     {
         think(philo);

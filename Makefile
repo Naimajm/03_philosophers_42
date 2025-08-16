@@ -57,7 +57,7 @@ re: fclean all
 # DEBUG -----------------------------------------
 
 # Análisis completo (Memcheck + threads)
-# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --tool=memcheck ./philo 4 400 200 200
+# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck ./philo 4 400 200 200
 
 # debugging específico de pthread:
 # valgrind --tool=helgrind --history-level=full ./philo 4 400 200 200

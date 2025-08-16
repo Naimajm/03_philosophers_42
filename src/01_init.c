@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 19:59:34 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/16 20:30:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ t_data	*initialize_data(int argc, char **argv)
 
 	data->philos		= NULL;				// INIT ARRAY PHILOS
 	
-	data->monitor_death 	= 0;			// INIT THREADS	
+	data->monitor_death = 0;			// INIT THREADS	
 	data->monitor_meals	= 0;
-	data->philo_threads		= NULL;	
+	data->philo_threads	= NULL;	
 	
 	return (data);
 }
@@ -51,52 +51,43 @@ t_data	*initialize_data(int argc, char **argv)
 void	initialize_philos(t_data *data)
 {
 	int	index;
-	t_philo	*philos;
 		
 	data->philos = (t_philo *) malloc(sizeof(t_philo) * data->num_philos);
 	if (!data->philos)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));	
-
 	index = 0;
-	philos = data->philos;	
 	while (index < data->num_philos)
 	{
-		philos->id 			= index + 1;
-		philos->num_meals	= 0;
-		philos->state		= INITIAL;
-		pthread_mutex_init(&philos->mutex_num_meals, NULL);
-		pthread_mutex_init(&philos->mutex_last_eat, NULL);
-		pthread_mutex_init(&philos->mutex_state, NULL);	
-		//philos_ptr->data		= data;
-		set_last_meal(philos);
-		philos->data = data;
+		data->philos[index].id			= index + 1;
+		data->philos[index].num_meals	= 0;
+		data->philos[index].state		= INITIAL;
+
+		pthread_mutex_init(&data->philos[index].mutex_num_meals, NULL);
+		pthread_mutex_init(&data->philos[index].mutex_last_eat, NULL);
+		pthread_mutex_init(&data->philos[index].mutex_state, NULL);	
+
+		set_last_meal(&data->philos[index]);
+		data->philos[index].data = data;
 		index++;
-		philos++;
 	}
 }
 
 int assign_forks_to_philos(t_data *data)
 {
 	int	index;
-	t_philo	*philos_ptr;
 
 	if (!data)
 		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
-	
-	philos_ptr = data->philos;
 	// CASO 1º PHILO
-	philos_ptr->fork_left = &data->mutex->forks[0];
-	philos_ptr->fork_right = &data->mutex->forks[data->num_philos - 1]; // ULTIMO TENEDOR !!
-	philos_ptr++;
-
-	index = 1;
+	data->philos[0].fork_left 	= &data->mutex->forks[0];
+	data->philos[0].fork_right  = &data->mutex->forks[data->num_philos - 1]; // ULTIMO TENEDOR !!
 	// RESTO CASOS
+	index = 1;	
 	while (index < data->num_philos)
 	{
-		philos_ptr->fork_left = &data->mutex->forks[index];
-		philos_ptr->fork_right = &data->mutex->forks[index - 1];
+		data->philos[index].fork_left 	= &data->mutex->forks[index];
+		data->philos[index].fork_right 	= &data->mutex->forks[index - 1];
 		index++;
-		philos_ptr++;
 	}	
 	return (SUCCESS);
 }
