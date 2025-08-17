@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 20:30:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 17:46:38 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,7 @@ void	initialize_mutex(t_data *data)
 	if (!data->mutex)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));
 	// INIT MUTEX
-	pthread_mutex_init(&data->mutex->die_time, NULL);
-	pthread_mutex_init(&data->mutex->eat_time, NULL);
-	pthread_mutex_init(&data->mutex->sleep_time, NULL);
-	pthread_mutex_init(&data->mutex->start_time, NULL);
+	pthread_mutex_init(&data->mutex->num_full, NULL);
 	pthread_mutex_init(&data->mutex->keep_iter, NULL);
 	pthread_mutex_init(&data->mutex->print_log, NULL);
 	

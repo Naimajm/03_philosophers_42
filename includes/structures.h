@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 20:00:28 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:04:53 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ typedef enum s_state
 // PHILOS
 typedef struct s_philo
 {
-	int				id;
-	
+	int				id;	
 	int				num_meals;
 	pthread_mutex_t mutex_num_meals;
 
@@ -49,13 +48,13 @@ typedef struct s_philo
 
 typedef struct s_mutex
 {
-	pthread_mutex_t	die_time;		// se van a modficicar ??
+	/* pthread_mutex_t	die_time;		// se van a modficicar ??
 	pthread_mutex_t	eat_time;		// se van a modficicar ??
-	pthread_mutex_t	sleep_time;		// se van a modficicar ??
+	pthread_mutex_t	sleep_time;		// se van a modficicar ?? */
+	//pthread_mutex_t	start_time;		// se van a modficicar ??
 
-	pthread_mutex_t	start_time;		
+	pthread_mutex_t num_full;       // Contador de philos que terminaron	
 	pthread_mutex_t	keep_iter;
-
 	pthread_mutex_t	*forks;	
 	pthread_mutex_t	print_log;	// ACTIVAR ORDEN IMPRESION
 	
@@ -72,18 +71,15 @@ typedef struct s_data
 	int			die_time;	
 	int			eat_time;	
 	int			sleep_time;	
-	int			num_meals;
+	int			num_meals;	
+
+	// VARIABLES DE ESTADO -----------
 	int			num_full;
-
-	// PROCCESS -----------
-	int			start_time;				// TIEMPO INICIO PROCESO
-	bool		keep_iter;
- 
-	// MUTEX
-	t_mutex		*mutex;
-
-	// CONEXION ARRAY PHILOS
-	t_philo		*philos;
+	long		start_time;				// TIEMPO INICIO PROCESO
+	bool		keep_iter; 
+	
+	t_mutex		*mutex;				// MUTEX	
+	t_philo		*philos;			// CONEXION ARRAY PHILOS
 
 	// THREADS
 	pthread_t	monitor_death;		// Thread para detectar muerte

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 12:28:38 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:23:54 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void print_data(t_data *data)
 	printf("\t num_meals \t-> %i\n", data->num_meals);  
 	printf("\t num_full \t-> %i\n", data->num_full);  
 
-	printf("\t start_time \t-> %i\n", data->start_time);  
+	printf("\t start_time \t-> %li\n", data->start_time);  
 	printf("\t keep_iter \t-> %d\n", data->keep_iter);  
 	printf("\t ───────── \n\n");
 

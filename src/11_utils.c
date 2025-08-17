@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 13:30:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/15 12:02:22 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/16 21:07:58 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ void	ft_putendl_fd(char *str, int fd)
 	int	index;
 
 	index = 0;
-	if (str)
+	if (!str)
+		return ;	
+	while (str[index])
 	{
-		while (str[index] != '\0')
-		{
-			write(fd, &str[index], 1);
-			index++;
-		}
-		write(fd, "\n", 1);
+		write(fd, &str[index], 1);
+		index++;
 	}
+	write(fd, "\n", 1);	
 }

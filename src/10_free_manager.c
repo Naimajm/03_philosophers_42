@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:28:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 19:59:34 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 17:47:16 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void cleanup_data(t_data *data)
 	data->monitor_meals 	= 0;	
 
 	free(data);
+	printf(FREE_ALL);
 }
 
 // LIMPIEZA ESTRUCTURA PHILOS
@@ -66,10 +67,7 @@ void	free_mutex(t_data *data)
 	if (!data || !data->mutex)
 		return ;
 	// DESTROY MUTEX
-	pthread_mutex_destroy(&data->mutex->die_time);
-	pthread_mutex_destroy(&data->mutex->eat_time);
-	pthread_mutex_destroy(&data->mutex->sleep_time);
-	pthread_mutex_destroy(&data->mutex->start_time);
+	pthread_mutex_destroy(&data->mutex->num_full);
 	pthread_mutex_destroy(&data->mutex->keep_iter);
 	pthread_mutex_destroy(&data->mutex->print_log);
 	

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 18:05:37 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:23:30 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,24 @@ void	initialize_philos(t_data *data);
 int 	assign_forks_to_philos(t_data *data);
 void	initialize_mutex(t_data *data);
 
-// 02_philo.c
+// 02_threads.c
 int		initialize_threads(t_data *data);
-void 	*daily_routine(void * args);
+void	*monitor_death(void *data);
+void	*monitor_meals(void *data);
 int 	wait_for_threads(t_data *data);
+
+// 02.1_monitor.c
+
+// 03_routine.c
+void 	*daily_routine(void * args);
  
 // 04_mutex_functions.c 
 void	set_last_meal(t_philo *philo);
 
 // 08_time.c
-int		my_watch(void);
+long	get_current_time(void);
+
+// 09_logs.c 
 
 // 10_free_manager.c
 void 	cleanup_data(t_data *data);

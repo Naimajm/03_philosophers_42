@@ -22,9 +22,9 @@ EXT_LIBRARYS 	:= -pthread
 # SRC --------------------------------------------------------------------------------
 SRC_DIR			:= ./src
 SRC_FILES 		:= $(addprefix $(SRC_DIR)/, 00_main.c \
-				01_init.c 02_philo.c  \
+				01_init.c 02_threads.c  02.1_monitor.c  03_routine.c \
 				04_mutex_functions.c  \
-				08_time.c \
+				08_time.c 09_logs.c \
 				10_free_manager.c 11_utils.c 12_utils_debug.c \
 				) 
 OBJ_FILES 		:= $(SRC_FILES:%.c=%.o)
@@ -57,16 +57,16 @@ re: fclean all
 # DEBUG -----------------------------------------
 
 # Análisis completo (Memcheck + threads)
-# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck ./philo 4 400 200 200
+# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck ./philo 4 400 200 200 5
 
 # debugging específico de pthread:
-# valgrind --tool=helgrind --history-level=full ./philo 4 400 200 200
+# valgrind --tool=helgrind --history-level=full ./philo 4 400 200 200 5
  
 # Problemas con threads (Helgrind):
-# valgrind --tool=helgrind ./philo 4 400 200 200
+# valgrind --tool=helgrind ./philo 4 400 200 200 5
 
 # Data races y condiciones de carrera:
-# valgrind --tool=drd ./philo 4 400 200 200
+# valgrind --tool=drd ./philo 4 400 200 200 5
 
 # Memory Leaks básico  
-# valgrind --leak-check=full --show-leak-kinds=all ./philo 4 400 200 200
+# valgrind --leak-check=full --show-leak-kinds=all ./philo 4 400 200 200 5
