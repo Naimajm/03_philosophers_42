@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:37:48 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 14:34:11 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 00:51:39 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@
 # define MSG_THINKING 	"is thinking"
 # define MSG_DIED 		"died"
 
-# define USLEEP_TIME	500 	// Microsegundos para sleep en loops
+# define USLEEP_LOOPS_TIME		500 	// Microsegundos para sleep en loops
+# define USLEEP_MONITOR_TIME	1000 	// Microsegundos para monitoreo estados
  
 # endif

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 18:54:30 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 01:14:09 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_data	*initialize_data(int argc, char **argv)
 		data->num_meals = (int) ft_atoi(argv[5]);
 	else
 		data->num_meals = -1; 				// comidas infinitas
-	data->num_full 		= 0;
+	data->num_full_philos 		= 0;
 	data->start_time	= 0;
 	data->program_active 	= true;
 
@@ -63,10 +63,10 @@ void	initialize_philos(t_data *data)
 		data->philos[index].state		= INITIAL;
 
 		pthread_mutex_init(&data->philos[index].mutex_num_meals, NULL);
-		pthread_mutex_init(&data->philos[index].mutex_last_eat_time, NULL);
+		pthread_mutex_init(&data->philos[index].mutex_last_meal_time, NULL);
 		pthread_mutex_init(&data->philos[index].mutex_state, NULL);	
 
-		set_last_meal(&data->philos[index]);
+		set_last_meal_time(&data->philos[index]);
 		data->philos[index].data = data;
 		index++;
 	}
@@ -101,7 +101,7 @@ void	initialize_mutex(t_data *data)
 	if (!data->mutex)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));
 	// INIT MUTEX
-	pthread_mutex_init(&data->mutex->num_full, NULL);
+	pthread_mutex_init(&data->mutex->num_full_philos, NULL);
 	pthread_mutex_init(&data->mutex->program_active, NULL);
 	pthread_mutex_init(&data->mutex->print_log, NULL);
 	

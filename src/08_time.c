@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:58:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 13:25:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 00:54:51 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	set_delay_time(long pause_time)
 
 	initial_time = get_current_time();
 	while ((get_current_time() - initial_time) < pause_time)
-		usleep(USLEEP_TIME);
+		usleep(USLEEP_LOOPS_TIME);
 }
 
 long	get_current_time(void)

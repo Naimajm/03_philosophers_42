@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 21:38:43 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 01:10:00 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,6 @@ int		sleeping(t_philo *philo);
 int		eating(t_philo *philo);
 void	take_forks(t_philo *philo);
 void	drop_forks(t_philo *philo);
-
-// FUNCION PPAL EJECUCION HILO 
-void	*daily_routine(void * philo_node)
-{
-	t_philo *philo;	
-	
-	philo 	= (t_philo *) philo_node;
-	
-	set_last_meal(philo);
-
-	// PRIORIDAD A PHILOS IMPARES -> EVITAR BLOQUEO ESTADO INICIAL
-	if (philo->id % 2 == 0)		
-		set_delay_time(philo->data->eat_time / 2);
-
-	while (is_alive(philo) && is_program_active(philo->data))
-	{
-		take_forks(philo);					// COGER TENEDORES
-		eating(philo);
-		drop_forks(philo);					// SOLTAR TENEDORES
-		
-		if (has_eaten_enough(philo))		// verificacion OBJETIVO comidas
-			break ;
-
-		sleeping(philo);
-		thinking(philo);
-	}    	
-	return (NULL);
-}
 
 int	thinking(t_philo *philo)
 {
@@ -76,7 +48,7 @@ int	eating(t_philo *philo)
 	printing_logs(philo->data, philo->id, MSG_EATING);	// log		
 	set_delay_time(philo->data->eat_time);	// proceso comer discurrir tiempo de comida
 	
-	set_last_meal(philo);					// actualizar tiempo ultima comida		
+	set_last_meal_time(philo);					// actualizar tiempo ultima comida		
 	increment_num_meals(philo);				// incrementar numero comidas realizadas	
 
 	return (SUCCESS);
@@ -91,11 +63,7 @@ void	take_forks(t_philo *philo)
 
 	//printf("take_forks() philo [%i]\n", philo->id);
 	if (!philo || !is_alive(philo))
-		return ;
-			
-	// caso especial -> 1 filosofo
-	/* if (philo->data->num_philos)
-		case_one_philo() */
+		return ;	
 
 	// GARANTIA SEGURA DEADLOCK -> orden por direcciones memoria ¡¡
 	if (philo->fork_left < philo->fork_right)

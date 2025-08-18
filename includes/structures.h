@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 21:34:10 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 01:22:48 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef enum s_state
 	EATING		= 1,
 	SLEEPING 	= 2,
 	THINKING  	= 3,
-	FINISHED	= 4,
+	FINISHED	= 4,		// ?? algun caso
 	DEAD 		= 5
 }	t_state;
 
@@ -34,8 +34,8 @@ typedef struct s_philo
 	int				num_meals;
 	pthread_mutex_t mutex_num_meals;
 
-	long			last_eat_time;
-	pthread_mutex_t	mutex_last_eat_time;
+	long			last_meal_time;
+	pthread_mutex_t	mutex_last_meal_time;
 
 	pthread_mutex_t	*fork_left;
 	pthread_mutex_t	*fork_right;	
@@ -48,7 +48,7 @@ typedef struct s_philo
 
 typedef struct s_mutex
 {
-	pthread_mutex_t num_full;       	// Contador de philos que terminaron	
+	pthread_mutex_t num_full_philos;       	// Contador de philos que terminaron	
 	pthread_mutex_t	program_active;		
 	pthread_mutex_t	*forks;	
 	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION	
@@ -65,7 +65,7 @@ typedef struct s_data
 	int			num_meals;	
 
 	// VARIABLES DE ESTADO -----------
-	int			num_full;
+	int			num_full_philos;	// ???? SE HA USADO ??
 	long		start_time;			// TIEMPO INICIO PROCESO
 	bool		program_active; 	// flag estado global programa -> activo
 	
@@ -73,8 +73,8 @@ typedef struct s_data
 	t_philo		*philos;			// CONEXION ARRAY PHILOS
 
 	// THREADS
-	pthread_t	monitor_death;		// Thread para detectar muerte
-	pthread_t	monitor_meals;		// Thread para detectar cuando todos comieron suficiente 
+	pthread_t	monitor_death;		// Thread monitoreo muerte
+	pthread_t	monitor_meals;		// Thread monitoreo cuando todos comieron suficiente 
 	pthread_t	*philo_threads;	
 }	t_data;
 

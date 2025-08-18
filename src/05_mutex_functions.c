@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:04:23 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 19:18:36 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 01:20:32 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void 	stop_program(t_data *data);
 
 void	increment_num_meals(t_philo * philo);
 int		get_num_meals(t_philo * philo);
-void	set_last_meal(t_philo *philo);
+
+void	set_last_meal_time(t_philo *philo);
+long	get_last_meal_time(t_philo *philo);
 
 void	change_philo_state(t_philo *philo, t_state new_state);
 t_state	get_philo_state(t_philo *philo);
@@ -37,8 +39,7 @@ bool is_program_active(t_data *data)
 void stop_program(t_data *data)
 {
     if (!data || !data->mutex)
-        return;
-        
+        return;        
     pthread_mutex_lock(&data->mutex->program_active);
     data->program_active = false;
     pthread_mutex_unlock(&data->mutex->program_active);
@@ -69,13 +70,27 @@ int		get_num_meals(t_philo * philo)
 	return (num_meals);
 }
 
-void	set_last_meal(t_philo *philo)
+
+// LAST_MEAL_TIME
+
+void	set_last_meal_time(t_philo *philo)
 {
 	if (!philo)
 		return ;
-	pthread_mutex_lock(&philo->mutex_last_eat_time);
-	philo->last_eat_time = get_current_time();
-	pthread_mutex_unlock(&philo->mutex_last_eat_time);
+	pthread_mutex_lock(&philo->mutex_last_meal_time);
+	philo->last_meal_time = get_current_time();
+	pthread_mutex_unlock(&philo->mutex_last_meal_time);
+}
+
+long	get_last_meal_time(t_philo *philo)
+{
+	long	last_meal_time;
+	if (!philo)
+		return (0);
+	pthread_mutex_lock(&philo->mutex_last_meal_time);
+	last_meal_time = philo->last_meal_time;
+	pthread_mutex_unlock(&philo->mutex_last_meal_time);
+	return (last_meal_time);
 }
 
 // STATE ------------------------------------

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 21:30:57 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 01:49:48 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ void	initialize_mutex(t_data *data);
 
 // 02_threads.c
 int		initialize_threads(t_data *data);
+void 	*daily_routine(void * args);
 void	*monitor_death(void *data);
 void	*monitor_meals(void *data);
 int 	wait_for_threads(t_data *data);
 
 // 03_routine.c
-void 	*daily_routine(void * args);
-
 int		thinking(t_philo *philo);
 int		sleeping(t_philo *philo);
 int		eating(t_philo *philo);
@@ -51,9 +50,10 @@ void	take_forks(t_philo *philo);
 void	drop_forks(t_philo *philo);
 
 // 03.1_monitor.c
+//void	program_is_over(t_data *data);
 
 // 04_core.c
-bool 	has_eaten_enough(t_philo *philo);
+bool 	philo_has_eaten_enough(t_philo *philo);
 bool 	is_alive(t_philo *philo);
  
 // 05_mutex_functions.c
@@ -62,7 +62,9 @@ void 	stop_program(t_data *data);
 
 void	increment_num_meals(t_philo * philo);
 int		get_num_meals(t_philo * philo);
-void	set_last_meal(t_philo *philo);
+
+void	set_last_meal_time(t_philo *philo);
+long	get_last_meal_time(t_philo *philo);
 
 void	change_philo_state(t_philo *philo, t_state new_state);
 t_state	get_philo_state(t_philo *philo);
