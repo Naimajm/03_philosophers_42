@@ -22,8 +22,9 @@ EXT_LIBRARYS 	:= -pthread
 # SRC --------------------------------------------------------------------------------
 SRC_DIR			:= ./src
 SRC_FILES 		:= $(addprefix $(SRC_DIR)/, 00_main.c \
-				01_init.c 02_threads.c  02.1_monitor.c  03_routine.c \
-				04_mutex_functions.c  \
+				01_init.c 02_threads.c      \
+				03_routine.c 03.2_monitor.c \
+				04_core.c 05_mutex_functions.c  \
 				08_time.c 09_logs.c \
 				10_free_manager.c 11_utils.c 12_utils_debug.c \
 				) 

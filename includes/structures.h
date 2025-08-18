@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 18:04:53 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:36:17 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ typedef struct s_philo
 	int				num_meals;
 	pthread_mutex_t mutex_num_meals;
 
-	int				last_eat;
-	pthread_mutex_t	mutex_last_eat;
+	long			last_eat_time;
+	pthread_mutex_t	mutex_last_eat_time;
 
 	pthread_mutex_t	*fork_left;
 	pthread_mutex_t	*fork_right;	
@@ -49,14 +49,14 @@ typedef struct s_philo
 typedef struct s_mutex
 {
 	/* pthread_mutex_t	die_time;		// se van a modficicar ??
-	pthread_mutex_t	eat_time;		// se van a modficicar ??
-	pthread_mutex_t	sleep_time;		// se van a modficicar ?? */
+	pthread_mutex_t	eat_time;			// se van a modficicar ??
+	pthread_mutex_t	sleep_time;			// se van a modficicar ?? */
 	//pthread_mutex_t	start_time;		// se van a modficicar ??
 
-	pthread_mutex_t num_full;       // Contador de philos que terminaron	
-	pthread_mutex_t	keep_iter;
+	pthread_mutex_t num_full;       	// Contador de philos que terminaron	
+	pthread_mutex_t	program_active;		// flag estado global programa -> activo
 	pthread_mutex_t	*forks;	
-	pthread_mutex_t	print_log;	// ACTIVAR ORDEN IMPRESION
+	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION
 	
 	//pthread_mutex_t	mutex_num_philos;	// se van a modficicar ??
 	

@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02.1_monitor.c                                     :+:      :+:    :+:   */
+/*   03.1_forks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 21:31:42 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 21:33:29 by juagomez         ###   ########.fr       */
+/*   Created: 2025/08/18 13:50:50 by juagomez          #+#    #+#             */
+/*   Updated: 2025/08/18 13:51:52 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-// FUNCIONES AUX PARA MONITORIZACION
-
+// FUNCIONES AUX PARA GESTION FORKS

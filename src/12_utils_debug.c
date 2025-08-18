@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 18:23:54 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/17 18:40:40 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void print_philos_array(t_data *data)
 		printf("\t └────────────┘\n");
 
 		printf("\t\t num_meals \t\t-> %i\n", philo->num_meals);
-		printf("\t\t last_eat \t\t-> %i\n", philo->last_eat);        
+		printf("\t\t last_eat_time \t\t-> %li\n", philo->last_eat_time);        
 		printf("\t\t state \t\t\t-> %s\n", get_state_string(philo->state));   
 
 		// MOSTRAR FORKS

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:28:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 17:47:16 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:34:52 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	free_philos(t_data *data)
 	while (index < data->num_philos)
 	{
 		pthread_mutex_destroy(&data->philos[index].mutex_num_meals);
-		pthread_mutex_destroy(&data->philos[index].mutex_last_eat);
+		pthread_mutex_destroy(&data->philos[index].mutex_last_eat_time);
 		pthread_mutex_destroy(&data->philos[index].mutex_state);
 		// liberar punteros fork_left y fork_right -> Se liberarán en free_mutex()
 		// state enum no necesta liberacion
@@ -68,7 +68,7 @@ void	free_mutex(t_data *data)
 		return ;
 	// DESTROY MUTEX
 	pthread_mutex_destroy(&data->mutex->num_full);
-	pthread_mutex_destroy(&data->mutex->keep_iter);
+	pthread_mutex_destroy(&data->mutex->program_active);
 	pthread_mutex_destroy(&data->mutex->print_log);
 	
 	// ARRAY MUTEX FORKS

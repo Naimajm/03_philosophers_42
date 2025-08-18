@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 18:23:30 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 18:14:49 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,35 @@ void	*monitor_death(void *data);
 void	*monitor_meals(void *data);
 int 	wait_for_threads(t_data *data);
 
-// 02.1_monitor.c
+
 
 // 03_routine.c
 void 	*daily_routine(void * args);
+int		eating(t_philo *philo);
+void	take_forks(t_philo *philo);
+
+// 03.1_monitor.c
+
+// 04_core.c
+bool has_eaten_enough(t_philo *philo);
+bool is_alive(t_philo *philo);
  
-// 04_mutex_functions.c 
+// 05_mutex_functions.c
+bool 	is_program_active(t_data *data);
+
+void	increment_num_meals_eaten(t_philo * philo);
+int		get_num_meals(t_philo * philo);
 void	set_last_meal(t_philo *philo);
 
+void	change_philo_state(t_philo *philo, t_state new_state);
+t_state	get_philo_state(t_philo *philo);
+
 // 08_time.c
+void	set_delay_time(long pause_time);
 long	get_current_time(void);
 
-// 09_logs.c 
+// 09_logs.c
+void printing_logs(t_data *data, int id_philo, char *message);
 
 // 10_free_manager.c
 void 	cleanup_data(t_data *data);

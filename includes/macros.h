@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:37:48 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 17:58:19 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 14:34:11 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@
 # define FREE_ALL				"Free\n Total cleaning... OK\n"
 
 // STATES PHILO
-# define INIT	0
+/* # define INIT	0
 # define EAT 	1
 # define SLEEP 	2
 # define THINK 	3
 # define FINISH	4
-# define DIED  	-1
+# define DIED  	-1 */
 
-//SYSTEM LOGS
+//SYSTEM MESSAGES  LOGS
 # define MSG_TAKE_FORKS "has taken a fork"
 # define MSG_EATING		"is eating"
 # define MSG_SLEEPING 	"is sleeping"
 # define MSG_THINKING 	"is thinking"
 # define MSG_DIED 		"died"
 
-# define USLEEP_TIME	100 	// Microsegundos para sleep en loops
+# define USLEEP_TIME	500 	// Microsegundos para sleep en loops
  
 # endif

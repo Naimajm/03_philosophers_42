@@ -6,11 +6,23 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:58:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 18:14:07 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 13:25:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
+
+void	set_delay_time(long pause_time);
+long	get_current_time(void);
+
+void	set_delay_time(long pause_time)
+{
+	long	initial_time;
+
+	initial_time = get_current_time();
+	while ((get_current_time() - initial_time) < pause_time)
+		usleep(USLEEP_TIME);
+}
 
 long	get_current_time(void)
 {
