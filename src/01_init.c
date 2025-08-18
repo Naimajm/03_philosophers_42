@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 17:34:52 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 18:54:30 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_data	*initialize_data(int argc, char **argv)
 		data->num_meals = -1; 				// comidas infinitas
 	data->num_full 		= 0;
 	data->start_time	= 0;
-	data->keep_iter 	= true;
+	data->program_active 	= true;
 
 	initialize_mutex(data);
 

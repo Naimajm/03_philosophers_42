@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 18:46:53 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 19:20:54 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		eating(t_philo *philo);
 void	take_forks(t_philo *philo);
+void	drop_forks(t_philo *philo);
 
 // FUNCION PPAL EJECUCION HILO 
 void	*daily_routine(void * philo_node)
@@ -28,41 +29,33 @@ void	*daily_routine(void * philo_node)
 	if (philo->id % 2 == 0)		
 		set_delay_time(philo->data->eat_time - 10);
 
-	while (is_alive(philo))
+	while (is_alive(philo) && is_program_active(philo->data))
 	{
+		take_forks(philo);						// COGER TENEDORES
 		eating(philo);
+		drop_forks(philo);					// SOLTAR TENEDORES
 
-		// verificacion objetivo comidas
+		// verificacion OBJETIVO comidas
 		if (!has_eaten_enough(philo))
 			break ;
 
-	}    
-    /* while (get_state(philo) != DIED)
-    {        
-        take_forks(philo);
-        eat(philo);
-        put_forks(philo);
-        sleep_philo(philo);
-		think(philo);
-    } */
+		// sleeping(philo);
+		// thinking(philo);
+	}    	
 	return (NULL);
 }
 
 int	eating(t_philo *philo)
 {
 	if (!philo)
-		return (FAILURE);	
-	take_forks(philo);					// COGER TENEDORES
+		return (FAILURE);		
 	
-	change_philo_state(philo, EATING);	// COMER -> cambio status	
-	
+	change_philo_state(philo, EATING);		// COMER -> cambio status	
 	printing_logs(philo->data, philo->id, MSG_EATING);	// log		
+	set_delay_time(philo->data->eat_time);	// proceso comer discurrir tiempo de comida
 	
-	set_last_meal(philo);				// actualizar tiempo ultima comida
-	
-	increment_num_meals_eaten(philo);	// incrementar numero comidas realizadas
-
-	// SOLTAR TENEDORES
+	set_last_meal(philo);					// actualizar tiempo ultima comida		
+	increment_num_meals(philo);				// incrementar numero comidas realizadas	
 
 	return (SUCCESS);
 }
@@ -74,7 +67,7 @@ void	take_forks(t_philo *philo)
 	pthread_mutex_t	*first_fork;
 	pthread_mutex_t	*second_fork;
 	(void) philo;
-	printf("take_forks\n");
+	printf("take_forks() philo [%i]\n", philo->id);
 	
 	// caso especial -> 1 filosofo
 	/* if (philo->data->num_philos)
@@ -100,13 +93,10 @@ void	take_forks(t_philo *philo)
 
 void	drop_forks(t_philo *philo)
 {
-	(void) philo;
-	printf("drop_forks\n");
+	printf("drop_forks() philo [%i]\n", philo->id);
 
-
-
-	
-
+	pthread_mutex_unlock(philo->fork_left);
+	pthread_mutex_unlock(philo->fork_right);
 }
 
 

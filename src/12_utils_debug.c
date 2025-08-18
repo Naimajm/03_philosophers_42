@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/17 18:40:40 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 18:54:30 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void print_data(t_data *data)
 	printf("\t num_full \t-> %i\n", data->num_full);  
 
 	printf("\t start_time \t-> %li\n", data->start_time);  
-	printf("\t keep_iter \t-> %d\n", data->keep_iter);  
+	printf("\t keep_iter \t-> %d\n", data->program_active);  
 	printf("\t ───────── \n\n");
 
 	//print_philos_array(data);		

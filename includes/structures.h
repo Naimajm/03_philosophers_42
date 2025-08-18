@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 17:36:17 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 18:55:00 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,11 @@ typedef struct s_philo
 
 typedef struct s_mutex
 {
-	/* pthread_mutex_t	die_time;		// se van a modficicar ??
-	pthread_mutex_t	eat_time;			// se van a modficicar ??
-	pthread_mutex_t	sleep_time;			// se van a modficicar ?? */
-	//pthread_mutex_t	start_time;		// se van a modficicar ??
-
 	pthread_mutex_t num_full;       	// Contador de philos que terminaron	
-	pthread_mutex_t	program_active;		// flag estado global programa -> activo
+	pthread_mutex_t	program_active;		
 	pthread_mutex_t	*forks;	
-	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION
-	
-	//pthread_mutex_t	mutex_num_philos;	// se van a modficicar ??
-	
+	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION	
 }	t_mutex;
-
 
 // GENERAL DATA
 typedef struct s_data
@@ -75,8 +66,8 @@ typedef struct s_data
 
 	// VARIABLES DE ESTADO -----------
 	int			num_full;
-	long		start_time;				// TIEMPO INICIO PROCESO
-	bool		keep_iter; 
+	long		start_time;			// TIEMPO INICIO PROCESO
+	bool		program_active; 	// flag estado global programa -> activo
 	
 	t_mutex		*mutex;				// MUTEX	
 	t_philo		*philos;			// CONEXION ARRAY PHILOS
