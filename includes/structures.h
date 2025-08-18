@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 18:55:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 21:34:10 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_philo
 	pthread_mutex_t	*fork_left;
 	pthread_mutex_t	*fork_right;	
 
-	t_state	state;
+	t_state			state;
 	pthread_mutex_t	mutex_state;
 	
 	struct s_data	*data; 		// conexion nivel superior a data struct

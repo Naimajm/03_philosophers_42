@@ -6,12 +6,14 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 19:20:54 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 21:38:43 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
+int		thinking(t_philo *philo);
+int		sleeping(t_philo *philo);
 int		eating(t_philo *philo);
 void	take_forks(t_philo *philo);
 void	drop_forks(t_philo *philo);
@@ -27,29 +29,49 @@ void	*daily_routine(void * philo_node)
 
 	// PRIORIDAD A PHILOS IMPARES -> EVITAR BLOQUEO ESTADO INICIAL
 	if (philo->id % 2 == 0)		
-		set_delay_time(philo->data->eat_time - 10);
+		set_delay_time(philo->data->eat_time / 2);
 
 	while (is_alive(philo) && is_program_active(philo->data))
 	{
-		take_forks(philo);						// COGER TENEDORES
+		take_forks(philo);					// COGER TENEDORES
 		eating(philo);
 		drop_forks(philo);					// SOLTAR TENEDORES
-
-		// verificacion OBJETIVO comidas
-		if (!has_eaten_enough(philo))
+		
+		if (has_eaten_enough(philo))		// verificacion OBJETIVO comidas
 			break ;
 
-		// sleeping(philo);
-		// thinking(philo);
+		sleeping(philo);
+		thinking(philo);
 	}    	
 	return (NULL);
 }
 
+int	thinking(t_philo *philo)
+{
+	if (!philo || !is_alive(philo))
+		return (FAILURE);	
+	// 	PROCESO
+	change_philo_state(philo, THINKING);					// DORMIR -> cambio status
+	printing_logs(philo->data, philo->id, MSG_THINKING);	// log
+	return (SUCCESS);
+}
+
+int	sleeping(t_philo *philo)
+{
+	if (!philo || !is_alive(philo))
+		return (FAILURE);	
+	// 	PROCESO
+	change_philo_state(philo, SLEEPING);					// DORMIR -> cambio status
+	printing_logs(philo->data, philo->id, MSG_SLEEPING);	// log
+	set_delay_time(philo->data->sleep_time);				// proceso comer discurrir tiempo de comida	
+	return (SUCCESS);
+}
+
 int	eating(t_philo *philo)
 {
-	if (!philo)
+	if (!philo || !is_alive(philo))
 		return (FAILURE);		
-	
+	// 	PROCESO
 	change_philo_state(philo, EATING);		// COMER -> cambio status	
 	printing_logs(philo->data, philo->id, MSG_EATING);	// log		
 	set_delay_time(philo->data->eat_time);	// proceso comer discurrir tiempo de comida
@@ -66,9 +88,11 @@ void	take_forks(t_philo *philo)
 {
 	pthread_mutex_t	*first_fork;
 	pthread_mutex_t	*second_fork;
-	(void) philo;
-	printf("take_forks() philo [%i]\n", philo->id);
-	
+
+	//printf("take_forks() philo [%i]\n", philo->id);
+	if (!philo || !is_alive(philo))
+		return ;
+			
 	// caso especial -> 1 filosofo
 	/* if (philo->data->num_philos)
 		case_one_philo() */
@@ -98,6 +122,8 @@ void	drop_forks(t_philo *philo)
 	pthread_mutex_unlock(philo->fork_left);
 	pthread_mutex_unlock(philo->fork_right);
 }
+
+
 
 
 

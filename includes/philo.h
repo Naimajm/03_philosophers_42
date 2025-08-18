@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/18 19:21:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/18 21:30:57 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int 	wait_for_threads(t_data *data);
 // 03_routine.c
 void 	*daily_routine(void * args);
 
+int		thinking(t_philo *philo);
+int		sleeping(t_philo *philo);
 int		eating(t_philo *philo);
 void	take_forks(t_philo *philo);
 void	drop_forks(t_philo *philo);
