@@ -6,16 +6,16 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 22:06:47 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:36:40 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-t_data	*initialize_data(int argc, char **argv);
-void	initialize_philos(t_data *data);
-int 	assign_forks_to_philos(t_data *data);
-void	initialize_mutex(t_data *data);
+t_data		*initialize_data(int argc, char **argv);
+void		initialize_philos(t_data *data);
+int 		assign_forks_to_philos(t_data *data);
+static void	initialize_mutex(t_data *data);
 
 t_data	*initialize_data(int argc, char **argv)
 {
@@ -45,8 +45,7 @@ t_data	*initialize_data(int argc, char **argv)
 	
 	data->monitor_death = 0;				// INIT THREADS	
 	data->monitor_meals	= 0;
-	data->philo_threads	= NULL;	
-	
+	data->philo_threads	= NULL;		
 	return (data);
 }
 
@@ -65,12 +64,12 @@ void	initialize_philos(t_data *data)
 		data->philos[index].id			= index + 1;
 		data->philos[index].num_meals	= 0;
 		data->philos[index].state		= INITIAL;
+		data->philos[index].last_meal_time = 0;
 
 		pthread_mutex_init(&data->philos[index].mutex_num_meals, NULL);
 		pthread_mutex_init(&data->philos[index].mutex_last_meal_time, NULL);
 		pthread_mutex_init(&data->philos[index].mutex_state, NULL);	
-
-		set_last_meal_time(&data->philos[index]);
+		//set_last_meal_time(&data->philos[index]);
 		data->philos[index].data = data;
 		index++;
 	}
@@ -96,7 +95,7 @@ int assign_forks_to_philos(t_data *data)
 	return (SUCCESS);
 }
 
-void	initialize_mutex(t_data *data)
+static void	initialize_mutex(t_data *data)
 {
 	int	index;
 

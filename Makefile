@@ -22,11 +22,10 @@ EXT_LIBRARYS 	:= -pthread
 # SRC --------------------------------------------------------------------------------
 SRC_DIR			:= ./src
 SRC_FILES 		:= $(addprefix $(SRC_DIR)/, 00_main.c \
-				01_init.c 02_threads.c      \
-				03_routine.c 03.2_monitor.c \
-				04_core.c 05_mutex_functions.c  \
-				08_time.c 09_logs.c \
-				10_free_manager.c 11_utils.c 12_utils_debug.c \
+				01_init.c 02_threads.c   \
+				03_routine.c 04_control.c  \
+				05_philo_state.c 06_philo_meal.c  \
+				07_free_manager.c 08_utils_basic.c 09_utils_debug.c \
 				) 
 OBJ_FILES 		:= $(SRC_FILES:%.c=%.o)
 

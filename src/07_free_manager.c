@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   10_free_manager.c                                  :+:      :+:    :+:   */
+/*   07_free_manager.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:28:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:33:20 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:30:46 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void 	cleanup_data(t_data *data);
-void	free_philos(t_data *data);
-void	free_mutex(t_data *data);
+void 		cleanup_data(t_data *data);
+static void	free_philos(t_data *data);
+static void	free_mutex(t_data *data);
 
 // limpieza GLOBAL DATA 
 void cleanup_data(t_data *data)
@@ -36,7 +36,7 @@ void cleanup_data(t_data *data)
 }
 
 // LIMPIEZA ESTRUCTURA PHILOS
-void	free_philos(t_data *data)
+static void	free_philos(t_data *data)
 {
 	int	index;
 
@@ -55,7 +55,7 @@ void	free_philos(t_data *data)
 }
 
 // LIMPIEZA ESTRUCTURA MUTEX
-void	free_mutex(t_data *data)
+static void	free_mutex(t_data *data)
 {	
 	int	index;
 

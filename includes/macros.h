@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:37:48 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:16:45 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:39:10 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 
 # define ERROR_INVALID_INPUT		"Error: Invalid input parameter\n"
 # define ERROR_MEM_ALLOC			"Error: Memory allocation failed\n"
-
 # define ERROR_THREADS_CREATE		"Error: Error creating thread\n"
 
 # define FREE_ALL					"Free: Total cleaning... OK\n"

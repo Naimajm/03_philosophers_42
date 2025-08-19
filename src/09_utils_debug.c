@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   12_utils_debug.c                                   :+:      :+:    :+:   */
+/*   09_utils_debug.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:46:53 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:26:41 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
+void 		print_data(t_data *data);
 void 		print_philos_array(t_data *data);
 static void print_forks_assignment(t_data *data, int index_philo);
 static int 	get_fork_index(t_data *data, pthread_mutex_t *fork);

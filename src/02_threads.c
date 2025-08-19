@@ -6,18 +6,19 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 22:13:57 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:39:29 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-// FUNCIONES CREACION Y CIERRE HILOS
+int			initialize_threads(t_data *data);
+static void	*daily_routine(void * philo_node);
+static void	*monitor_death(void *data);
+static void	*monitor_meals(void *data);
+int 		wait_for_threads(t_data *data);
 
-void	*daily_routine(void * philo_node);
-void	*monitor_death(void *data);
-void	*monitor_meals(void *data);
-int 	wait_for_threads(t_data *data);
+// FUNCIONES CREACION Y CIERRE HILOS
 
 int	initialize_threads(t_data *data)
 {
@@ -26,17 +27,19 @@ int	initialize_threads(t_data *data)
 	if (!data)
 		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	index = 0;
+	
 	// RESERVA MEMORIA THREADS
 	data->philo_threads = (pthread_t *) malloc(sizeof(pthread_t) * data->num_philos);
 	if (!data->philo_threads)
-		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO), FAILURE);	
+		return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);		
 	
-	// INICIO TEMPORIZADOR 
-	data->start_time = get_current_time();
+	data->start_time = get_current_time();					// INICIO TEMPORIZADOR 
 
 	// CREACION THREADS PHILOS -> FUNCION PPAL + ESTRUCTURA PHILO [INDICE]
 	while (index < data->num_philos)
-	{
+	{		
+        set_last_meal_time(&data->philos[index]);			// INICIALIZAR TIEMPO JUSTO ANTES DE CREAR EL THREAD
+
 		if (pthread_create(&data->philo_threads[index], NULL, &daily_routine, &data->philos[index]))
 			return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);	
 		index++;
@@ -52,7 +55,7 @@ int	initialize_threads(t_data *data)
 }
 
 // FUNCION PPAL EJECUCION HILO 
-void	*daily_routine(void * philo_node)
+static void	*daily_routine(void * philo_node)
 {
 	t_philo *philo;
 	
@@ -64,11 +67,11 @@ void	*daily_routine(void * philo_node)
 		printing_logs(philo->data, philo->id, MSG_TAKE_FORKS);
 		return (NULL);
 	}	
-	set_last_meal_time(philo);					// XQ ?
+	//set_last_meal_time(philo);					// opcion original
 
 	// PRIORIDAD A PHILOS IMPARES -> EVITAR BLOQUEO ESTADO INICIAL
 	if (philo->id % 2 == 0)		
-		set_delay_time(philo->data->eat_time / 2);
+		set_delay_time(philo->data->eat_time - 10);
 
 	while (is_alive(philo) && is_program_active(philo->data))
 	{
@@ -84,7 +87,7 @@ void	*daily_routine(void * philo_node)
 }
 
 // MONITORIZAICON FRACASO -> verifica si algun filósofo han muerto de hambre
-void	*monitor_death(void *data_struct)
+static void	*monitor_death(void *data_struct)
 {
 	t_data	*data;
 	t_philo	*philo;
@@ -103,8 +106,8 @@ void	*monitor_death(void *data_struct)
 		{
 			current_time = get_current_time();
 			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);			
-			if (time_since_last_meal >= data->die_time		// VERIFICAR MUERTE POR HAMBRE
-					&& get_philo_state(&philo[index]) != EATING)
+			if (time_since_last_meal >= data->die_time)		// VERIFICAR MUERTE POR HAMBRE
+					//&& get_philo_state(&philo[index]) != EATING)
 			{				
 				change_philo_state(&philo[index], DEAD);	// PROCESO MUERTE POR HAMBRE -> IMPRIMIR + STATE	
 				printing_logs(data, philo[index].id, MSG_DIED);				
@@ -122,7 +125,7 @@ void	*monitor_death(void *data_struct)
 }
 
 // MONITORIZAICON EXITOSA -> verifica si todos los filósofos han comido suficientes veces
-void	*monitor_meals(void *data_struct)
+static void	*monitor_meals(void *data_struct)
 {
 	t_data	*data;	
 	int		index;

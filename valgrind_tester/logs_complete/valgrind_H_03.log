@@ -1,200 +1,200 @@
-==680979== drd, a thread error detector
-==680979== Copyright (C) 2006-2020, and GNU GPL'd, by Bart Van Assche.
-==680979== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==680979== Command: ../philo 8 800 100 100 5
-==680979== 
-11 1 is thinking
-16 1 has taken a fork
-17 1 has taken a fork
-17 1 is eating
-24 3 is thinking
-24 3 has taken a fork
-24 3 has taken a fork
-24 3 is eating
-29 5 is thinking
-29 5 has taken a fork
-29 5 has taken a fork
-29 5 is eating
-35 7 is thinking
-35 7 has taken a fork
-35 7 has taken a fork
-35 7 is eating
-72 2 is thinking
-76 4 is thinking
-82 6 is thinking
-89 8 is thinking
-119 1 is sleeping
-119 2 has taken a fork
-124 4 has taken a fork
-125 3 is sleeping
-125 2 has taken a fork
-125 2 is eating
-130 6 has taken a fork
-131 5 is sleeping
-131 4 has taken a fork
-131 4 is eating
-136 8 has taken a fork
-136 8 has taken a fork
-136 8 is eating
-137 7 is sleeping
-137 6 has taken a fork
-137 6 is eating
-219 1 is thinking
-225 3 is thinking
-226 3 has taken a fork
-227 2 is sleeping
-227 1 has taken a fork
-233 4 is sleeping
-234 3 has taken a fork
-234 3 is eating
-235 5 is thinking
-235 5 has taken a fork
-237 1 has taken a fork
-238 1 is eating
-238 6 is sleeping
-239 8 is sleeping
-240 7 is thinking
-240 7 has taken a fork
-240 7 has taken a fork
-240 7 is eating
-241 5 has taken a fork
-241 5 is eating
-327 2 is thinking
-334 4 is thinking
-335 3 is sleeping
-336 4 has taken a fork
-339 6 is thinking
-339 1 is sleeping
-340 8 is thinking
-341 2 has taken a fork
-341 2 has taken a fork
-341 2 is eating
-342 6 has taken a fork
-343 8 has taken a fork
-343 8 has taken a fork
-343 8 is eating
-344 4 has taken a fork
-344 4 is eating
-344 7 is sleeping
-344 6 has taken a fork
-345 6 is eating
-345 5 is sleeping
-435 3 is thinking
-439 1 is thinking
-442 3 has taken a fork
-442 2 is sleeping
-443 1 has taken a fork
-444 7 is thinking
-445 5 is thinking
-445 5 has taken a fork
-445 8 is sleeping
-446 7 has taken a fork
-446 7 has taken a fork
-446 7 is eating
-447 3 has taken a fork
-447 3 is eating
-447 1 has taken a fork
-447 1 is eating
-448 4 is sleeping
-448 6 is sleeping
-448 5 has taken a fork
-449 5 is eating
-542 2 is thinking
-546 8 is thinking
-547 3 is sleeping
-548 6 is thinking
-549 4 is thinking
-550 4 has taken a fork
-550 1 is sleeping
-550 7 is sleeping
-551 6 has taken a fork
-551 6 has taken a fork
-551 6 is eating
-552 2 has taken a fork
-552 2 has taken a fork
-552 2 is eating
-552 8 has taken a fork
-552 8 has taken a fork
-552 8 is eating
-553 5 is sleeping
-553 4 has taken a fork
-554 4 is eating
-647 3 is thinking
-650 7 is thinking
-651 1 is thinking
-652 8 is sleeping
-653 6 is sleeping
-653 5 is thinking
-654 7 has taken a fork
-654 7 has taken a fork
-654 7 is eating
-655 3 has taken a fork
-657 2 is sleeping
-657 1 has taken a fork
-657 1 has taken a fork
-657 1 is eating
-658 5 has taken a fork
-658 5 has taken a fork
-658 5 is eating
-658 4 is sleeping
-658 3 has taken a fork
-659 3 is eating
-753 6 is thinking
-754 8 is thinking
-755 8 has taken a fork
-756 7 is sleeping
-757 2 is thinking
-758 4 is thinking
-759 5 is sleeping
-760 2 has taken a fork
-761 6 has taken a fork
-761 6 has taken a fork
-761 6 is eating
-761 4 has taken a fork
-761 4 has taken a fork
-762 4 is eating
-762 1 is sleeping
-762 8 has taken a fork
-762 8 is eating
-763 3 is sleeping
-764 2 has taken a fork
-764 2 is eating
-856 7 is thinking
-860 5 is thinking
-862 8 is sleeping
-863 3 is thinking
-864 1 is thinking
-864 6 is sleeping
-865 7 has taken a fork
-865 7 has taken a fork
-865 7 is eating
-865 5 has taken a fork
-865 5 has taken a fork
-865 5 is eating
-866 4 is sleeping
-867 1 has taken a fork
-868 1 has taken a fork
-868 1 is eating
-868 3 has taken a fork
-868 3 has taken a fork
-868 3 is eating
-868 2 is sleeping
-962 8 is thinking
-965 6 is thinking
-968 8 has taken a fork
-969 2 is thinking
-969 2 has taken a fork
-969 4 is thinking
-970 6 has taken a fork
-971 4 has taken a fork
-971 4 has taken a fork
-972 4 is eating
-972 8 has taken a fork
-973 8 is eating
-973 6 has taken a fork
-974 6 is eating
-974 2 has taken a fork
-974 2 is eating
-==680979== 
-==680979== For lists of detected and suppressed errors, rerun with: -s
-==680979== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 4)
+==797741== drd, a thread error detector
+==797741== Copyright (C) 2006-2020, and GNU GPL'd, by Bart Van Assche.
+==797741== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==797741== Command: ../philo 8 800 100 100 5
+==797741== 
+16 1 is thinking
+22 1 has taken a fork
+22 1 has taken a fork
+23 1 is eating
+32 3 is thinking
+32 3 has taken a fork
+32 3 has taken a fork
+32 3 is eating
+39 5 is thinking
+39 5 has taken a fork
+39 5 has taken a fork
+39 5 is eating
+46 7 is thinking
+46 7 has taken a fork
+46 7 has taken a fork
+46 7 is eating
+120 2 is thinking
+125 1 is sleeping
+126 2 has taken a fork
+126 4 is thinking
+132 6 is thinking
+134 4 has taken a fork
+134 3 is sleeping
+135 2 has taken a fork
+135 2 is eating
+140 8 is thinking
+141 6 has taken a fork
+142 5 is sleeping
+142 4 has taken a fork
+142 4 is eating
+148 8 has taken a fork
+148 8 has taken a fork
+148 8 is eating
+148 7 is sleeping
+149 6 has taken a fork
+149 6 is eating
+226 1 is thinking
+235 3 is thinking
+237 3 has taken a fork
+238 2 is sleeping
+238 1 has taken a fork
+243 4 is sleeping
+243 3 has taken a fork
+243 3 is eating
+243 5 is thinking
+244 5 has taken a fork
+248 7 is thinking
+249 8 is sleeping
+250 1 has taken a fork
+250 1 is eating
+250 7 has taken a fork
+250 7 has taken a fork
+250 7 is eating
+251 6 is sleeping
+252 5 has taken a fork
+252 5 is eating
+339 2 is thinking
+343 3 is sleeping
+344 4 is thinking
+345 4 has taken a fork
+349 8 is thinking
+351 2 has taken a fork
+351 2 has taken a fork
+351 2 is eating
+351 1 is sleeping
+353 6 is thinking
+353 6 has taken a fork
+354 5 is sleeping
+354 4 has taken a fork
+354 4 is eating
+355 7 is sleeping
+356 8 has taken a fork
+356 8 has taken a fork
+356 8 is eating
+356 6 has taken a fork
+357 6 is eating
+443 3 is thinking
+451 3 has taken a fork
+452 2 is sleeping
+453 1 is thinking
+453 1 has taken a fork
+455 5 is thinking
+455 5 has taken a fork
+456 7 is thinking
+456 4 is sleeping
+456 3 has taken a fork
+457 3 is eating
+458 7 has taken a fork
+459 6 is sleeping
+459 5 has taken a fork
+459 5 is eating
+460 1 has taken a fork
+460 1 is eating
+461 8 is sleeping
+462 7 has taken a fork
+462 7 is eating
+552 2 is thinking
+557 4 is thinking
+559 3 is sleeping
+559 5 is sleeping
+560 6 is thinking
+560 6 has taken a fork
+561 4 has taken a fork
+561 4 has taken a fork
+561 4 is eating
+562 1 is sleeping
+563 8 is thinking
+563 2 has taken a fork
+563 2 has taken a fork
+564 2 is eating
+565 8 has taken a fork
+565 8 has taken a fork
+565 8 is eating
+566 7 is sleeping
+566 6 has taken a fork
+566 6 is eating
+659 3 is thinking
+661 5 is thinking
+662 4 is sleeping
+663 1 is thinking
+663 5 has taken a fork
+664 3 has taken a fork
+665 3 has taken a fork
+665 3 is eating
+665 8 is sleeping
+667 7 is thinking
+667 7 has taken a fork
+667 7 has taken a fork
+667 7 is eating
+668 6 is sleeping
+668 5 has taken a fork
+668 5 is eating
+668 2 is sleeping
+669 1 has taken a fork
+669 1 has taken a fork
+669 1 is eating
+763 4 is thinking
+765 8 is thinking
+766 3 is sleeping
+767 4 has taken a fork
+768 6 is thinking
+769 2 is thinking
+770 7 is sleeping
+770 8 has taken a fork
+772 2 has taken a fork
+772 2 has taken a fork
+772 2 is eating
+772 6 has taken a fork
+772 6 has taken a fork
+772 6 is eating
+773 4 has taken a fork
+773 4 is eating
+773 1 is sleeping
+774 8 has taken a fork
+774 8 is eating
+775 5 is sleeping
+866 3 is thinking
+870 7 is thinking
+872 6 is sleeping
+874 2 is sleeping
+874 1 is thinking
+874 1 has taken a fork
+874 4 is sleeping
+875 7 has taken a fork
+875 5 is thinking
+875 5 has taken a fork
+875 5 has taken a fork
+875 5 is eating
+876 3 has taken a fork
+876 3 has taken a fork
+876 3 is eating
+878 1 has taken a fork
+878 1 is eating
+878 8 is sleeping
+879 7 has taken a fork
+880 7 is eating
+973 6 is thinking
+974 2 is thinking
+975 4 is thinking
+978 6 has taken a fork
+978 8 is thinking
+980 2 has taken a fork
+980 2 has taken a fork
+981 2 is eating
+981 4 has taken a fork
+981 4 has taken a fork
+981 4 is eating
+981 8 has taken a fork
+982 8 has taken a fork
+982 8 is eating
+983 6 has taken a fork
+983 6 is eating
+==797741== 
+==797741== For lists of detected and suppressed errors, rerun with: -s
+==797741== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 4)

@@ -1,224 +1,224 @@
-==680244== Memcheck, a memory error detector
-==680244== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==680244== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==680244== Command: ../philo 15 800 200 200 3
-==680244== 
-106 3 is thinking
-121 3 has taken a fork
-121 3 has taken a fork
-122 3 is eating
-122 1 is thinking
-122 1 has taken a fork
-122 1 has taken a fork
-122 1 is eating
-150 5 is thinking
-150 5 has taken a fork
-150 5 has taken a fork
-150 5 is eating
-200 7 is thinking
-200 7 has taken a fork
-200 7 has taken a fork
-200 7 is eating
-224 2 is thinking
-224 4 is thinking
-269 9 is thinking
-269 9 has taken a fork
-269 9 has taken a fork
-269 9 is eating
-292 11 is thinking
-292 11 has taken a fork
-292 11 has taken a fork
-292 11 is eating
-293 6 is thinking
-361 3 is sleeping
-361 1 is sleeping
-361 13 is thinking
-361 13 has taken a fork
-361 13 has taken a fork
-362 13 is eating
-383 15 is thinking
-383 15 has taken a fork
-383 15 has taken a fork
-383 15 is eating
-384 4 has taken a fork
-384 5 is sleeping
-384 2 has taken a fork
-384 2 has taken a fork
-384 2 is eating
-407 6 has taken a fork
-407 4 has taken a fork
-407 4 is eating
-407 8 is thinking
-407 10 is thinking
-407 7 is sleeping
-431 8 has taken a fork
-431 6 has taken a fork
-431 6 is eating
-433 12 is thinking
-459 14 is thinking
-469 10 has taken a fork
-469 9 is sleeping
-469 8 has taken a fork
-469 8 is eating
-492 12 has taken a fork
-492 11 is sleeping
-492 10 has taken a fork
-492 10 is eating
-561 3 is thinking
-561 1 is thinking
-562 13 is sleeping
-562 14 has taken a fork
-562 12 has taken a fork
-562 12 is eating
-583 15 is sleeping
-583 14 has taken a fork
-583 14 is eating
-584 5 is thinking
-584 2 is sleeping
-584 1 has taken a fork
-584 1 has taken a fork
-584 1 is eating
-584 3 has taken a fork
-607 7 is thinking
-607 3 has taken a fork
-607 3 is eating
-607 5 has taken a fork
-608 4 is sleeping
-631 7 has taken a fork
-631 6 is sleeping
-631 5 has taken a fork
-631 5 is eating
-669 9 is thinking
-669 9 has taken a fork
-669 7 has taken a fork
-669 7 is eating
-669 8 is sleeping
-692 11 is thinking
-692 11 has taken a fork
-693 10 is sleeping
-693 9 has taken a fork
-693 9 is eating
-762 13 is thinking
-762 12 is sleeping
-762 13 has taken a fork
-762 11 has taken a fork
-762 11 is eating
-783 15 is thinking
-783 15 has taken a fork
-783 14 is sleeping
-783 13 has taken a fork
-783 13 is eating
-784 1 is sleeping
-784 2 is thinking
-784 2 has taken a fork
-784 15 has taken a fork
-784 15 is eating
-807 3 is sleeping
-807 2 has taken a fork
-807 2 is eating
-808 4 is thinking
-808 4 has taken a fork
-831 5 is sleeping
-831 6 is thinking
-831 6 has taken a fork
-831 4 has taken a fork
-831 4 is eating
-869 8 is thinking
-869 8 has taken a fork
-869 7 is sleeping
-869 6 has taken a fork
-869 6 is eating
-893 10 is thinking
-893 10 has taken a fork
-893 9 is sleeping
-893 8 has taken a fork
-893 8 is eating
-962 11 is sleeping
-962 10 has taken a fork
-962 10 is eating
-962 12 is thinking
-962 12 has taken a fork
-983 14 is thinking
-983 13 is sleeping
-983 12 has taken a fork
-983 12 is eating
-983 14 has taken a fork
-984 1 is thinking
-984 15 is sleeping
-984 14 has taken a fork
-984 14 is eating
-1007 3 is thinking
-1007 3 has taken a fork
-1007 2 is sleeping
-1007 1 has taken a fork
-1007 1 has taken a fork
-1007 1 is eating
-1031 4 is sleeping
-1031 3 has taken a fork
-1031 3 is eating
-1031 5 is thinking
-1031 5 has taken a fork
-1069 6 is sleeping
-1069 7 is thinking
-1069 7 has taken a fork
-1069 5 has taken a fork
-1069 5 is eating
-1093 9 is thinking
-1093 9 has taken a fork
-1093 7 has taken a fork
-1093 7 is eating
-1093 8 is sleeping
-1162 11 is thinking
-1162 11 has taken a fork
-1162 9 has taken a fork
-1162 9 is eating
-1162 10 is sleeping
-1183 11 has taken a fork
-1183 11 is eating
-1183 12 is sleeping
-1183 13 is thinking
-1183 13 has taken a fork
-1184 15 is thinking
-1184 15 has taken a fork
-1184 14 is sleeping
-1184 13 has taken a fork
-1184 13 is eating
-1210 2 is thinking
-1210 2 has taken a fork
-1210 15 has taken a fork
-1210 15 is eating
-1231 4 is thinking
-1231 4 has taken a fork
-1231 2 has taken a fork
-1231 2 is eating
-1269 4 has taken a fork
-1269 4 is eating
-1269 6 is thinking
-1269 6 has taken a fork
-1293 8 is thinking
-1293 8 has taken a fork
-1293 6 has taken a fork
-1293 6 is eating
-1362 10 is thinking
-1362 10 has taken a fork
-1362 8 has taken a fork
-1362 8 is eating
-1383 12 is thinking
-1383 10 has taken a fork
-1384 12 has taken a fork
-1385 12 has taken a fork
-1385 12 is eating
-1385 10 is eating
-1384 14 is thinking
-1385 14 has taken a fork
-1410 14 has taken a fork
-1410 14 is eating
-==680244== 
-==680244== HEAP SUMMARY:
-==680244==     in use at exit: 0 bytes in 0 blocks
-==680244==   total heap usage: 23 allocs, 23 frees, 12,128 bytes allocated
-==680244== 
-==680244== All heap blocks were freed -- no leaks are possible
-==680244== 
-==680244== For lists of detected and suppressed errors, rerun with: -s
-==680244== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==797279== Memcheck, a memory error detector
+==797279== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==797279== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==797279== Command: ../philo 15 800 200 200 3
+==797279== 
+63 3 is thinking
+72 3 has taken a fork
+72 3 has taken a fork
+73 3 is eating
+90 1 is thinking
+91 1 has taken a fork
+91 1 has taken a fork
+91 1 is eating
+141 7 is thinking
+141 7 has taken a fork
+141 7 has taken a fork
+141 7 is eating
+141 5 is thinking
+141 5 has taken a fork
+141 5 has taken a fork
+141 5 is eating
+193 9 is thinking
+193 9 has taken a fork
+193 9 has taken a fork
+193 9 is eating
+212 11 is thinking
+212 11 has taken a fork
+212 11 has taken a fork
+212 11 is eating
+250 13 is thinking
+250 13 has taken a fork
+250 13 has taken a fork
+250 13 is eating
+251 2 is thinking
+289 15 is thinking
+289 15 has taken a fork
+290 4 is thinking
+291 3 is sleeping
+312 2 has taken a fork
+312 2 has taken a fork
+312 2 is eating
+312 1 is sleeping
+333 15 has taken a fork
+333 15 is eating
+333 4 has taken a fork
+333 6 is thinking
+341 7 is sleeping
+341 6 has taken a fork
+341 6 has taken a fork
+341 6 is eating
+341 5 is sleeping
+341 4 has taken a fork
+341 4 is eating
+348 8 is thinking
+348 8 has taken a fork
+383 10 is thinking
+393 10 has taken a fork
+393 8 has taken a fork
+393 8 is eating
+393 9 is sleeping
+412 11 is sleeping
+412 10 has taken a fork
+412 10 is eating
+421 12 is thinking
+421 12 has taken a fork
+450 13 is sleeping
+450 12 has taken a fork
+450 12 is eating
+460 14 is thinking
+460 14 has taken a fork
+491 3 is thinking
+512 2 is sleeping
+512 3 has taken a fork
+512 1 is thinking
+512 1 has taken a fork
+533 15 is sleeping
+533 1 has taken a fork
+533 1 is eating
+533 14 has taken a fork
+533 14 is eating
+541 5 is thinking
+541 7 is thinking
+541 5 has taken a fork
+541 3 has taken a fork
+541 3 is eating
+541 4 is sleeping
+541 6 is sleeping
+541 5 has taken a fork
+541 5 is eating
+541 7 has taken a fork
+593 8 is sleeping
+593 7 has taken a fork
+593 7 is eating
+593 9 is thinking
+593 9 has taken a fork
+612 11 is thinking
+612 11 has taken a fork
+612 10 is sleeping
+612 9 has taken a fork
+612 9 is eating
+650 13 is thinking
+650 13 has taken a fork
+650 11 has taken a fork
+650 11 is eating
+650 12 is sleeping
+712 2 is thinking
+733 14 is sleeping
+733 13 has taken a fork
+733 13 is eating
+733 15 is thinking
+733 15 has taken a fork
+733 2 has taken a fork
+733 15 has taken a fork
+733 15 is eating
+733 1 is sleeping
+741 4 is thinking
+741 5 is sleeping
+741 4 has taken a fork
+741 4 has taken a fork
+741 4 is eating
+741 3 is sleeping
+741 2 has taken a fork
+741 2 is eating
+741 6 is thinking
+741 6 has taken a fork
+793 7 is sleeping
+793 6 has taken a fork
+793 6 is eating
+793 8 is thinking
+793 8 has taken a fork
+812 9 is sleeping
+812 8 has taken a fork
+812 8 is eating
+812 10 is thinking
+812 10 has taken a fork
+850 12 is thinking
+850 12 has taken a fork
+850 11 is sleeping
+850 10 has taken a fork
+850 10 is eating
+933 14 is thinking
+933 1 is thinking
+933 14 has taken a fork
+933 13 is sleeping
+933 12 has taken a fork
+933 12 is eating
+933 15 is sleeping
+933 14 has taken a fork
+933 14 is eating
+941 3 is thinking
+941 3 has taken a fork
+941 2 is sleeping
+941 1 has taken a fork
+941 1 has taken a fork
+941 1 is eating
+941 3 has taken a fork
+941 3 is eating
+941 4 is sleeping
+941 5 is thinking
+941 5 has taken a fork
+993 6 is sleeping
+993 5 has taken a fork
+993 5 is eating
+993 7 is thinking
+993 7 has taken a fork
+1012 9 is thinking
+1012 9 has taken a fork
+1012 7 has taken a fork
+1012 7 is eating
+1012 8 is sleeping
+1050 11 is thinking
+1050 11 has taken a fork
+1050 9 has taken a fork
+1050 9 is eating
+1050 10 is sleeping
+1133 15 is thinking
+1133 15 has taken a fork
+1133 14 is sleeping
+1133 12 is sleeping
+1133 11 has taken a fork
+1133 11 is eating
+1133 13 is thinking
+1133 13 has taken a fork
+1133 13 has taken a fork
+1133 13 is eating
+1142 15 has taken a fork
+1142 15 is eating
+1143 4 is thinking
+1143 4 has taken a fork
+1143 2 is thinking
+1143 2 has taken a fork
+1144 2 has taken a fork
+1144 2 is eating
+1193 4 has taken a fork
+1193 4 is eating
+1193 6 is thinking
+1193 6 has taken a fork
+1212 6 has taken a fork
+1212 6 is eating
+1212 8 is thinking
+1212 8 has taken a fork
+1250 8 has taken a fork
+1250 8 is eating
+1250 10 is thinking
+1250 10 has taken a fork
+1333 12 is thinking
+1333 14 is thinking
+1333 14 has taken a fork
+1335 12 has taken a fork
+1335 12 has taken a fork
+1335 12 is eating
+1335 10 has taken a fork
+1335 10 is eating
+1342 14 has taken a fork
+1342 14 is eating
+==797279== 
+==797279== HEAP SUMMARY:
+==797279==     in use at exit: 0 bytes in 0 blocks
+==797279==   total heap usage: 23 allocs, 23 frees, 12,128 bytes allocated
+==797279== 
+==797279== All heap blocks were freed -- no leaks are possible
+==797279== 
+==797279== For lists of detected and suppressed errors, rerun with: -s
+==797279== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

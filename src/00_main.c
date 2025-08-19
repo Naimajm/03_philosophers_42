@@ -6,15 +6,15 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:17 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 22:02:10 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:38:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-int	validate_limits(int argc, char **argv);
-int	validate_syntax(int argc, char **argv);
-int	validate_numeric_format(int argc, char **argv);
+static int	validate_philo_limits(int argc, char **argv);
+static int	validate_syntax(int argc, char **argv);
+static int	validate_numeric_format(int argc, char **argv);
 
 // MAIN -----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_data	*data;
 	if (validate_syntax(argc, argv))		// CHECK ARGS
 		return (FAILURE);
-	if (validate_limits(argc, argv))
+	if (validate_philo_limits(argc, argv))
 		return (FAILURE);
 		
 	data = initialize_data(argc, argv);		// INICIALIZACION DATA (MUTEX + FORKS)	
@@ -41,49 +41,7 @@ int	main(int argc, char **argv)
 	return (SUCCESS);
 }
 
-int validate_syntax(int argc, char **argv)
-{
-	if (!argc || !argv)
-		return (FAILURE);
-	if (argc < 5 || argc > 6)				// check num argumentos
-	{
-		ft_putendl_fd(ERROR_ARGS_NUMBER, STDERR_FILENO);
-		return (FAILURE);
-	}
-	else if (validate_numeric_format(argc, argv))	// check char tipo numero
-	{
-		ft_putendl_fd(ERROR_ARGS_TYPE, STDERR_FILENO);
-		return (FAILURE);
-	}
-	return (SUCCESS);
-}
-
-int validate_numeric_format(int argc, char **argv)
-{
-	int		index_arg;
-	int 	index_char;
-	char	*argument;
-
-	if (!argc || !argv)
-		return (FAILURE);
-	index_arg = 1;
-	while (index_arg < argc)
-	{
-		index_char = 0;
-		argument = argv[index_arg];
-		while (argument[index_char])
-		{
-			// verificacion de char 'numero'
-			if (argument[index_char] < '0' || argument[index_char] > '9')				
-				return (FAILURE);
-			index_char++;
-		}
-		index_arg++;
-	}
-	return (SUCCESS);
-}
-
-int	validate_limits(int argc, char **argv)
+static int	validate_philo_limits(int argc, char **argv)
 {	
 	if (!argc || !argv)
 		return (FAILURE);
@@ -107,15 +65,44 @@ int	validate_limits(int argc, char **argv)
 	return (SUCCESS);
 }
 
+static int validate_syntax(int argc, char **argv)
+{
+	if (!argc || !argv)
+		return (FAILURE);
+	if (argc < 5 || argc > 6)				// check num argumentos
+	{
+		ft_putendl_fd(ERROR_ARGS_NUMBER, STDERR_FILENO);
+		return (FAILURE);
+	}
+	else if (validate_numeric_format(argc, argv))	// check char tipo numero
+	{
+		ft_putendl_fd(ERROR_ARGS_TYPE, STDERR_FILENO);
+		return (FAILURE);
+	}
+	return (SUCCESS);
+}
 
+static int validate_numeric_format(int argc, char **argv)
+{
+	int		index_arg;
+	int 	index_char;
+	char	*argument;
 
-
-
-
-
-
-
-
-
-
-
+	if (!argc || !argv)
+		return (FAILURE);
+	index_arg = 1;
+	while (index_arg < argc)
+	{
+		index_char = 0;
+		argument = argv[index_arg];
+		while (argument[index_char])
+		{
+			// verificacion de char 'numero'
+			if (argument[index_char] < '0' || argument[index_char] > '9')
+				return (FAILURE);
+			index_char++;
+		}
+		index_arg++;
+	}
+	return (SUCCESS);
+}
