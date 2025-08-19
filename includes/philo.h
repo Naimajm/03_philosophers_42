@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:49:48 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 02:01:50 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	drop_forks(t_philo *philo);
 //void	program_is_over(t_data *data);
 
 // 04_core.c
-bool 	philo_has_eaten_enough(t_philo *philo);
+bool 	has_eaten_enough(t_philo *philo);
 bool 	is_alive(t_philo *philo);
  
 // 05_mutex_functions.c

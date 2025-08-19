@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:28:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:14:09 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 02:06:57 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	free_mutex(t_data *data)
 	if (!data || !data->mutex)
 		return ;
 	// DESTROY MUTEX
-	pthread_mutex_destroy(&data->mutex->num_full_philos);
+	//pthread_mutex_destroy(&data->mutex->num_full_philos);
 	pthread_mutex_destroy(&data->mutex->program_active);
 	pthread_mutex_destroy(&data->mutex->print_log);
 	

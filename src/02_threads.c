@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:50:45 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 13:33:00 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	*daily_routine(void * philo_node)
 	// caso especial -> 1 filosofo muere
 	if (philo->data->num_philos == 1)
 	{	
+		printing_logs(philo->data, philo->id, MSG_TAKE_FORKS);
 		set_delay_time(philo->data->die_time);
 		change_philo_state(philo, DEAD);
 		printing_logs(philo->data, philo->id, MSG_DIED);	// log
@@ -79,7 +80,7 @@ void	*daily_routine(void * philo_node)
 		eating(philo);
 		drop_forks(philo);					// SOLTAR TENEDORES
 		
-		if (philo_has_eaten_enough(philo))		// verificacion OBJETIVO comidas
+		if (has_eaten_enough(philo))		// verificacion OBJETIVO comidas
 			break ;
 		sleeping(philo);
 		thinking(philo);
@@ -113,12 +114,12 @@ void	*monitor_death(void *data_struct)
 			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);
 
 			// VERIFICAR MUERTE POR HAMBRE
-			if (time_since_last_meal > data->die_time 
+			if (time_since_last_meal > data->die_time
 					&& get_philo_state(&philo[index]) != EATING)
 			{
 				// PROCESO MUERTE POR HAMBRE -> IMPRIMIR + STATE
 				change_philo_state(&philo[index], DEAD);		
-				printing_logs(philo->data, philo->id, MSG_DIED);
+				printing_logs(data, philo[index].id, MSG_DIED);
 				stop_program(data);			// program_active = false terminar el ciclo de monitoreo				
 				return (NULL);
 			}		
@@ -135,35 +136,40 @@ void	*monitor_death(void *data_struct)
 // MONITORIZAICON EXITOSA -> verifica si todos los filósofos han comido suficientes veces
 void	*monitor_meals(void *data_struct)
 {
-	t_data	*data;
-	t_philo	*philo;
-	int		index;		
+	t_data	*data;	
+	int		index;
+	int		philos_satisfied;	
 
 	data 	= data_struct;
-	philo	= data->philos;
-	index 	= 0;
 
 	pthread_mutex_lock(&data->mutex->print_log);		// ACTIVAR MUTEX
-	printf("INICIO monitor_death()\n");
+	printf("INICIO monitor_meals()\n");
 	pthread_mutex_unlock(&data->mutex->print_log);
 
-	// CICLO VERIFICACION SUFICIENTES COMIDAS
-	while (index < data->num_philos && is_program_active(data))
+	// CICLO EXTERNO VERIFICACION SUFICIENTES COMIDAS
+	while (is_program_active(data))
 	{
-		usleep(USLEEP_MONITOR_TIME);			// tiempo verificacion  Evitar consumir CPU excesivamente
-		if (philo_has_eaten_enough(&philo[index]) == false)
-			index = 0;							// reiniciar para verificar desde inicio
-		index++;
-	}
-	// CASO TODOS HAN COMIDO  -> OBJETIVO POR COMIDA . NO POR MUERTE
-	if (is_program_active(data))
-	{
-		stop_program(data);
-		//program_is_over(data);
+		index 	= 0;
+		philos_satisfied = 0;
+		while (index < data->num_philos)
+		{			
+			if (has_eaten_enough(&data->philos[index]))
+				philos_satisfied++;
+			index++;
+		}
+		// CASO TODOS HAN COMIDO  -> OBJETIVO POR COMIDA . NO POR MUERTE
+		if (philos_satisfied >= data->num_philos)
+		{
+			stop_program(data);
+			//program_is_over(data);
 
-		pthread_mutex_lock(&data->mutex->print_log);
-    	printf("FIN monitor_death() -> TODOS HAN COMIDO\n");
-		pthread_mutex_unlock(&data->mutex->print_log);
+			pthread_mutex_lock(&data->mutex->print_log);
+			printf("FIN monitor_meals() -> TODOS HAN COMIDO\n");
+			pthread_mutex_unlock(&data->mutex->print_log);
+
+			return (NULL);
+		}
+		usleep(USLEEP_MONITOR_TIME);  // ESPERA tiempo verificacion 
 	}	
 	return (NULL);
 }

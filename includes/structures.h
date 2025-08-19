@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:22:48 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 02:05:03 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_philo
 
 typedef struct s_mutex
 {
-	pthread_mutex_t num_full_philos;       	// Contador de philos que terminaron	
+	//pthread_mutex_t num_full_philos;       	// Contador de philos que terminaron ?? se usa??	
 	pthread_mutex_t	program_active;		
 	pthread_mutex_t	*forks;	
 	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION	
@@ -65,7 +65,7 @@ typedef struct s_data
 	int			num_meals;	
 
 	// VARIABLES DE ESTADO -----------
-	int			num_full_philos;	// ???? SE HA USADO ??
+	//int			num_full_philos;	// ???? SE HA USADO  EN JUANJE ??
 	long		start_time;			// TIEMPO INICIO PROCESO
 	bool		program_active; 	// flag estado global programa -> activo
 	

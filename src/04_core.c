@@ -6,17 +6,17 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 18:03:02 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:07:27 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 02:01:50 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-bool philo_has_eaten_enough(t_philo *philo);
+bool has_eaten_enough(t_philo *philo);
 bool is_alive(t_philo *philo);
 
 
-bool philo_has_eaten_enough(t_philo *philo)
+bool has_eaten_enough(t_philo *philo)
 {
 	bool	has_eaten;
 

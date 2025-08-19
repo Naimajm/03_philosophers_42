@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:13:34 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 02:07:13 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void print_data(t_data *data)
 	printf("\t eat_time \t-> %i\n", data->eat_time);   
 	printf("\t sleep_time \t-> %i\n", data->sleep_time);  
 	printf("\t num_meals \t-> %i\n", data->num_meals);  
-	printf("\t num_full \t-> %i\n", data->num_full_philos);  
+	//printf("\t num_full \t-> %i\n", data->num_full_philos);  
 
 	printf("\t start_time \t-> %li\n", data->start_time);  
 	printf("\t keep_iter \t-> %d\n", data->program_active);  
