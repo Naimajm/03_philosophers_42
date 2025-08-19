@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:23:25 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:48:35 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,5 @@ void	ft_putendl_fd(char *str, int fd);
 // 12_utils_debug.c
 void 	print_data(t_data *data);
 void 	print_philos_array(t_data *data);
-void	print_arguments(char **argv);
-void	print_strings_array(char **array);
 
 # endif

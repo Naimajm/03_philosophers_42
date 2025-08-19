@@ -1,239 +1,202 @@
-==609063== Helgrind, a thread error detector
-==609063== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
-==609063== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==609063== Command: ../philo 8 800 100 100 5
-==609063== 
-6 1 has taken a fork
-10 1 has taken a fork
-10 1 is eating
-13 3 has taken a fork
-13 3 has taken a fork
-13 3 is eating
-15 5 has taken a fork
-15 5 has taken a fork
-15 5 is eating
-16 7 has taken a fork
-17 7 has taken a fork
-17 7 is eating
-INICIO monitor_death()
-INICIO monitor_meals()
-drop_forks() philo [1]
-111 1 is sleeping
-112 2 has taken a fork
-drop_forks() philo [3]
-114 4 has taken a fork
-114 3 is sleeping
+==680224== Helgrind, a thread error detector
+==680224== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==680224== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==680224== Command: ../philo 8 800 100 100 5
+==680224== 
+8 1 is thinking
+13 1 has taken a fork
+14 1 has taken a fork
+14 1 is eating
+18 3 is thinking
+18 3 has taken a fork
+18 3 has taken a fork
+18 3 is eating
+20 5 is thinking
+21 5 has taken a fork
+21 5 has taken a fork
+21 5 is eating
+23 7 is thinking
+23 7 has taken a fork
+23 7 has taken a fork
+23 7 is eating
+66 2 is thinking
+69 4 is thinking
+72 6 is thinking
+75 8 is thinking
 114 2 has taken a fork
-115 2 is eating
-drop_forks() philo [5]
-115 5 is sleeping
-116 4 has taken a fork
-116 4 is eating
-116 6 has taken a fork
-drop_forks() philo [7]
-117 6 has taken a fork
-117 6 is eating
-117 8 has taken a fork
-117 8 has taken a fork
-117 8 is eating
-118 7 is sleeping
-212 1 is thinking
-214 3 is thinking
-215 5 is thinking
-drop_forks() philo [2]
-216 3 has taken a fork
-216 2 is sleeping
-216 1 has taken a fork
-drop_forks() philo [4]
-216 5 has taken a fork
-drop_forks() philo [6]
-217 5 has taken a fork
-217 5 is eating
-217 3 has taken a fork
-217 3 is eating
-217 6 is sleeping
-218 4 is sleeping
-drop_forks() philo [8]
-219 7 is thinking
-219 7 has taken a fork
-219 1 has taken a fork
-219 1 is eating
-220 8 is sleeping
-220 7 has taken a fork
-220 7 is eating
-316 2 is thinking
-drop_forks() philo [5]
-drop_forks() philo [3]
-317 3 is sleeping
-317 5 is sleeping
-318 4 is thinking
-318 4 has taken a fork
-318 4 has taken a fork
-318 4 is eating
-318 6 is thinking
-319 6 has taken a fork
-drop_forks() philo [1]
-319 2 has taken a fork
-319 2 has taken a fork
-319 2 is eating
-320 8 is thinking
-320 1 is sleeping
-drop_forks() philo [7]
-320 6 has taken a fork
-321 6 is eating
-321 8 has taken a fork
-321 8 has taken a fork
-321 8 is eating
-321 7 is sleeping
-417 3 is thinking
-417 5 is thinking
-drop_forks() philo [4]
-418 4 is sleeping
-419 5 has taken a fork
-drop_forks() philo [2]
-419 3 has taken a fork
-419 3 has taken a fork
-419 3 is eating
-419 2 is sleeping
-420 1 is thinking
-420 1 has taken a fork
-drop_forks() philo [8]
-421 1 has taken a fork
-421 1 is eating
-421 7 is thinking
-421 8 is sleeping
-drop_forks() philo [6]
-422 5 has taken a fork
-422 5 is eating
-422 7 has taken a fork
-422 7 has taken a fork
-422 7 is eating
-423 6 is sleeping
-518 4 is thinking
-drop_forks() philo [3]
-519 3 is sleeping
-519 4 has taken a fork
-520 2 is thinking
-drop_forks() philo [1]
-521 2 has taken a fork
-521 2 has taken a fork
-521 2 is eating
-522 8 is thinking
-522 1 is sleeping
-drop_forks() philo [7]
-drop_forks() philo [5]
-523 7 is sleeping
-523 6 is thinking
-523 6 has taken a fork
-523 6 has taken a fork
-523 6 is eating
-523 5 is sleeping
-524 4 has taken a fork
-524 4 is eating
-524 8 has taken a fork
-524 8 has taken a fork
-524 8 is eating
-619 3 is thinking
-drop_forks() philo [2]
-621 2 is sleeping
-621 3 has taken a fork
-622 1 is thinking
-622 1 has taken a fork
-623 7 is thinking
-drop_forks() philo [6]
-623 5 is thinking
-624 6 is sleeping
-624 7 has taken a fork
-drop_forks() philo [4]
-drop_forks() philo [8]
-625 1 has taken a fork
-625 1 is eating
-625 5 has taken a fork
-625 5 has taken a fork
-625 5 is eating
-626 8 is sleeping
-626 4 is sleeping
-626 3 has taken a fork
-626 3 is eating
-626 7 has taken a fork
-626 7 is eating
-721 2 is thinking
-724 6 is thinking
-drop_forks() philo [1]
-drop_forks() philo [5]
-726 1 is sleeping
-726 5 is sleeping
-726 4 is thinking
-drop_forks() philo [3]
-727 3 is sleeping
-727 6 has taken a fork
-727 2 has taken a fork
-727 2 has taken a fork
-727 2 is eating
-728 4 has taken a fork
-728 4 has taken a fork
-728 4 is eating
-728 8 is thinking
-drop_forks() philo [7]
-728 8 has taken a fork
-728 8 has taken a fork
-728 8 is eating
-729 7 is sleeping
-729 6 has taken a fork
-729 6 is eating
-826 5 is thinking
-827 1 is thinking
-drop_forks() philo [2]
-827 2 is sleeping
-827 1 has taken a fork
-827 3 is thinking
-828 3 has taken a fork
-drop_forks() philo [4]
-drop_forks() philo [8]
-828 1 has taken a fork
-828 1 is eating
-829 5 has taken a fork
-drop_forks() philo [6]
-829 6 is sleeping
-830 8 is sleeping
-830 7 is thinking
-830 7 has taken a fork
-830 7 has taken a fork
-830 7 is eating
-830 4 is sleeping
-830 5 has taken a fork
-831 5 is eating
-831 3 has taken a fork
-831 3 is eating
-927 2 is thinking
-drop_forks() philo [1]
-929 2 has taken a fork
-930 4 is thinking
-930 6 is thinking
-931 8 is thinking
-drop_forks() philo [5]
-drop_forks() philo [7]
-drop_forks() philo [3]
-932 8 has taken a fork
-932 8 has taken a fork
-933 8 is eating
-933 4 has taken a fork
-933 4 has taken a fork
-933 4 is eating
-933 6 has taken a fork
-934 6 has taken a fork
-934 6 is eating
-934 2 has taken a fork
-935 2 is eating
-drop_forks() philo [8]
-drop_forks() philo [6]
-drop_forks() philo [4]
-drop_forks() philo [2]
-FIN monitor_death()
-FIN monitor_meals() -> TODOS HAN COMIDO
-Free: Total cleaning... OK
-==609063== 
-==609063== Use --history-level=approx or =none to gain increased speed, at
-==609063== the cost of reduced accuracy of conflicting-access information
-==609063== For lists of detected and suppressed errors, rerun with: -s
-==609063== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 17954 from 134)
+115 1 is sleeping
+119 4 has taken a fork
+119 3 is sleeping
+120 2 has taken a fork
+120 2 is eating
+121 6 has taken a fork
+122 4 has taken a fork
+123 4 is eating
+123 5 is sleeping
+124 8 has taken a fork
+124 8 has taken a fork
+124 8 is eating
+126 7 is sleeping
+126 6 has taken a fork
+127 6 is eating
+216 1 is thinking
+220 3 is thinking
+222 3 has taken a fork
+222 1 has taken a fork
+222 2 is sleeping
+223 4 is sleeping
+224 8 is sleeping
+226 3 has taken a fork
+226 3 is eating
+226 7 is thinking
+227 5 is thinking
+227 5 has taken a fork
+228 1 has taken a fork
+228 1 is eating
+229 7 has taken a fork
+229 7 has taken a fork
+230 7 is eating
+230 6 is sleeping
+231 5 has taken a fork
+231 5 is eating
+323 2 is thinking
+325 4 is thinking
+326 8 is thinking
+328 3 is sleeping
+329 1 is sleeping
+329 4 has taken a fork
+330 6 is thinking
+330 2 has taken a fork
+331 2 has taken a fork
+331 2 is eating
+332 8 has taken a fork
+332 8 has taken a fork
+332 8 is eating
+332 6 has taken a fork
+334 4 has taken a fork
+334 4 is eating
+334 7 is sleeping
+335 5 is sleeping
+336 6 has taken a fork
+336 6 is eating
+429 3 is thinking
+430 1 is thinking
+432 1 has taken a fork
+433 1 has taken a fork
+433 1 is eating
+433 2 is sleeping
+433 3 has taken a fork
+434 8 is sleeping
+435 7 is thinking
+436 4 is sleeping
+436 5 is thinking
+437 5 has taken a fork
+437 3 has taken a fork
+437 3 is eating
+438 7 has taken a fork
+438 7 has taken a fork
+438 7 is eating
+439 6 is sleeping
+439 5 has taken a fork
+439 5 is eating
+533 1 is sleeping
+534 2 is thinking
+534 2 has taken a fork
+535 8 is thinking
+536 4 is thinking
+537 4 has taken a fork
+539 3 is sleeping
+539 6 is thinking
+540 7 is sleeping
+541 2 has taken a fork
+541 2 is eating
+541 8 has taken a fork
+541 8 has taken a fork
+541 8 is eating
+543 6 has taken a fork
+543 6 has taken a fork
+543 6 is eating
+544 4 has taken a fork
+544 4 is eating
+544 5 is sleeping
+634 1 is thinking
+639 3 is thinking
+640 7 is thinking
+642 3 has taken a fork
+642 2 is sleeping
+644 8 is sleeping
+645 5 is thinking
+645 5 has taken a fork
+646 4 is sleeping
+646 1 has taken a fork
+646 1 has taken a fork
+647 1 is eating
+647 3 has taken a fork
+647 3 is eating
+648 7 has taken a fork
+648 7 has taken a fork
+648 7 is eating
+649 6 is sleeping
+649 5 has taken a fork
+649 5 is eating
+743 2 is thinking
+744 8 is thinking
+746 4 is thinking
+748 3 is sleeping
+748 8 has taken a fork
+748 4 has taken a fork
+749 6 is thinking
+750 7 is sleeping
+750 2 has taken a fork
+750 2 has taken a fork
+750 2 is eating
+751 6 has taken a fork
+751 6 has taken a fork
+751 6 is eating
+752 1 is sleeping
+752 8 has taken a fork
+752 8 is eating
+753 5 is sleeping
+753 4 has taken a fork
+754 4 is eating
+849 3 is thinking
+850 7 is thinking
+851 2 is sleeping
+851 3 has taken a fork
+852 1 is thinking
+852 1 has taken a fork
+853 7 has taken a fork
+853 6 is sleeping
+854 5 is thinking
+856 8 is sleeping
+857 1 has taken a fork
+857 1 is eating
+857 5 has taken a fork
+857 5 has taken a fork
+858 5 is eating
+858 7 has taken a fork
+858 7 is eating
+860 4 is sleeping
+860 3 has taken a fork
+860 3 is eating
+951 2 is thinking
+953 6 is thinking
+957 2 has taken a fork
+961 6 has taken a fork
+961 6 has taken a fork
+961 6 is eating
+961 8 is thinking
+961 8 has taken a fork
+961 8 has taken a fork
+962 8 is eating
+962 2 has taken a fork
+962 2 is eating
+963 4 is thinking
+963 4 has taken a fork
+963 4 has taken a fork
+963 4 is eating
+==680224== 
+==680224== Use --history-level=approx or =none to gain increased speed, at
+==680224== the cost of reduced accuracy of conflicting-access information
+==680224== For lists of detected and suppressed errors, rerun with: -s
+==680224== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 15523 from 106)

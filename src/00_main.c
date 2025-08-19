@@ -6,22 +6,21 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:17 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:24:31 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 22:02:10 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
 int	validate_limits(int argc, char **argv);
-int validate_syntax(int argc, char **argv);
-int validate_numeric_format(int argc, char **argv);
+int	validate_syntax(int argc, char **argv);
+int	validate_numeric_format(int argc, char **argv);
 
 // MAIN -----------------------------------------------------------------------
 
 int	main(int argc, char **argv)
 {
 	t_data	*data;
-	//print_arguments(argv);				// DEBUG
 	if (validate_syntax(argc, argv))		// CHECK ARGS
 		return (FAILURE);
 	if (validate_limits(argc, argv))

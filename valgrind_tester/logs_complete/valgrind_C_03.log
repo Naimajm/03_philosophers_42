@@ -1,125 +1,105 @@
-==609007== Helgrind, a thread error detector
-==609007== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
-==609007== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==609007== Command: ../philo 5 800 200 200 4
-==609007== 
-6 1 has taken a fork
-9 1 has taken a fork
-10 1 is eating
-12 3 has taken a fork
-13 3 has taken a fork
-13 3 is eating
-14 5 has taken a fork
-INICIO monitor_death()
-INICIO monitor_meals()
-drop_forks() philo [1]
-211 2 has taken a fork
-211 1 is sleeping
-212 5 has taken a fork
-212 5 is eating
-drop_forks() philo [3]
-213 3 is sleeping
-213 2 has taken a fork
-214 2 is eating
-214 4 has taken a fork
-412 1 is thinking
-drop_forks() philo [5]
-413 3 is thinking
-413 5 is sleeping
-413 4 has taken a fork
-413 4 is eating
-drop_forks() philo [2]
-414 3 has taken a fork
-415 1 has taken a fork
-415 1 has taken a fork
-415 1 is eating
-415 2 is sleeping
-613 5 is thinking
-drop_forks() philo [4]
-614 5 has taken a fork
-614 4 is sleeping
-615 3 has taken a fork
-615 3 is eating
-drop_forks() philo [1]
-615 2 is thinking
-616 2 has taken a fork
-616 1 is sleeping
-616 5 has taken a fork
-616 5 is eating
-814 4 is thinking
-drop_forks() philo [3]
-815 3 is sleeping
-815 4 has taken a fork
-816 2 has taken a fork
-816 2 is eating
-816 1 is thinking
-drop_forks() philo [5]
-817 5 is sleeping
-817 4 has taken a fork
-817 4 is eating
-1015 3 is thinking
-drop_forks() philo [2]
-1016 2 is sleeping
-1016 3 has taken a fork
-1017 5 is thinking
-1017 1 has taken a fork
-1017 1 has taken a fork
-1017 1 is eating
-drop_forks() philo [4]
-1018 4 is sleeping
-1018 5 has taken a fork
-1018 3 has taken a fork
-1018 3 is eating
-1216 2 is thinking
-drop_forks() philo [1]
-1217 1 is sleeping
-1217 2 has taken a fork
-1217 5 has taken a fork
-1218 5 is eating
-drop_forks() philo [3]
-1219 3 is sleeping
-1219 2 has taken a fork
-1219 2 is eating
-1219 4 is thinking
-1219 4 has taken a fork
-1417 1 is thinking
-drop_forks() philo [5]
-1418 5 is sleeping
-1419 4 has taken a fork
-1419 4 is eating
-1419 3 is thinking
-drop_forks() philo [2]
-1419 2 is sleeping
-1420 3 has taken a fork
-1420 1 has taken a fork
-1420 1 has taken a fork
-1420 1 is eating
-1618 5 is thinking
-drop_forks() philo [4]
-1619 4 is sleeping
-1619 5 has taken a fork
-1619 3 has taken a fork
-1619 3 is eating
-1620 2 is thinking
-drop_forks() philo [1]
-1620 2 has taken a fork
-1622 5 has taken a fork
-1622 5 is eating
-1819 4 is thinking
-drop_forks() philo [3]
-1820 4 has taken a fork
-1821 2 has taken a fork
-1821 2 is eating
-drop_forks() philo [5]
-1822 4 has taken a fork
-1822 4 is eating
-drop_forks() philo [2]
-drop_forks() philo [4]
-FIN monitor_death()
-FIN monitor_meals() -> TODOS HAN COMIDO
-Free: Total cleaning... OK
-==609007== 
-==609007== Use --history-level=approx or =none to gain increased speed, at
-==609007== the cost of reduced accuracy of conflicting-access information
-==609007== For lists of detected and suppressed errors, rerun with: -s
-==609007== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 29870 from 127)
+==679746== Helgrind, a thread error detector
+==679746== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==679746== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==679746== Command: ../philo 5 800 200 200 4
+==679746== 
+9 1 is thinking
+14 1 has taken a fork
+15 1 has taken a fork
+15 1 is eating
+19 3 is thinking
+19 3 has taken a fork
+19 3 has taken a fork
+19 3 is eating
+22 5 is thinking
+22 5 has taken a fork
+117 2 is thinking
+122 4 is thinking
+216 1 is sleeping
+216 2 has taken a fork
+217 5 has taken a fork
+217 5 is eating
+221 4 has taken a fork
+222 3 is sleeping
+222 2 has taken a fork
+222 2 is eating
+416 1 is thinking
+417 5 is sleeping
+417 4 has taken a fork
+418 4 is eating
+422 3 is thinking
+423 2 is sleeping
+423 3 has taken a fork
+424 1 has taken a fork
+424 1 has taken a fork
+424 1 is eating
+617 5 is thinking
+619 5 has taken a fork
+619 4 is sleeping
+619 3 has taken a fork
+620 3 is eating
+623 2 is thinking
+624 2 has taken a fork
+625 1 is sleeping
+625 5 has taken a fork
+625 5 is eating
+819 4 is thinking
+821 3 is sleeping
+821 2 has taken a fork
+822 2 is eating
+822 4 has taken a fork
+825 1 is thinking
+826 5 is sleeping
+826 4 has taken a fork
+826 4 is eating
+1021 3 is thinking
+1023 3 has taken a fork
+1023 2 is sleeping
+1023 1 has taken a fork
+1023 1 has taken a fork
+1023 1 is eating
+1026 5 is thinking
+1026 3 has taken a fork
+1027 3 is eating
+1027 4 is sleeping
+1027 5 has taken a fork
+1223 2 is thinking
+1224 5 has taken a fork
+1224 5 is eating
+1224 2 has taken a fork
+1225 1 is sleeping
+1227 4 is thinking
+1227 4 has taken a fork
+1228 2 has taken a fork
+1228 2 is eating
+1228 3 is sleeping
+1425 1 is thinking
+1426 5 is sleeping
+1426 4 has taken a fork
+1426 4 is eating
+1428 2 is sleeping
+1429 3 is thinking
+1429 3 has taken a fork
+1429 1 has taken a fork
+1429 1 has taken a fork
+1429 1 is eating
+1626 5 is thinking
+1627 5 has taken a fork
+1627 4 is sleeping
+1628 3 has taken a fork
+1628 3 is eating
+1629 2 is thinking
+1630 2 has taken a fork
+1632 5 has taken a fork
+1632 5 is eating
+1828 4 is thinking
+1828 4 has taken a fork
+1829 2 has taken a fork
+1829 2 is eating
+1833 4 has taken a fork
+1833 4 is eating
+==679746== 
+==679746== Use --history-level=approx or =none to gain increased speed, at
+==679746== the cost of reduced accuracy of conflicting-access information
+==679746== For lists of detected and suppressed errors, rerun with: -s
+==679746== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 27210 from 99)
