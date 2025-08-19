@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 02:01:50 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 17:51:35 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,11 @@ long	get_current_time(void);
 void 	printing_logs(t_data *data, int id_philo, char *message);
 
 // 10_free_manager.c
+/* void 	cleanup_all_locks(t_data *data);
+void 	cleanup_philosopher_locks(t_philo *philo); */
+
 void 	cleanup_data(t_data *data);
+void	free_philos(t_data *data);
 void	free_mutex(t_data *data);
 
 // 11_utils.c

@@ -1,0 +1,60 @@
+==465062== Memcheck, a memory error detector
+==465062== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==465062== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==465062== Command: ../philo 5 600 200 200 2
+==465062== 
+160 3 has taken a fork
+170 3 has taken a fork
+172 3 is eating
+172 1 has taken a fork
+172 1 has taken a fork
+172 1 is eating
+INICIO monitor_death()
+251 5 has taken a fork
+INICIO monitor_meals()
+373 3 is sleeping
+374 2 has taken a fork
+374 2 has taken a fork
+374 2 is eating
+374 4 has taken a fork
+374 1 is sleeping
+374 5 has taken a fork
+374 5 is eating
+574 3 is thinking
+574 1 is thinking
+574 3 has taken a fork
+574 2 is sleeping
+574 1 has taken a fork
+574 1 has taken a fork
+574 1 is eating
+574 5 is sleeping
+574 4 has taken a fork
+574 4 is eating
+776 5 is thinking
+776 4 is sleeping
+776 3 has taken a fork
+776 3 is eating
+776 2 is thinking
+776 2 has taken a fork
+776 5 has taken a fork
+776 5 has taken a fork
+776 5 is eating
+976 4 is thinking
+976 4 has taken a fork
+976 4 has taken a fork
+976 4 is eating
+976 2 has taken a fork
+976 2 is eating
+FIN monitor_death()
+FIN monitor_meals() -> TODOS HAN COMIDO
+Free
+ Total cleaning... OK
+==465062== 
+==465062== HEAP SUMMARY:
+==465062==     in use at exit: 0 bytes in 0 blocks
+==465062==   total heap usage: 13 allocs, 13 frees, 7,248 bytes allocated
+==465062== 
+==465062== All heap blocks were freed -- no leaks are possible
+==465062== 
+==465062== For lists of detected and suppressed errors, rerun with: -s
+==465062== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 02:05:03 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_philo
 	long			last_meal_time;
 	pthread_mutex_t	mutex_last_meal_time;
 
-	pthread_mutex_t	*fork_left;
-	pthread_mutex_t	*fork_right;	
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;	
 
 	t_state			state;
 	pthread_mutex_t	mutex_state;

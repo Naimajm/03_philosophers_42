@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:17 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/16 21:39:55 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 15:10:38 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 	wait_for_threads(data);	
 	//print_philos_array(data);				// DEBUG
 
-	// LIBERACION
+	// LIBERACION	
+	//cleanup_all_locks(data);				// cleanup antes de liberar memoria
 	cleanup_data(data);
 	return (SUCCESS);
 }

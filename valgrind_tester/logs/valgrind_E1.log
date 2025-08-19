@@ -1,0 +1,37 @@
+==465005== Memcheck, a memory error detector
+==465005== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==465005== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==465005== Command: ../philo 3 400 150 100 2
+==465005== 
+INICIO monitor_death()
+189 1 has taken a fork
+195 1 has taken a fork
+195 1 is eating
+INICIO monitor_meals()
+197 3 has taken a fork
+352 1 is sleeping
+353 2 has taken a fork
+354 3 has taken a fork
+354 3 is eating
+454 1 is thinking
+505 3 is sleeping
+505 2 has taken a fork
+505 2 is eating
+605 3 is thinking
+655 2 is sleeping
+655 3 has taken a fork
+655 3 has taken a fork
+655 3 is eating
+655 1 has taken a fork
+747 1 died
+Free
+ Total cleaning... OK
+==465005== 
+==465005== HEAP SUMMARY:
+==465005==     in use at exit: 0 bytes in 0 blocks
+==465005==   total heap usage: 11 allocs, 11 frees, 6,272 bytes allocated
+==465005== 
+==465005== All heap blocks were freed -- no leaks are possible
+==465005== 
+==465005== For lists of detected and suppressed errors, rerun with: -s
+==465005== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

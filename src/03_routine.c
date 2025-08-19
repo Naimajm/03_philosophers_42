@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:10:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 17:52:58 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,15 @@ void	take_forks(t_philo *philo)
 		return ;	
 
 	// GARANTIA SEGURA DEADLOCK -> orden por direcciones memoria ¡¡
-	if (philo->fork_left < philo->fork_right)
+	if (philo->left_fork < philo->right_fork)
 	{
-		first_fork 	= philo->fork_left;
-		second_fork = philo->fork_right;
+		first_fork 	= philo->left_fork;
+		second_fork = philo->right_fork;
 	}
 	else
 	{
-		first_fork 	= philo->fork_right;
-		second_fork = philo->fork_left;
+		first_fork 	= philo->right_fork;
+		second_fork = philo->left_fork;
 	}
 	// accion coger + imprimir log
 	pthread_mutex_lock(first_fork);
@@ -85,10 +85,19 @@ void	take_forks(t_philo *philo)
 
 void	drop_forks(t_philo *philo)
 {
-	printf("drop_forks() philo [%i]\n", philo->id);
+	pthread_mutex_lock(&philo->data->mutex->print_log);
+    printf("drop_forks() philo [%d]\n", philo->id);
+    pthread_mutex_unlock(&philo->data->mutex->print_log);
 
-	pthread_mutex_unlock(philo->fork_left);
-	pthread_mutex_unlock(philo->fork_right);
+	/* if (is_program_active(philo->data) == false) // Unlock silencioso si está terminando
+    {        
+        pthread_mutex_unlock(philo->fork_left);
+        pthread_mutex_unlock(philo->fork_right);
+        return ;
+    } */
+
+	pthread_mutex_unlock(philo->left_fork);
+	pthread_mutex_unlock(philo->right_fork);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 13:33:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:12:02 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void	*daily_routine(void * philo_node)
 		sleeping(philo);
 		thinking(philo);
 	}    	
+
+	//cleanup_philosopher_locks(philo);		// cleanup final del thread
 	return (NULL);
 }
 
@@ -114,13 +116,17 @@ void	*monitor_death(void *data_struct)
 			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);
 
 			// VERIFICAR MUERTE POR HAMBRE
-			if (time_since_last_meal > data->die_time
+			if (time_since_last_meal >= data->die_time
 					&& get_philo_state(&philo[index]) != EATING)
 			{
 				// PROCESO MUERTE POR HAMBRE -> IMPRIMIR + STATE
 				change_philo_state(&philo[index], DEAD);		
-				printing_logs(data, philo[index].id, MSG_DIED);
-				stop_program(data);			// program_active = false terminar el ciclo de monitoreo				
+				printing_logs(data, philo[index].id, MSG_DIED);				
+    			//cleanup_philosopher_locks(&data->philos[index]); // Cleanup locks philo específico
+
+				stop_program(data);			// program_active = false terminar el ciclo de monitoreo	
+				//program_is_over(data);
+				//cleanup_all_locks(data);	// Cleanup general para forzar salida de otros threads
 				return (NULL);
 			}		
 			index++;
@@ -196,5 +202,7 @@ int wait_for_threads(t_data *data)
         pthread_join(data->philo_threads[index], NULL);
         index++;
     }
+
+	//cleanup_all_locks(data);
     return (SUCCESS);
 }

@@ -1,0 +1,55 @@
+==467897== Helgrind, a thread error detector
+==467897== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==467897== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==467897== Command: ../philo 4 200 195 5
+==467897== 
+6 1 has taken a fork
+11 1 has taken a fork
+11 1 is eating
+14 3 has taken a fork
+14 3 has taken a fork
+14 3 is eating
+INICIO monitor_death()
+207 1 is sleeping
+208 2 has taken a fork
+209 3 is sleeping
+209 2 has taken a fork
+209 2 is eating
+209 4 has taken a fork
+210 4 has taken a fork
+210 4 is eating
+212 1 is thinking
+214 3 is thinking
+404 2 is sleeping
+404 1 has taken a fork
+404 3 has taken a fork
+405 4 is sleeping
+405 1 has taken a fork
+405 1 is eating
+405 3 has taken a fork
+405 3 is eating
+409 2 is thinking
+410 4 is thinking
+600 1 is sleeping
+601 3 is sleeping
+601 4 has taken a fork
+601 4 has taken a fork
+601 4 is eating
+601 2 has taken a fork
+601 2 has taken a fork
+601 2 is eating
+605 1 is thinking
+606 3 is thinking
+796 3 has taken a fork
+798 4 is sleeping
+799 1 has taken a fork
+799 1 has taken a fork
+799 1 is eating
+801 3 died
+Free
+ Total cleaning... OK
+==467897== 
+==467897== Use --history-level=approx or =none to gain increased speed, at
+==467897== the cost of reduced accuracy of conflicting-access information
+==467897== For lists of detected and suppressed errors, rerun with: -s
+==467897== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 5826 from 108)

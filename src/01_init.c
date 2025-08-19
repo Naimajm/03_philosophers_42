@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 02:06:06 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ int assign_forks_to_philos(t_data *data)
 	if (!data)
 		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	// CASO 1º PHILO
-	data->philos[0].fork_left 	= &data->mutex->forks[0];
-	data->philos[0].fork_right  = &data->mutex->forks[data->num_philos - 1]; // ULTIMO TENEDOR !!
+	data->philos[0].left_fork 	= &data->mutex->forks[0];
+	data->philos[0].right_fork  = &data->mutex->forks[data->num_philos - 1]; // ULTIMO TENEDOR !!
 	// RESTO CASOS
 	index = 1;	
 	while (index < data->num_philos)
 	{
-		data->philos[index].fork_left 	= &data->mutex->forks[index];
-		data->philos[index].fork_right 	= &data->mutex->forks[index - 1];
+		data->philos[index].left_fork 	= &data->mutex->forks[index];
+		data->philos[index].right_fork 	= &data->mutex->forks[index - 1];
 		index++;
 	}	
 	return (SUCCESS);

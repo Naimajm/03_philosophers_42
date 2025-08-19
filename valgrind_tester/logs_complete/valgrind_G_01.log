@@ -1,0 +1,254 @@
+==467854== Memcheck, a memory error detector
+==467854== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==467854== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==467854== Command: ../philo 2 100 50 25
+==467854== 
+72 1 has taken a fork
+80 1 has taken a fork
+80 1 is eating
+INICIO monitor_death()
+131 1 is sleeping
+131 2 has taken a fork
+131 2 has taken a fork
+131 2 is eating
+156 1 is thinking
+181 2 is sleeping
+181 1 has taken a fork
+181 1 has taken a fork
+181 1 is eating
+206 2 is thinking
+231 1 is sleeping
+231 2 has taken a fork
+231 2 has taken a fork
+231 2 is eating
+256 1 is thinking
+281 2 is sleeping
+281 1 has taken a fork
+281 1 has taken a fork
+281 1 is eating
+306 2 is thinking
+331 1 is sleeping
+331 2 has taken a fork
+331 2 has taken a fork
+331 2 is eating
+356 1 is thinking
+381 2 is sleeping
+381 1 has taken a fork
+381 1 has taken a fork
+381 1 is eating
+406 2 is thinking
+431 1 is sleeping
+431 2 has taken a fork
+431 2 has taken a fork
+431 2 is eating
+456 1 is thinking
+481 2 is sleeping
+481 1 has taken a fork
+481 1 has taken a fork
+481 1 is eating
+506 2 is thinking
+532 1 is sleeping
+532 2 has taken a fork
+532 2 has taken a fork
+532 2 is eating
+557 1 is thinking
+582 2 is sleeping
+582 1 has taken a fork
+582 1 has taken a fork
+582 1 is eating
+607 2 is thinking
+632 1 is sleeping
+632 2 has taken a fork
+632 2 has taken a fork
+632 2 is eating
+657 1 is thinking
+682 2 is sleeping
+682 1 has taken a fork
+682 1 has taken a fork
+682 1 is eating
+707 2 is thinking
+732 1 is sleeping
+732 2 has taken a fork
+732 2 has taken a fork
+732 2 is eating
+757 1 is thinking
+782 2 is sleeping
+782 1 has taken a fork
+782 1 has taken a fork
+782 1 is eating
+807 2 is thinking
+832 1 is sleeping
+832 2 has taken a fork
+832 2 has taken a fork
+833 2 is eating
+857 1 is thinking
+883 2 is sleeping
+883 1 has taken a fork
+883 1 has taken a fork
+883 1 is eating
+908 2 is thinking
+933 1 is sleeping
+934 2 has taken a fork
+934 2 has taken a fork
+934 2 is eating
+958 1 is thinking
+984 2 is sleeping
+985 1 has taken a fork
+985 1 has taken a fork
+985 1 is eating
+1010 2 is thinking
+1035 1 is sleeping
+1036 2 has taken a fork
+1036 2 has taken a fork
+1036 2 is eating
+1060 1 is thinking
+1086 2 is sleeping
+1086 1 has taken a fork
+1086 1 has taken a fork
+1086 1 is eating
+1111 2 is thinking
+1136 1 is sleeping
+1136 2 has taken a fork
+1136 2 has taken a fork
+1136 2 is eating
+1161 1 is thinking
+1186 2 is sleeping
+1186 1 has taken a fork
+1186 1 has taken a fork
+1186 1 is eating
+1211 2 is thinking
+1236 1 is sleeping
+1236 2 has taken a fork
+1236 2 has taken a fork
+1237 2 is eating
+1261 1 is thinking
+1287 2 is sleeping
+1287 1 has taken a fork
+1287 1 has taken a fork
+1287 1 is eating
+1312 2 is thinking
+1337 1 is sleeping
+1337 2 has taken a fork
+1337 2 has taken a fork
+1337 2 is eating
+1362 1 is thinking
+1387 2 is sleeping
+1388 1 has taken a fork
+1388 1 has taken a fork
+1388 1 is eating
+1413 2 is thinking
+1438 1 is sleeping
+1438 2 has taken a fork
+1438 2 has taken a fork
+1438 2 is eating
+1463 1 is thinking
+1488 2 is sleeping
+1488 1 has taken a fork
+1488 1 has taken a fork
+1488 1 is eating
+1513 2 is thinking
+1538 1 is sleeping
+1538 2 has taken a fork
+1538 2 has taken a fork
+1538 2 is eating
+1563 1 is thinking
+1588 2 is sleeping
+1588 1 has taken a fork
+1588 1 has taken a fork
+1588 1 is eating
+1613 2 is thinking
+1638 1 is sleeping
+1638 2 has taken a fork
+1638 2 has taken a fork
+1638 2 is eating
+1663 1 is thinking
+1688 2 is sleeping
+1688 1 has taken a fork
+1688 1 has taken a fork
+1688 1 is eating
+1713 2 is thinking
+1738 1 is sleeping
+1738 2 has taken a fork
+1738 2 has taken a fork
+1738 2 is eating
+1763 1 is thinking
+1788 2 is sleeping
+1788 1 has taken a fork
+1788 1 has taken a fork
+1788 1 is eating
+1813 2 is thinking
+1838 1 is sleeping
+1838 2 has taken a fork
+1838 2 has taken a fork
+1838 2 is eating
+1863 1 is thinking
+1888 2 is sleeping
+1888 1 has taken a fork
+1888 1 has taken a fork
+1888 1 is eating
+1913 2 is thinking
+1938 1 is sleeping
+1938 2 has taken a fork
+1938 2 has taken a fork
+1938 2 is eating
+1963 1 is thinking
+1988 2 is sleeping
+1988 1 has taken a fork
+1988 1 has taken a fork
+1988 1 is eating
+2013 2 is thinking
+2038 1 is sleeping
+2038 2 has taken a fork
+2038 2 has taken a fork
+2038 2 is eating
+2063 1 is thinking
+2088 2 is sleeping
+2088 1 has taken a fork
+2088 1 has taken a fork
+2088 1 is eating
+21==467854== 
+==467854== Process terminating with default action of signal 15 (SIGTERM)
+==467854==    at 0x49497F6: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:78)
+==467854==    by 0x494E676: nanosleep (nanosleep.c:25)
+==467854==    by 0x497FF2E: usleep (usleep.c:31)
+==467854==    by 0x10A5B0: set_delay_time (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854==    by 0x10A174: eating (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854==    by 0x109BD6: daily_routine (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854==    by 0x48F8AC2: start_thread (pthread_create.c:442)
+==467854==    by 0x4989A03: clone (clone.S:100)
+==467854== 
+==467854== HEAP SUMMARY:
+==467854==     in use at exit: 5,512 bytes in 9 blocks
+==467854==   total heap usage: 9 allocs, 0 frees, 5,512 bytes allocated
+==467854== 
+==467854== 272 bytes in 1 blocks are possibly lost in loss record 5 of 8
+==467854==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==467854==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==467854==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==467854==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==467854==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==467854==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==467854==    by 0x109A6E: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854==    by 0x109354: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854== 
+==467854== 544 bytes in 2 blocks are possibly lost in loss record 7 of 8
+==467854==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==467854==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==467854==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==467854==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==467854==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==467854==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==467854==    by 0x109A16: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854==    by 0x109354: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==467854== 
+==467854== LEAK SUMMARY:
+==467854==    definitely lost: 0 bytes in 0 blocks
+==467854==    indirectly lost: 0 bytes in 0 blocks
+==467854==      possibly lost: 816 bytes in 3 blocks
+==467854==    still reachable: 4,696 bytes in 6 blocks
+==467854==         suppressed: 0 bytes in 0 blocks
+==467854== Reachable blocks (those to which a pointer was found) are not shown.
+==467854== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==467854== 
+==467854== For lists of detected and suppressed errors, rerun with: -s
+==467854== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

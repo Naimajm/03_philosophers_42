@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:04:23 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 01:58:05 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 14:46:37 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void stop_program(t_data *data)
     pthread_mutex_lock(&data->mutex->program_active);
     data->program_active = false;
     pthread_mutex_unlock(&data->mutex->program_active);
+
+	usleep(USLEEP_MONITOR_TIME);	// Pausa para que threads lean el flag
 }
 
 

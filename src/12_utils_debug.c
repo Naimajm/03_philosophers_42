@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 02:07:13 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ static void print_forks_assignment(t_data *data, int index_philo)
 	printf("\t\t | Forks philo [%i] |\n", data->philos[index_philo].id);
 	printf("\t\t └─────────────────┘\n");
 
-	printf("\t\t\t fork_left \t-> [%i]\n", get_fork_index(data, data->philos[index_philo].fork_left));  
-	printf("\t\t\t fork_right \t-> [%i]\n", get_fork_index(data, data->philos[index_philo].fork_right));     
+	printf("\t\t\t fork_left \t-> [%i]\n", get_fork_index(data, data->philos[index_philo].left_fork));  
+	printf("\t\t\t fork_right \t-> [%i]\n", get_fork_index(data, data->philos[index_philo].right_fork));     
     printf("\n");
 }
 
