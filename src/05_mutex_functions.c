@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:04:23 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 14:46:37 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:32:13 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	set_last_meal_time(t_philo *philo)
 long	get_last_meal_time(t_philo *philo)
 {
 	long	last_meal_time;
+	
 	if (!philo)
 		return (0);
 	pthread_mutex_lock(&philo->mutex_last_meal_time);
@@ -111,7 +112,6 @@ t_state	get_philo_state(t_philo *philo)
 
 	if (!philo)
 		return (DEAD);
-
 	pthread_mutex_lock(&philo->mutex_state);
 	state = philo->state;
 	pthread_mutex_unlock(&philo->mutex_state);

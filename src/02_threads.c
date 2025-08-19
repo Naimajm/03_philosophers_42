@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 20:19:56 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:29:40 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,16 @@ int	initialize_threads(t_data *data)
 // FUNCION PPAL EJECUCION HILO 
 void	*daily_routine(void * philo_node)
 {
-	t_philo *philo;	
+	t_philo *philo;
 	
-	philo 	= (t_philo *) philo_node;
-	
-	
+	if (!philo_node)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);	
+	philo 	= (t_philo *) philo_node;	
 	if (philo->data->num_philos == 1)			// caso especial -> 1 filosofo muere
 	{	
 		printing_logs(philo->data, philo->id, MSG_TAKE_FORKS);
-		//set_delay_time(philo->data->die_time);
-		/* change_philo_state(philo, DEAD);
-		printing_logs(philo->data, philo->id, MSG_DIED);	// log */
 		return (NULL);
-	}			
-
+	}	
 	set_last_meal_time(philo);					// XQ ?
 
 	// PRIORIDAD A PHILOS IMPARES -> EVITAR BLOQUEO ESTADO INICIAL
@@ -76,17 +72,14 @@ void	*daily_routine(void * philo_node)
 
 	while (is_alive(philo) && is_program_active(philo->data))
 	{
+		thinking(philo);
 		take_forks(philo);					// COGER TENEDORES
 		eating(philo);
-		drop_forks(philo);					// SOLTAR TENEDORES
-		
+		drop_forks(philo);					// SOLTAR TENEDORES		
 		if (has_eaten_enough(philo))		// verificacion OBJETIVO comidas
 			break ;
-		sleeping(philo);
-		thinking(philo);
-	}    	
-
-	//cleanup_philosopher_locks(philo);		// cleanup final del thread
+		sleeping(philo);		
+	}
 	return (NULL);
 }
 
@@ -99,43 +92,32 @@ void	*monitor_death(void *data_struct)
 	long	current_time;
 	long	time_since_last_meal;
 
+	if (!data_struct)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	data 	= data_struct;
 	philo	= data->philos;	
-
-	pthread_mutex_lock(&data->mutex->print_log);		// ACTIVAR MUTEX
-	printf("INICIO monitor_death()\n");
-	pthread_mutex_unlock(&data->mutex->print_log);	
-
 	while (is_program_active(data))
 	{
-		index	= 0;
-		// CICLO MONITOREO PHILOS
-		while (index < data->num_philos)
+		index	= 0;		
+		while (index < data->num_philos)		// CICLO MONITOREO PHILOS
 		{
 			current_time = get_current_time();
-			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);
-
-			// VERIFICAR MUERTE POR HAMBRE
-			if (time_since_last_meal >= data->die_time
+			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);			
+			if (time_since_last_meal >= data->die_time		// VERIFICAR MUERTE POR HAMBRE
 					&& get_philo_state(&philo[index]) != EATING)
-			{
-				// PROCESO MUERTE POR HAMBRE -> IMPRIMIR + STATE
-				change_philo_state(&philo[index], DEAD);		
+			{				
+				change_philo_state(&philo[index], DEAD);	// PROCESO MUERTE POR HAMBRE -> IMPRIMIR + STATE	
 				printing_logs(data, philo[index].id, MSG_DIED);				
-    			//cleanup_philosopher_locks(&data->philos[index]); // Cleanup locks philo específico
-
-				stop_program(data);			// program_active = false terminar el ciclo de monitoreo	
-				//program_is_over(data);
-				//cleanup_all_locks(data);	// Cleanup general para forzar salida de otros threads
+				stop_program(data);							// terminar el ciclo de monitoreo	
 				return (NULL);
 			}		
 			index++;
 		}
 		usleep(USLEEP_MONITOR_TIME);
 	}	
-	pthread_mutex_lock(&data->mutex->print_log);
+	/* pthread_mutex_lock(&data->mutex->print_log);
     printf("FIN monitor_death()\n");
-	pthread_mutex_unlock(&data->mutex->print_log);
+	pthread_mutex_unlock(&data->mutex->print_log); */
 	return (NULL);
 }
 
@@ -144,14 +126,11 @@ void	*monitor_meals(void *data_struct)
 {
 	t_data	*data;	
 	int		index;
-	int		philos_satisfied;	
+	int		philos_satisfied;
 
+	if (!data_struct)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	data 	= data_struct;
-
-	pthread_mutex_lock(&data->mutex->print_log);		// ACTIVAR MUTEX
-	printf("INICIO monitor_meals()\n");
-	pthread_mutex_unlock(&data->mutex->print_log);
-
 	// CICLO EXTERNO VERIFICACION SUFICIENTES COMIDAS
 	while (is_program_active(data))
 	{
@@ -167,15 +146,13 @@ void	*monitor_meals(void *data_struct)
 		if (philos_satisfied >= data->num_philos)
 		{
 			stop_program(data);
-			//program_is_over(data);
 
-			pthread_mutex_lock(&data->mutex->print_log);
+			/* pthread_mutex_lock(&data->mutex->print_log);
 			printf("FIN monitor_meals() -> TODOS HAN COMIDO\n");
-			pthread_mutex_unlock(&data->mutex->print_log);
-
+			pthread_mutex_unlock(&data->mutex->print_log); */
 			return (NULL);
 		}
-		usleep(USLEEP_MONITOR_TIME);  // ESPERA tiempo verificacion 
+		usleep(USLEEP_MONITOR_TIME);  	// ESPERA tiempo verificacion 
 	}	
 	return (NULL);
 }
@@ -202,7 +179,5 @@ int wait_for_threads(t_data *data)
         pthread_join(data->philo_threads[index], NULL);
         index++;
     }
-
-	//cleanup_all_locks(data);
     return (SUCCESS);
 }

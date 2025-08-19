@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 16:58:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 02:31:07 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:32:28 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ long	get_current_time(void)
 
 	if (gettimeofday(&timestamp, NULL))
 		return (FAILURE);
-	// Milisegundos desde Unix epoch
-	// AGREGAR L para evitar overflow en enteros grandes
 	current_time = timestamp.tv_sec * 1000 + (timestamp.tv_usec / 1000);
 	return (current_time);
 }

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 17:52:58 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:30:32 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,8 @@ int	eating(t_philo *philo)
 	printing_logs(philo->data, philo->id, MSG_EATING);	// log		
 	set_delay_time(philo->data->eat_time);	// proceso comer discurrir tiempo de comida
 	
-	set_last_meal_time(philo);					// actualizar tiempo ultima comida		
+	set_last_meal_time(philo);				// actualizar tiempo ultima comida		
 	increment_num_meals(philo);				// incrementar numero comidas realizadas	
-
 	return (SUCCESS);
 }
 
@@ -61,10 +60,8 @@ void	take_forks(t_philo *philo)
 	pthread_mutex_t	*first_fork;
 	pthread_mutex_t	*second_fork;
 
-	//printf("take_forks() philo [%i]\n", philo->id);
 	if (!philo || !is_alive(philo))
 		return ;	
-
 	// GARANTIA SEGURA DEADLOCK -> orden por direcciones memoria ¡¡
 	if (philo->left_fork < philo->right_fork)
 	{
@@ -85,17 +82,9 @@ void	take_forks(t_philo *philo)
 
 void	drop_forks(t_philo *philo)
 {
-	pthread_mutex_lock(&philo->data->mutex->print_log);
+	/* pthread_mutex_lock(&philo->data->mutex->print_log);
     printf("drop_forks() philo [%d]\n", philo->id);
-    pthread_mutex_unlock(&philo->data->mutex->print_log);
-
-	/* if (is_program_active(philo->data) == false) // Unlock silencioso si está terminando
-    {        
-        pthread_mutex_unlock(philo->fork_left);
-        pthread_mutex_unlock(philo->fork_right);
-        return ;
-    } */
-
+    pthread_mutex_unlock(&philo->data->mutex->print_log); */
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }

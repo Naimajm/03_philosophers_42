@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:17 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 20:11:42 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:24:31 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ int validate_numeric_format(int argc, char **argv);
 
 int	main(int argc, char **argv)
 {
-	(void) argc;
-	(void) argv;
-
 	t_data	*data;
-	//print_arguments(argv);	
+	//print_arguments(argv);				// DEBUG
 	if (validate_syntax(argc, argv))		// CHECK ARGS
 		return (FAILURE);
 	if (validate_limits(argc, argv))
@@ -49,7 +46,6 @@ int validate_syntax(int argc, char **argv)
 {
 	if (!argc || !argv)
 		return (FAILURE);
-	//print_arguments(argv);	
 	if (argc < 5 || argc > 6)				// check num argumentos
 	{
 		ft_putendl_fd(ERROR_ARGS_NUMBER, STDERR_FILENO);

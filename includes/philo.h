@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 17:51:35 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:23:25 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@
 # include "structures.h" 	// STRUCTS
 
 // EXTERNAL LIBRARIES
-# include <pthread.h>	// FUNCIONES HILOS
-# include <stdio.h>  	// printf
-# include <stdbool.h>	// bool
-# include <unistd.h>	// STDERR_FILENO
-# include <stdlib.h> 	// malloc
-# include <sys/time.h>	// time utils -> gettimeofday
+# include <pthread.h>		// FUNCIONES HILOS
+# include <stdio.h>  		// printf
+# include <stdbool.h>		// bool
+# include <unistd.h>		// STDERR_FILENO
+# include <stdlib.h> 		// malloc
+# include <sys/time.h>		// time utils -> gettimeofday
 
 // FUNCTIONS ------------------------------------------
 
 // 00_main.c 
+int		validate_limits(int argc, char **argv);
+int 	validate_syntax(int argc, char **argv);
+int 	validate_numeric_format(int argc, char **argv);
 
 //  01_init.c 
 t_data	*initialize_data(int argc, char **argv);
@@ -77,9 +80,6 @@ long	get_current_time(void);
 void 	printing_logs(t_data *data, int id_philo, char *message);
 
 // 10_free_manager.c
-/* void 	cleanup_all_locks(t_data *data);
-void 	cleanup_philosopher_locks(t_philo *philo); */
-
 void 	cleanup_data(t_data *data);
 void	free_philos(t_data *data);
 void	free_mutex(t_data *data);

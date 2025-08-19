@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:27:09 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_data	*initialize_data(int argc, char **argv)
 {
 	t_data	*data;
 
+	if (!argc || !argv)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	data = (t_data *) malloc(sizeof(t_data));
 	if (!data)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO), NULL);
@@ -33,7 +35,7 @@ t_data	*initialize_data(int argc, char **argv)
 		data->num_meals = (int) ft_atoi(argv[5]);
 	else
 		data->num_meals = -1; 				// comidas infinitas
-	//data->num_full_philos 		= 0;
+
 	data->start_time	= 0;
 	data->program_active 	= true;
 
@@ -41,7 +43,7 @@ t_data	*initialize_data(int argc, char **argv)
 
 	data->philos		= NULL;				// INIT ARRAY PHILOS
 	
-	data->monitor_death = 0;			// INIT THREADS	
+	data->monitor_death = 0;				// INIT THREADS	
 	data->monitor_meals	= 0;
 	data->philo_threads	= NULL;	
 	
@@ -51,7 +53,9 @@ t_data	*initialize_data(int argc, char **argv)
 void	initialize_philos(t_data *data)
 {
 	int	index;
-		
+
+	if (!data)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);		
 	data->philos = (t_philo *) malloc(sizeof(t_philo) * data->num_philos);
 	if (!data->philos)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));	
@@ -96,15 +100,14 @@ void	initialize_mutex(t_data *data)
 {
 	int	index;
 
+	if (!data)
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
 	index = 0;
 	data->mutex = (t_mutex *) malloc(sizeof(t_mutex));
 	if (!data->mutex)
-		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));
-	// INIT MUTEX
-	//pthread_mutex_init(&data->mutex->num_full_philos, NULL);
-	pthread_mutex_init(&data->mutex->program_active, NULL);
-	pthread_mutex_init(&data->mutex->print_log, NULL);
-	
+		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));	
+	pthread_mutex_init(&data->mutex->program_active, NULL);		// INIT MUTEX
+	pthread_mutex_init(&data->mutex->print_log, NULL);	
 	// ARRAY MUTEX FORKS
 	data->mutex->forks = (pthread_mutex_t *) malloc(sizeof(pthread_mutex_t) * data->num_philos);
 	if (!data->mutex->forks)

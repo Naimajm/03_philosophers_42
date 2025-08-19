@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 11:21:34 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:34:31 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static int 	get_fork_index(t_data *data, pthread_mutex_t *fork);
 static char *get_state_string(t_state state);
 void		print_arguments(char **argv);
 void		print_strings_array(char **array);
-
 
 void print_data(t_data *data)
 {
@@ -34,12 +33,10 @@ void print_data(t_data *data)
 	printf("\t eat_time \t-> %i\n", data->eat_time);   
 	printf("\t sleep_time \t-> %i\n", data->sleep_time);  
 	printf("\t num_meals \t-> %i\n", data->num_meals);  
-	//printf("\t num_full \t-> %i\n", data->num_full_philos);  
 
 	printf("\t start_time \t-> %li\n", data->start_time);  
 	printf("\t keep_iter \t-> %d\n", data->program_active);  
 	printf("\t ───────── \n\n");
-
 	//print_philos_array(data);		
 }
 
@@ -64,11 +61,9 @@ void print_philos_array(t_data *data)
 
 		printf("\t\t num_meals \t\t-> %i\n", philo->num_meals);
 		printf("\t\t last_eat_time \t\t-> %li\n", philo->last_meal_time);        
-		printf("\t\t state \t\t\t-> %s\n", get_state_string(philo->state));   
-
-		// MOSTRAR FORKS
-		print_forks_assignment(data, index);
-		//printf("\t ─────────────────── \n");
+		printf("\t\t state \t\t\t-> %s\n", get_state_string(philo->state));  
+		
+		print_forks_assignment(data, index);		// MOSTRAR FORKS
 		index++;		
 	}
 	printf("\n");
@@ -103,7 +98,7 @@ static int get_fork_index(t_data *data, pthread_mutex_t *fork)
 		id_fork++;
         index++;
     }
-    return (-1);  // No encontrado
+    return (-1); 			
 }
 
 static char *get_state_string(t_state state)
@@ -116,8 +111,6 @@ static char *get_state_string(t_state state)
 		return ("SLEEPING");
 	else if (state == THINKING)
 		return ("THINKING");
-	else if (state == FINISHED)
-		return ("FINISHED");
 	else if (state == DEAD)
 		return ("DEAD");		
 	else

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:50:13 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 15:00:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 21:22:53 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ typedef enum s_state
 	EATING		= 1,
 	SLEEPING 	= 2,
 	THINKING  	= 3,
-	FINISHED	= 4,		// ?? algun caso
-	DEAD 		= 5
+	DEAD 		= 4
 }	t_state;
 
 // PHILOS
@@ -43,12 +42,11 @@ typedef struct s_philo
 	t_state			state;
 	pthread_mutex_t	mutex_state;
 	
-	struct s_data	*data; 		// conexion nivel superior a data struct
+	struct s_data	*data; 				// conexion nivel superior a data struct
 }	t_philo;
 
 typedef struct s_mutex
-{
-	//pthread_mutex_t num_full_philos;       	// Contador de philos que terminaron ?? se usa??	
+{	
 	pthread_mutex_t	program_active;		
 	pthread_mutex_t	*forks;	
 	pthread_mutex_t	print_log;			// ACTIVAR ORDEN IMPRESION	
@@ -64,8 +62,7 @@ typedef struct s_data
 	int			sleep_time;	
 	int			num_meals;	
 
-	// VARIABLES DE ESTADO -----------
-	//int			num_full_philos;	// ???? SE HA USADO  EN JUANJE ??
+	// VARIABLES DE ESTADO
 	long		start_time;			// TIEMPO INICIO PROCESO
 	bool		program_active; 	// flag estado global programa -> activo
 	
