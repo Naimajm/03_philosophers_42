@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:37:48 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 00:51:39 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 20:05:53 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,22 @@
 # define FAILURE			1
 # define SUCCESS			0
 
-# define ERROR_ARGS_NUMBER 			"Error\n Wrong number of arguments\n"
-# define ERROR_ARGS_PHILO_NUMBER 	"Error\n Number of philosophers must be at least 2\n"
-# define ERROR_ARGS_TIME_DIE 		"Error\n Time to die must be at least 60 ms\n"
-# define ERROR_ARGS_TIME_EAT 		"Error\n Time to eat must be at least 60 ms\n"
-# define ERROR_ARGS_TIME_SLEEP 		"Error\n Time to sleep must be at least 60 ms\n"
-# define ERROR_ARGS_MEALS_NUMBER 	"Error\n Number of meals must be at least 1\n"
+# define ERROR_ARGS_NUMBER 			"Error: Wrong number of arguments\n"
+# define ERROR_ARGS_TYPE			"Error: Non-numeric argument or negative.\n"
 
-# define ERROR_INVALID_INPUT	"Error\n Invalid input parameter\n"
-# define ERROR_MEM_ALLOC		"Error\n Memory allocation failed\n"
+# define LIMIT_ARGS_PHILO_NUMBER 	"Limit: Outside limits philos\n"
+# define LIMIT_ARGS_TIME			"Limit: Time must be at least 30 ms\n"
+# define LIMIT_ARGS_MEALS_NUMBER 	"Limit: Number of meals at least 1\n"
 
-# define ERROR_THREADS_CREATE		"Error\n Error creating thread\n"
+# define MAX_PHILOS					500
+# define MIN_TIME					30
 
+# define ERROR_INVALID_INPUT		"Error: Invalid input parameter\n"
+# define ERROR_MEM_ALLOC			"Error: Memory allocation failed\n"
 
-# define FREE_ALL				"Free\n Total cleaning... OK\n"
+# define ERROR_THREADS_CREATE		"Error: Error creating thread\n"
 
-// STATES PHILO
-/* # define INIT	0
-# define EAT 	1
-# define SLEEP 	2
-# define THINK 	3
-# define FINISH	4
-# define DIED  	-1 */
+# define FREE_ALL					"Free: Total cleaning... OK\n"
 
 //SYSTEM MESSAGES  LOGS
 # define MSG_TAKE_FORKS "has taken a fork"

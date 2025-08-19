@@ -1,106 +1,125 @@
-==467030== Helgrind, a thread error detector
-==467030== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
-==467030== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==467030== Command: ../philo 5 800 200 200 4
-==467030== 
+==592590== Helgrind, a thread error detector
+==592590== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==592590== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==592590== Command: ../philo 5 800 200 200 4
+==592590== 
 6 1 has taken a fork
 10 1 has taken a fork
 11 1 is eating
 13 3 has taken a fork
 13 3 has taken a fork
-14 3 is eating
-16 5 has taken a fork
+13 3 is eating
+15 5 has taken a fork
 INICIO monitor_death()
 INICIO monitor_meals()
-212 2 has taken a fork
+drop_forks() philo [1]
 212 1 is sleeping
-213 5 has taken a fork
+212 2 has taken a fork
+212 5 has taken a fork
 213 5 is eating
+drop_forks() philo [3]
+213 3 is sleeping
+214 2 has taken a fork
+214 2 is eating
 214 4 has taken a fork
-214 3 is sleeping
-215 2 has taken a fork
-215 2 is eating
-413 1 is thinking
-414 5 is sleeping
+412 1 is thinking
+drop_forks() philo [5]
+413 5 is sleeping
+413 4 has taken a fork
+413 4 is eating
 414 3 is thinking
-414 4 has taken a fork
-414 4 is eating
-415 3 has taken a fork
+drop_forks() philo [2]
+414 1 has taken a fork
+414 1 has taken a fork
+414 1 is eating
 415 2 is sleeping
-415 1 has taken a fork
-416 1 has taken a fork
-416 1 is eating
-614 5 is thinking
+415 3 has taken a fork
+613 5 is thinking
+drop_forks() philo [4]
 614 5 has taken a fork
+614 4 is sleeping
+614 3 has taken a fork
+614 3 is eating
+drop_forks() philo [1]
+615 1 is sleeping
 615 2 is thinking
-615 4 is sleeping
-615 3 has taken a fork
-616 3 is eating
 616 2 has taken a fork
-616 1 is sleeping
 616 5 has taken a fork
 617 5 is eating
-815 4 is thinking
-816 1 is thinking
-816 4 has taken a fork
-816 2 has taken a fork
-816 2 is eating
-817 3 is sleeping
+814 4 is thinking
+drop_forks() philo [3]
+814 2 has taken a fork
+815 2 is eating
+815 1 is thinking
+815 3 is sleeping
+815 4 has taken a fork
+drop_forks() philo [5]
 817 5 is sleeping
 817 4 has taken a fork
 817 4 is eating
+1015 3 is thinking
+drop_forks() philo [2]
+1015 3 has taken a fork
+1016 2 is sleeping
+1016 1 has taken a fork
+1016 1 has taken a fork
+1016 1 is eating
 1017 5 is thinking
-1017 5 has taken a fork
-1017 5 has taken a fork
-1018 5 is eating
-1018 1 has taken a fork
-1018 3 is thinking
-1018 3 has taken a fork
-1018 3 has taken a fork
+drop_forks() philo [4]
+1017 4 is sleeping
+1017 3 has taken a fork
 1018 3 is eating
-1019 4 is sleeping
-1019 2 is sleeping
-1218 5 is sleeping
-1218 1 has taken a fork
-1218 1 is eating
-1219 3 is sleeping
-1219 2 is thinking
-1219 4 is thinking
-1219 4 has taken a fork
-1219 4 has taken a fork
-1220 4 is eating
-1418 5 is thinking
-1419 1 is sleeping
-1419 3 is thinking
+1018 5 has taken a fork
+1216 2 is thinking
+drop_forks() philo [1]
+1216 2 has taken a fork
+1217 5 has taken a fork
+1217 5 is eating
+1217 1 is sleeping
+1217 4 is thinking
+drop_forks() philo [3]
+1218 3 is sleeping
+1218 4 has taken a fork
+1218 2 has taken a fork
+1218 2 is eating
+1417 1 is thinking
+drop_forks() philo [5]
+1418 5 is sleeping
+1418 3 is thinking
+1418 4 has taken a fork
+1418 4 is eating
+drop_forks() philo [2]
 1419 3 has taken a fork
-1419 2 has taken a fork
-1420 5 has taken a fork
-1420 5 has taken a fork
-1420 5 is eating
-1420 4 is sleeping
-1421 3 has taken a fork
-1421 3 is eating
-1619 1 is thinking
-1620 4 is thinking
-1622 4 has taken a fork
-1622 4 has taken a fork
-1622 4 is eating
-1623 2 has taken a fork
-1623 2 is eating
-1823 2 is sleeping
-1823 1 has taken a fork
-1824 1 has taken a fork
-1824 1 is eating
-2023 2 is thinking
-2024 2 has taken a fork
-2024 2 has taken a fork
-2024 2 is eating
+1419 2 is sleeping
+1419 1 has taken a fork
+1420 1 has taken a fork
+1420 1 is eating
+drop_forks() philo [4]
+1618 5 is thinking
+1618 5 has taken a fork
+1618 4 is sleeping
+1619 3 has taken a fork
+1619 3 is eating
+1619 2 is thinking
+drop_forks() philo [1]
+1620 2 has taken a fork
+1622 5 has taken a fork
+1622 5 is eating
+drop_forks() philo [3]
+1819 4 is thinking
+1820 4 has taken a fork
+1820 2 has taken a fork
+1820 2 is eating
+drop_forks() philo [5]
+1822 4 has taken a fork
+1822 4 is eating
+drop_forks() philo [2]
+drop_forks() philo [4]
 FIN monitor_death()
 FIN monitor_meals() -> TODOS HAN COMIDO
-Free
- Total cleaning... OK
-==467030== 
-==467030== Use --history-level=approx or =none to gain increased speed, at
-==467030== the cost of reduced accuracy of conflicting-access information
-==467030== For lists of detected and suppressed errors, rerun with: -s
-==467030== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 36873 from 133)
+Free: Total cleaning... OK
+==592590== 
+==592590== Use --history-level=approx or =none to gain increased speed, at
+==592590== the cost of reduced accuracy of conflicting-access information
+==592590== For lists of detected and suppressed errors, rerun with: -s
+==592590== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 29961 from 127)

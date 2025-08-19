@@ -35,7 +35,7 @@ all: $(NAME)
 $(NAME):  $(OBJ_FILES)
 	@echo "$(ORANGE)🚀​ Compiling $(NAME)... $(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJ_FILES) $(INCLUDES) $(EXT_LIBRARYS) -o $(NAME)
-	@echo "$(DARK_GREEN)📚 $(NAME) has been created			OK$(DEF_COLOR)"
+	@echo "$(DARK_GREEN)📚 $(NAME) has been created		OK$(DEF_COLOR)"
 
 clean:
 	@rm -f $(OBJ_FILES)	

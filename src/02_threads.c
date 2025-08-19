@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 18:12:02 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 20:19:56 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	*daily_routine(void * philo_node)
 	
 	philo 	= (t_philo *) philo_node;
 	
-	// caso especial -> 1 filosofo muere
-	if (philo->data->num_philos == 1)
+	
+	if (philo->data->num_philos == 1)			// caso especial -> 1 filosofo muere
 	{	
 		printing_logs(philo->data, philo->id, MSG_TAKE_FORKS);
-		set_delay_time(philo->data->die_time);
-		change_philo_state(philo, DEAD);
-		printing_logs(philo->data, philo->id, MSG_DIED);	// log
+		//set_delay_time(philo->data->die_time);
+		/* change_philo_state(philo, DEAD);
+		printing_logs(philo->data, philo->id, MSG_DIED);	// log */
 		return (NULL);
 	}			
 

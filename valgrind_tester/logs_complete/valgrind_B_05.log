@@ -1,99 +1,86 @@
-==466848== Memcheck, a memory error detector
-==466848== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==466848== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==466848== Command: ../philo 50 800 200 200 1
-==466848== 
-79 3 has taken a fork
-87 3 has taken a fork
-87 3 is eating
-683 39 has taken a fork
-683 39 has taken a fork
-683 39 is eating
-684 1 has taken a fork
-684 1 has taken a fork
-684 1 is eating
-684 21 has taken a fork
-684 21 has taken a fork
-684 21 is eating
-684 11 has taken a fork
-684 11 has taken a fork
-684 11 is eating
-684 23 has taken a fork
-684 23 has taken a fork
-684 23 is eating
-685 25 has taken a fork
-685 25 has taken a fork
-685 25 is eating
-685 13 has taken a fork
-685 13 has taken a fork
-685 13 is eating
-685 7 has taken a fork
-685 7 has taken a fork
-685 7 is eating
-686 27 has taken a fork
-686 27 has taken a fork
-686 27 is eating
-688 15 has taken a fork
-688 15 has taken a fork
-688 15 is eating
-689 31 has taken a fork
-689 31 has taken a fork
-689 31 is eating
-689 33 has taken a fork
-689 33 has taken a fork
-689 33 is eating
-689 9 has taken a fork
-689 9 has taken a fork
-689 9 is eating
-689 17 has taken a fork
-689 17 has taken a fork
-689 17 is eating
-689 5 has taken a fork
-689 5 has taken a fork
-689 5 is eating
-909 29 has taken a fork
-909 29 has taken a fork
-909 29 is eating
-910 4 has taken a fork
-910 35 has taken a fork
-910 35 has taken a fork
-910 35 is eating
-910 8 has taken a fork
-910 37 has taken a fork
-910 37 has taken a fork
-910 37 is eating
-910 8 has taken a fork
-910 8 is eating
-911 41 has taken a fork
-911 41 has taken a fork
-911 41 is eating
-911 43 has taken a fork
-911 43 has taken a fork
-911 43 is eating
-911 2 has taken a fork
-911 2 has taken a fork
-911 2 is eating
-911 22 has taken a fork
-911 45 has taken a fork
-911 45 has taken a fork
-911 45 is eating
-912 6 has taken a fork
-912 6 has taken a fork
-912 6 is eating
-912 49 has taken a fork
-912 49 has taken a fork
-912 49 is eating
+==592456== Memcheck, a memory error detector
+==592456== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==592456== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==592456== Command: ../philo 50 800 200 200 1
+==592456== 
+873 27 has taken a fork
+881 27 has taken a fork
+881 27 is eating
+882 29 has taken a fork
+883 29 has taken a fork
+883 29 is eating
+883 15 has taken a fork
+883 15 has taken a fork
+883 15 is eating
+884 1 has taken a fork
+884 1 has taken a fork
+884 1 is eating
+884 33 has taken a fork
+884 33 has taken a fork
+884 33 is eating
+884 17 has taken a fork
+884 17 has taken a fork
+884 17 is eating
+884 9 has taken a fork
+884 9 has taken a fork
+884 9 is eating
+884 35 has taken a fork
+884 35 has taken a fork
+884 35 is eating
+884 5 has taken a fork
+884 5 has taken a fork
+884 5 is eating
+884 37 has taken a fork
+884 37 has taken a fork
+884 37 is eating
+885 19 has taken a fork
+885 19 has taken a fork
+885 19 is eating
+885 39 has taken a fork
+885 39 has taken a fork
+885 39 is eating
+885 3 has taken a fork
+885 3 has taken a fork
+885 3 is eating
+885 41 has taken a fork
+885 41 has taken a fork
+885 41 is eating
+885 21 has taken a fork
+885 21 has taken a fork
+885 21 is eating
+885 45 has taken a fork
+885 45 has taken a fork
+885 45 is eating
+885 47 has taken a fork
+885 47 has taken a fork
+885 47 is eating
 INICIO monitor_death()
-914 4 died
+888 7 died
 INICIO monitor_meals()
-Free
- Total cleaning... OK
-==466848== 
-==466848== HEAP SUMMARY:
-==466848==     in use at exit: 0 bytes in 0 blocks
-==466848==   total heap usage: 58 allocs, 58 frees, 29,208 bytes allocated
-==466848== 
-==466848== All heap blocks were freed -- no leaks are possible
-==466848== 
-==466848== For lists of detected and suppressed errors, rerun with: -s
-==466848== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+drop_forks() philo [27]
+drop_forks() philo [29]
+drop_forks() philo [15]
+drop_forks() philo [1]
+drop_forks() philo [9]
+drop_forks() philo [17]
+drop_forks() philo [5]
+drop_forks() philo [37]
+drop_forks() philo [33]
+drop_forks() philo [35]
+drop_forks() philo [41]
+drop_forks() philo [47]
+drop_forks() philo [39]
+drop_forks() philo [3]
+drop_forks() philo [19]
+drop_forks() philo [21]
+drop_forks() philo [45]
+Free: Total cleaning... OK
+==592456== 
+==592456== HEAP SUMMARY:
+==592456==     in use at exit: 0 bytes in 0 blocks
+==592456==   total heap usage: 58 allocs, 58 frees, 29,208 bytes allocated
+==592456== 
+==592456== All heap blocks were freed -- no leaks are possible
+==592456== 
+==592456== For lists of detected and suppressed errors, rerun with: -s
+==592456== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
