@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:29:40 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 22:13:57 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	*daily_routine(void * philo_node)
 	t_philo *philo;
 	
 	if (!philo_node)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);	
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	philo 	= (t_philo *) philo_node;	
 	if (philo->data->num_philos == 1)			// caso especial -> 1 filosofo muere
 	{	
@@ -93,9 +93,9 @@ void	*monitor_death(void *data_struct)
 	long	time_since_last_meal;
 
 	if (!data_struct)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	data 	= data_struct;
-	philo	= data->philos;	
+	philo	= data->philos;
 	while (is_program_active(data))
 	{
 		index	= 0;		
@@ -129,7 +129,7 @@ void	*monitor_meals(void *data_struct)
 	int		philos_satisfied;
 
 	if (!data_struct)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	data 	= data_struct;
 	// CICLO EXTERNO VERIFICACION SUFICIENTES COMIDAS
 	while (is_program_active(data))

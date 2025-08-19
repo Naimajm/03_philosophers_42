@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:08:04 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 21:27:09 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 22:06:47 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_data	*initialize_data(int argc, char **argv)
 	t_data	*data;
 
 	if (!argc || !argv)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	data = (t_data *) malloc(sizeof(t_data));
 	if (!data)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO), NULL);
@@ -55,7 +55,7 @@ void	initialize_philos(t_data *data)
 	int	index;
 
 	if (!data)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);		
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO));		
 	data->philos = (t_philo *) malloc(sizeof(t_philo) * data->num_philos);
 	if (!data->philos)
 		return (ft_putendl_fd(ERROR_MEM_ALLOC, STDERR_FILENO));	
@@ -101,7 +101,7 @@ void	initialize_mutex(t_data *data)
 	int	index;
 
 	if (!data)
-		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), FAILURE);
+		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO));
 	index = 0;
 	data->mutex = (t_mutex *) malloc(sizeof(t_mutex));
 	if (!data->mutex)
