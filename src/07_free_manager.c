@@ -6,26 +6,26 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:28:37 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:53:26 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:18:54 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void 		cleanup_data(t_data *data);
+void		cleanup_data(t_data *data);
 static void	free_philos(t_data *data);
 static void	free_mutex(t_data *data);
 
-void cleanup_data(t_data *data)
+void	cleanup_data(t_data *data)
 {
 	if (!data)
 		return ;
 	free_mutex(data);
 	free_philos(data);
 	free(data->philo_threads);
-	data->philo_threads 	= NULL;
-	data->monitor_death 	= 0;
-	data->monitor_meals 	= 0;
+	data->philo_threads = NULL;
+	data->monitor_death = 0;
+	data->monitor_meals = 0;
 	free(data);
 }
 
@@ -48,7 +48,7 @@ static void	free_philos(t_data *data)
 }
 
 static void	free_mutex(t_data *data)
-{	
+{
 	int	index;
 
 	if (!data || !data->mutex)
@@ -62,10 +62,7 @@ static void	free_mutex(t_data *data)
 		index++;
 	}
 	free(data->mutex->forks);
-	data->mutex->forks = NULL;	
+	data->mutex->forks = NULL;
 	free(data->mutex);
 	data->mutex = NULL;
 }
-
-
-

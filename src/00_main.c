@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 10:07:17 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:49:17 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 17:50:06 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ static int	validate_numeric_format(int argc, char **argv);
 int	main(int argc, char **argv)
 {
 	t_data	*data;
+
 	if (validate_syntax(argc, argv))
 		return (FAILURE);
 	if (validate_philo_limits(argc, argv))
 		return (FAILURE);
 	data = initialize_data(argc, argv);
 	initialize_philos(data);
-	assign_forks_to_philos(data);	
+	assign_forks_to_philos(data);
 	initialize_threads(data);
 	wait_for_threads(data);
 	cleanup_data(data);
@@ -33,22 +34,22 @@ int	main(int argc, char **argv)
 }
 
 static int	validate_philo_limits(int argc, char **argv)
-{	
+{
 	if (!argc || !argv)
 		return (FAILURE);
-	if  (ft_atoi(argv[1]) < 1 || ft_atoi(argv[1]) > MAX_PHILOS)
+	if (ft_atoi(argv[1]) < 1 || ft_atoi(argv[1]) > MAX_PHILOS)
 	{
 		ft_putendl_fd(LIMIT_ARGS_PHILO_NUMBER, STDERR_FILENO);
 		return (FAILURE);
 	}
-	if  (ft_atoi(argv[2]) < MIN_TIME ||
-			ft_atoi(argv[3]) < MIN_TIME ||
-			ft_atoi(argv[4]) < MIN_TIME)
+	if (ft_atoi(argv[2]) < MIN_TIME
+		|| ft_atoi(argv[3]) < MIN_TIME
+		|| ft_atoi(argv[4]) < MIN_TIME)
 	{
 		ft_putendl_fd(LIMIT_ARGS_TIME, STDERR_FILENO);
 		return (FAILURE);
 	}
-	if  (argc == 6 && ft_atoi(argv[5]) < 1)
+	if (argc == 6 && ft_atoi(argv[5]) < 1)
 	{
 		ft_putendl_fd(LIMIT_ARGS_MEALS_NUMBER, STDERR_FILENO);
 		return (FAILURE);
@@ -56,7 +57,7 @@ static int	validate_philo_limits(int argc, char **argv)
 	return (SUCCESS);
 }
 
-static int validate_syntax(int argc, char **argv)
+static int	validate_syntax(int argc, char **argv)
 {
 	if (!argc || !argv)
 		return (FAILURE);
@@ -73,10 +74,10 @@ static int validate_syntax(int argc, char **argv)
 	return (SUCCESS);
 }
 
-static int validate_numeric_format(int argc, char **argv)
+static int	validate_numeric_format(int argc, char **argv)
 {
 	int		index_arg;
-	int 	index_char;
+	int		index_char;
 	char	*argument;
 
 	if (!argc || !argv)

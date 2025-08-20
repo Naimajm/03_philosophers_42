@@ -6,19 +6,19 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 17:04:23 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:52:05 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:13:02 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void 	printing_logs(t_data *data, int id_philo, char *message);
-bool 	is_program_active(t_data *data);
-void 	stop_program(t_data *data);
+void	printing_logs(t_data *data, int id_philo, char *message);
+bool	is_program_active(t_data *data);
+void	stop_program(t_data *data);
 void	set_delay_time(long pause_time);
 long	get_current_time(void);
 
-void printing_logs(t_data *data, int id_philo, char *message)
+void	printing_logs(t_data *data, int id_philo, char *message)
 {
 	long	relative_time;
 
@@ -29,9 +29,9 @@ void printing_logs(t_data *data, int id_philo, char *message)
 	pthread_mutex_unlock(&data->mutex->print_log);
 }
 
-bool is_program_active(t_data *data)
+bool	is_program_active(t_data *data)
 {
-	bool active;
+	bool	active;
 
 	pthread_mutex_lock(&data->mutex->program_active);
 	active = data->program_active;
@@ -39,13 +39,13 @@ bool is_program_active(t_data *data)
 	return (active);
 }
 
-void stop_program(t_data *data)
+void	stop_program(t_data *data)
 {
-    if (!data || !data->mutex)
-        return ;
-    pthread_mutex_lock(&data->mutex->program_active);
-    data->program_active = false;
-    pthread_mutex_unlock(&data->mutex->program_active);
+	if (!data || !data->mutex)
+		return ;
+	pthread_mutex_lock(&data->mutex->program_active);
+	data->program_active = false;
+	pthread_mutex_unlock(&data->mutex->program_active);
 	usleep(USLEEP_MONITOR_TIME);
 }
 

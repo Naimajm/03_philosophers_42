@@ -6,19 +6,19 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 11:39:33 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:52:46 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:17:43 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-bool 	has_eaten_enough(t_philo *philo);
-void	increment_num_meals(t_philo * philo);
-int		get_num_meals(t_philo * philo);
+bool	has_eaten_enough(t_philo *philo);
+void	increment_num_meals(t_philo *philo);
+int		get_num_meals(t_philo *philo);
 void	set_last_meal_time(t_philo *philo);
 long	get_last_meal_time(t_philo *philo);
 
-bool has_eaten_enough(t_philo *philo)
+bool	has_eaten_enough(t_philo *philo)
 {
 	bool	has_eaten;
 
@@ -30,7 +30,7 @@ bool has_eaten_enough(t_philo *philo)
 	return (has_eaten);
 }
 
-void	increment_num_meals(t_philo * philo)
+void	increment_num_meals(t_philo *philo)
 {
 	if (!philo)
 		return ;
@@ -39,9 +39,9 @@ void	increment_num_meals(t_philo * philo)
 	pthread_mutex_unlock(&philo->mutex_num_meals);
 }
 
-int		get_num_meals(t_philo * philo)
+int	get_num_meals(t_philo *philo)
 {
-	int num_meals;
+	int	num_meals;
 
 	if (!philo)
 		return (FAILURE);
@@ -63,7 +63,7 @@ void	set_last_meal_time(t_philo *philo)
 long	get_last_meal_time(t_philo *philo)
 {
 	long	last_meal_time;
-	
+
 	if (!philo)
 		return (0);
 	pthread_mutex_lock(&philo->mutex_last_meal_time);
@@ -71,5 +71,3 @@ long	get_last_meal_time(t_philo *philo)
 	pthread_mutex_unlock(&philo->mutex_last_meal_time);
 	return (last_meal_time);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:39:29 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:03:25 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	initialize_threads(t_data *data)
 	// RESERVA MEMORIA THREADS
 	data->philo_threads = (pthread_t *) malloc(sizeof(pthread_t) * data->num_philos);
 	if (!data->philo_threads)
-		return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);		
+		return (ft_putendl_fd(ERROR_THREAD_CREATE, STDERR_FILENO), FAILURE);		
 	
 	data->start_time = get_current_time();					// INICIO TEMPORIZADOR 
 
@@ -41,16 +41,16 @@ int	initialize_threads(t_data *data)
         set_last_meal_time(&data->philos[index]);			// INICIALIZAR TIEMPO JUSTO ANTES DE CREAR EL THREAD
 
 		if (pthread_create(&data->philo_threads[index], NULL, &daily_routine, &data->philos[index]))
-			return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);	
+			return (ft_putendl_fd(ERROR_THREAD_CREATE, STDERR_FILENO), FAILURE);	
 		index++;
 	}
 	// CREACION THREADS MONITOR DEATH()
 	if (pthread_create(&data->monitor_death, NULL, &monitor_death, data))
-		return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);
+		return (ft_putendl_fd(ERROR_THREAD_CREATE, STDERR_FILENO), FAILURE);
 
 	// CREACION THREADS MONITOR MEALS().-> se crea si hay limite en numero de comidas
 	if (data->num_meals > 0 && pthread_create(&data->monitor_meals, NULL, &monitor_meals, data))
-		return (ft_putendl_fd(ERROR_THREADS_CREATE, STDERR_FILENO), FAILURE);	
+		return (ft_putendl_fd(ERROR_THREAD_CREATE, STDERR_FILENO), FAILURE);	
 	return (SUCCESS);
 }
 

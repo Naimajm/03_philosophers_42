@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/20 13:20:17 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:13:31 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	thinking(t_philo *philo)
 		return (FAILURE);
 	change_philo_state(philo, THINKING);
 	printing_logs(philo->data, philo->id, MSG_THINKING);
-
 	usleep(100);
 	//set_delay_time(100);
 	return (SUCCESS);
@@ -45,13 +44,11 @@ int	eating(t_philo *philo)
 	if (!philo || !is_alive(philo))
 		return (FAILURE);
 	take_forks(philo);
-	
 	change_philo_state(philo, EATING);
 	printing_logs(philo->data, philo->id, MSG_EATING);
 	set_delay_time(philo->data->eat_time);
 	set_last_meal_time(philo);
 	increment_num_meals(philo);
-
 	drop_forks(philo);
 	return (SUCCESS);
 }
@@ -65,12 +62,12 @@ int	take_forks(t_philo *philo)
 		return (FAILURE);
 	if (philo->left_fork < philo->right_fork)
 	{
-		first_fork 	= philo->left_fork;
+		first_fork = philo->left_fork;
 		second_fork = philo->right_fork;
 	}
 	else
 	{
-		first_fork 	= philo->right_fork;
+		first_fork = philo->right_fork;
 		second_fork = philo->left_fork;
 	}
 	pthread_mutex_lock(first_fork);
