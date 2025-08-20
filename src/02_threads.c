@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/20 18:24:04 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:18:20 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,25 +73,22 @@ static void	*daily_routine(void *philo_node)
 	return (NULL);
 }
 
+//&& get_philo_state(&data->philos[index]) != EATING)
 static void	*monitor_death(void *data_struct)
 {
 	t_data	*data;
-	//t_philo	*philo;
 	int		index;
-	long	current_time;
 	long	time_since_last_meal;
 
 	if (!data_struct)
 		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	data = data_struct;
-	//philo = data->philos;
 	index = 0;
 	while (index < data->num_philos && is_program_active(data))
 	{
-		current_time = get_current_time();
-		time_since_last_meal = current_time - get_last_meal_time(&data->philos[index]);
-		if (time_since_last_meal >= data->die_time && is_program_active(data))
-			//&& get_philo_state(&philo[index]) != EATING)
+		time_since_last_meal = get_current_time()
+			- get_last_meal_time(&data->philos[index]);
+		if (time_since_last_meal > data->die_time && is_program_active(data))
 		{
 			printing_logs(data, data->philos[index].id, MSG_DIED);
 			change_philo_state(&data->philos[index], DEAD);
@@ -101,7 +98,6 @@ static void	*monitor_death(void *data_struct)
 		index++;
 		if (index == data->num_philos)
 			index = 0;
-		//set_delay_time(USLEEP_MONITOR_TIME);
 		usleep(USLEEP_MONITOR_TIME);
 	}
 	return (NULL);

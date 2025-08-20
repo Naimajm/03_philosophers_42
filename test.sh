@@ -13,6 +13,7 @@ TOTAL_TESTS=0
 PASSED_TESTS=0
 
 # Función para ejecutar test con formato expandido
+# Función para ejecutar test con formato expandido
 run_test() {
     local section="$1"
     local test_num="$2"
@@ -36,25 +37,29 @@ run_test() {
     timeout ${timeout_val}s $command > /dev/null 2>&1
     local exit_code=$?
     
-    # Análisis del resultado
+    # ✅ CORRECCIÓN: Análisis del resultado mejorado
     if [ $exit_code -eq 124 ]; then
+        # Timeout ocurrido
         if [ "$expected_exit" = "timeout" ]; then
-            echo "✅ OK - Timeout esperado"
+            echo "✅ OK - Timeout esperado (comportamiento correcto)"
             PASSED_TESTS=$((PASSED_TESTS + 1))
         else
-            echo "⏰ Test terminado por timeout"
-            if [ "$expected_exit" = "0" ]; then
-                PASSED_TESTS=$((PASSED_TESTS + 1))
-            fi
+            echo "⏰ Test terminado por timeout (no esperado)"
         fi
+    elif [ "$expected_exit" = "timeout" ]; then
+        # Se esperaba timeout pero terminó normalmente
+        echo "❌ FALLO - El programa terminó cuando debería seguir ejecutándose"
     elif [ $exit_code -eq $expected_exit ]; then
+        # Exit code correcto
         echo "✅ OK - Exit code: $exit_code"
         PASSED_TESTS=$((PASSED_TESTS + 1))
     else
+        # Exit code incorrecto
         echo "❌ FALLO - Exit code: $exit_code (esperado: $expected_exit)"
     fi    
-	echo "----------------------------------------------"
-	echo ""
+    
+    echo "----------------------------------------------"
+    echo ""
 }
 
 # Verificar que philo existe
@@ -336,9 +341,6 @@ echo "📊 TOTAL: $TOTAL_TESTS casos de test"
 echo ""
 
 echo "🔧 INSTRUCCIONES:"
-echo "   - Para memory leaks: usa valgrind_test_complete.sh"
-echo "   - Revisa los outputs para detectar problemas específicos"
 echo "   - Tests con timeout normal indican funcionamiento correcto"
 echo ""
-
 echo "✅ Testing $TOTAL_TESTS casos terminado!"

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:07:31 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/20 18:13:31 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 21:04:05 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	thinking(t_philo *philo)
 	change_philo_state(philo, THINKING);
 	printing_logs(philo->data, philo->id, MSG_THINKING);
 	usleep(100);
-	//set_delay_time(100);
 	return (SUCCESS);
 }
 
@@ -79,6 +78,8 @@ int	take_forks(t_philo *philo)
 
 void	drop_forks(t_philo *philo)
 {
+	if (!philo)
+		return ;
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
