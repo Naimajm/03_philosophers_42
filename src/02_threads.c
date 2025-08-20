@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 22:06:50 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:47:12 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/20 14:42:59 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ static void	*daily_routine(void * philo_node)
 		set_delay_time(philo->data->eat_time - 10);
 	while (is_alive(philo) && is_program_active(philo->data))
 	{
-		thinking(philo);
-		take_forks(philo);
-		eating(philo);
-		drop_forks(philo);
+		if (thinking(philo) == FAILURE)
+			break ;		
+		if (eating(philo) == FAILURE)
+			break ;		
 		if (has_eaten_enough(philo))
 			break ;
-		sleeping(philo);
+		if (sleeping(philo) == FAILURE)
+			break ;			
 	}
 	return (NULL);
 }
@@ -82,25 +83,25 @@ static void	*monitor_death(void *data_struct)
 		return (ft_putendl_fd(ERROR_INVALID_INPUT, STDERR_FILENO), NULL);
 	data 	= data_struct;
 	philo	= data->philos;
-	while (is_program_active(data))
+	index	= 0;		
+	while (index < data->num_philos && is_program_active(data))
 	{
-		index	= 0;
-		while (index < data->num_philos)
+		current_time = get_current_time();
+		time_since_last_meal = current_time - get_last_meal_time(&philo[index]);
+		if (time_since_last_meal >= data->die_time && is_program_active(data))
+				//&& get_philo_state(&philo[index]) != EATING)
 		{
-			current_time = get_current_time();
-			time_since_last_meal = current_time - get_last_meal_time(&philo[index]);
-			if (time_since_last_meal >= data->die_time)
-					//&& get_philo_state(&philo[index]) != EATING)
-			{				
-				change_philo_state(&philo[index], DEAD);
-				printing_logs(data, philo[index].id, MSG_DIED);
-				stop_program(data);
-				return (NULL);
-			}
-			index++;
+			printing_logs(data, philo[index].id, MSG_DIED);	
+			change_philo_state(&philo[index], DEAD);				
+			stop_program(data);			
+			break ;
 		}
+		index++;
+		if (index == data->num_philos)
+			index = 0;		
 		usleep(USLEEP_MONITOR_TIME);
-	}
+	}	
+	
 	return (NULL);
 }
 
