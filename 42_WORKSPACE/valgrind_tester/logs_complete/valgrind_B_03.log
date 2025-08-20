@@ -1,0 +1,23 @@
+==814114== Memcheck, a memory error detector
+==814114== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==814114== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==814114== Command: ../philo 4 100 200 200
+==814114== 
+74 1 is thinking
+81 1 has taken a fork
+82 1 has taken a fork
+82 1 is eating
+82 3 is thinking
+82 3 has taken a fork
+82 3 has taken a fork
+82 3 is eating
+102 1 died
+==814114== 
+==814114== HEAP SUMMARY:
+==814114==     in use at exit: 0 bytes in 0 blocks
+==814114==   total heap usage: 11 allocs, 11 frees, 6,488 bytes allocated
+==814114== 
+==814114== All heap blocks were freed -- no leaks are possible
+==814114== 
+==814114== For lists of detected and suppressed errors, rerun with: -s
+==814114== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

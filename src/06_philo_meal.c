@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 11:39:33 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:25:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:52:46 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int		get_num_meals(t_philo * philo);
 void	set_last_meal_time(t_philo *philo);
 long	get_last_meal_time(t_philo *philo);
 
-// FUNCIONES GESTION MEALS
-
 bool has_eaten_enough(t_philo *philo)
 {
 	bool	has_eaten;
@@ -29,7 +27,7 @@ bool has_eaten_enough(t_philo *philo)
 		has_eaten = false;
 	else if (get_num_meals(philo) >= philo->data->num_meals)
 		has_eaten = true;
-	return (has_eaten);	
+	return (has_eaten);
 }
 
 void	increment_num_meals(t_philo * philo)
@@ -46,7 +44,7 @@ int		get_num_meals(t_philo * philo)
 	int num_meals;
 
 	if (!philo)
-		return (-1);
+		return (FAILURE);
 	pthread_mutex_lock(&philo->mutex_num_meals);
 	num_meals = philo->num_meals;
 	pthread_mutex_unlock(&philo->mutex_num_meals);

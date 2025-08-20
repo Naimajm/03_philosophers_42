@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 21:31:42 by juagomez          #+#    #+#             */
-/*   Updated: 2025/08/19 23:25:02 by juagomez         ###   ########.fr       */
+/*   Updated: 2025/08/19 23:52:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 bool 	is_alive(t_philo *philo);
 void	change_philo_state(t_philo *philo, t_state new_state);
 t_state	get_philo_state(t_philo *philo);
-
-// FUNCIONES GESTION STATE  
 
 bool is_alive(t_philo *philo)
 {

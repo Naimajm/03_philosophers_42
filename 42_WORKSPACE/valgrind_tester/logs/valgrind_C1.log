@@ -1,0 +1,112 @@
+==464626== Memcheck, a memory error detector
+==464626== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==464626== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==464626== Command: ../philo 4 800 200 200 5
+==464626== 
+158 3 has taken a fork
+168 3 has taken a fork
+169 3 is eating
+INICIO monitor_death()
+240 1 has taken a fork
+240 1 has taken a fork
+240 1 is eating
+INICIO monitor_meals()
+371 3 is sleeping
+371 4 has taken a fork
+440 1 is sleeping
+440 4 has taken a fork
+440 4 is eating
+440 2 has taken a fork
+440 2 has taken a fork
+440 2 is eating
+571 3 is thinking
+640 2 is sleeping
+640 3 has taken a fork
+640 4 is sleeping
+640 3 has taken a fork
+640 3 is eating
+640 1 is thinking
+640 1 has taken a fork
+640 1 has taken a fork
+640 1 is eating
+840 2 is thinking
+840 4 is thinking
+840 3 is sleeping
+840 4 has taken a fork
+840 1 is sleeping
+840 4 has taken a fork
+840 4 is eating
+840 2 has taken a fork
+840 2 has taken a fork
+840 2 is eating
+1040 3 is thinking
+1040 1 is thinking
+1040 3 has taken a fork
+1040 4 is sleeping
+1040 3 has taken a fork
+1040 3 is eating
+1040 2 is sleeping
+1040 1 has taken a fork
+1040 1 has taken a fork
+1040 1 is eating
+1240 4 is thinking
+1240 2 is thinking
+1240 2 has taken a fork
+1240 2 has taken a fork
+1240 2 is eating
+1240 4 has taken a fork
+1240 1 is sleeping
+1240 4 has taken a fork
+1240 4 is eating
+1240 3 is sleeping
+1440 2 is sleeping
+1440 1 is thinking
+1440 1 has taken a fork
+1440 4 is sleeping
+1440 3 is thinking
+1440 3 has taken a fork
+1440 3 has taken a fork
+1440 3 is eating
+1440 1 has taken a fork
+1440 1 is eating
+1640 2 is thinking
+1640 4 is thinking
+1640 1 is sleeping
+1640 2 has taken a fork
+1640 4 has taken a fork
+1640 4 has taken a fork
+1640 4 is eating
+1640 2 has taken a fork
+1640 2 is eating
+1640 3 is sleeping
+1840 4 is sleeping
+1840 1 is thinking
+1840 3 is thinking
+1840 3 has taken a fork
+1840 3 has taken a fork
+1840 3 is eating
+1840 1 has taken a fork
+1840 1 has taken a fork
+1840 1 is eating
+1841 2 is sleeping
+2040 4 is thinking
+2042 2 is thinking
+2042 2 has taken a fork
+2042 4 has taken a fork
+2042 4 has taken a fork
+2042 4 is eating
+2043 2 has taken a fork
+2043 2 is eating
+FIN monitor_death()
+FIN monitor_meals() -> TODOS HAN COMIDO
+Free
+ Total cleaning... OK
+==464626== 
+==464626== HEAP SUMMARY:
+==464626==     in use at exit: 0 bytes in 0 blocks
+==464626==   total heap usage: 12 allocs, 12 frees, 6,760 bytes allocated
+==464626== 
+==464626== All heap blocks were freed -- no leaks are possible
+==464626== 
+==464626== For lists of detected and suppressed errors, rerun with: -s
+==464626== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

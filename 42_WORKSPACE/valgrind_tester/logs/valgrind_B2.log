@@ -1,0 +1,90 @@
+==464402== Memcheck, a memory error detector
+==464402== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==464402== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==464402== Command: ../philo 2 1000 200 200
+==464402== 
+==464402== 
+==464402== Process terminating with default action of signal 15 (SIGTERM)
+==464402==    at 0x48F5117: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==464402==    by 0x48F5117: __futex_abstimed_wait_common (futex-internal.c:87)
+==464402==    by 0x48F5117: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==464402==    by 0x48FA623: __pthread_clockjoin_ex (pthread_join_common.c:105)
+==464402==    by 0x109F91: wait_for_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x109360: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== HEAP SUMMARY:
+==464402==     in use at exit: 5,512 bytes in 9 blocks
+==464402==   total heap usage: 9 allocs, 0 frees, 5,512 bytes allocated
+==464402== 
+==464402== 16 bytes in 1 blocks are still reachable in loss record 1 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x10997F: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x109354: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 80 bytes in 1 blocks are still reachable in loss record 2 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x109390: initialize_data (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10932C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 80 bytes in 1 blocks are still reachable in loss record 3 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x1098AF: initialize_mutex (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10946D: initialize_data (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10932C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 88 bytes in 1 blocks are still reachable in loss record 4 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x109826: initialize_mutex (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10946D: initialize_data (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10932C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 272 bytes in 1 blocks are possibly lost in loss record 5 of 8
+==464402==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==464402==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==464402==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==464402==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==464402==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==464402==    by 0x109A6E: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x109354: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 336 bytes in 1 blocks are still reachable in loss record 6 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x1094D9: initialize_philos (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10933C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 544 bytes in 2 blocks are possibly lost in loss record 7 of 8
+==464402==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==464402==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==464402==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==464402==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==464402==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==464402==    by 0x109A16: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x109354: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402== 
+==464402== 4,096 bytes in 1 blocks are still reachable in loss record 8 of 8
+==464402==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==464402==    by 0x48E2BA3: _IO_file_doallocate (filedoalloc.c:101)
+==464402==    by 0x48F1CDF: _IO_doallocbuf (genops.c:347)
+==464402==    by 0x48F0F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==464402==    by 0x48EF6D4: _IO_new_file_xsputn (fileops.c:1243)
+==464402==    by 0x48EF6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==464402==    by 0x48D9CA8: outstring_func (vfprintf-internal.c:239)
+==464402==    by 0x48D9CA8: __vfprintf_internal (vfprintf-internal.c:1516)
+==464402==    by 0x48C479E: printf (printf.c:33)
+==464402==    by 0x10A6BC: printing_logs (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x10A23A: take_forks (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x109BCA: daily_routine (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==464402==    by 0x48F8AC2: start_thread (pthread_create.c:442)
+==464402==    by 0x4989A03: clone (clone.S:100)
+==464402== 
+==464402== LEAK SUMMARY:
+==464402==    definitely lost: 0 bytes in 0 blocks
+==464402==    indirectly lost: 0 bytes in 0 blocks
+==464402==      possibly lost: 816 bytes in 3 blocks
+==464402==    still reachable: 4,696 bytes in 6 blocks
+==464402==         suppressed: 0 bytes in 0 blocks
+==464402== 
+==464402== For lists of detected and suppressed errors, rerun with: -s
+==464402== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

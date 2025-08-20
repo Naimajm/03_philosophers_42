@@ -1,0 +1,215 @@
+==464849== Memcheck, a memory error detector
+==464849== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==464849== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==464849== Command: ../philo 15 800 200 200 3
+==464849== 
+142 5 has taken a fork
+151 5 has taken a fork
+152 5 is eating
+152 3 has taken a fork
+152 3 has taken a fork
+152 3 is eating
+152 7 has taken a fork
+152 7 has taken a fork
+152 7 is eating
+173 9 has taken a fork
+173 9 has taken a fork
+173 9 is eating
+192 1 has taken a fork
+192 1 has taken a fork
+192 1 is eating
+310 11 has taken a fork
+310 11 has taken a fork
+310 11 is eating
+311 13 has taken a fork
+311 13 has taken a fork
+311 13 is eating
+INICIO monitor_death()
+INICIO monitor_meals()
+314 15 has taken a fork
+353 5 is sleeping
+353 6 has taken a fork
+353 8 has taken a fork
+353 4 has taken a fork
+353 4 has taken a fork
+353 4 is eating
+353 7 is sleeping
+354 6 has taken a fork
+354 6 is eating
+354 3 is sleeping
+373 10 has taken a fork
+373 8 has taken a fork
+373 8 is eating
+373 9 is sleeping
+392 2 has taken a fork
+392 2 has taken a fork
+392 2 is eating
+392 1 is sleeping
+392 15 has taken a fork
+392 15 is eating
+510 11 is sleeping
+510 12 has taken a fork
+510 10 has taken a fork
+510 10 is eating
+511 14 has taken a fork
+511 12 has taken a fork
+511 12 is eating
+511 13 is sleeping
+553 5 is thinking
+553 7 is thinking
+553 4 is sleeping
+553 5 has taken a fork
+554 3 is thinking
+554 7 has taken a fork
+554 5 has taken a fork
+554 5 is eating
+554 6 is sleeping
+573 9 is thinking
+573 8 is sleeping
+573 7 has taken a fork
+573 7 is eating
+573 9 has taken a fork
+592 1 is thinking
+592 2 is sleeping
+592 3 has taken a fork
+592 3 has taken a fork
+592 3 is eating
+592 1 has taken a fork
+592 1 has taken a fork
+592 1 is eating
+592 15 is sleeping
+592 14 has taken a fork
+592 14 is eating
+710 10 is sleeping
+710 9 has taken a fork
+710 9 is eating
+710 11 is thinking
+710 11 has taken a fork
+711 13 is thinking
+711 11 has taken a fork
+711 11 is eating
+711 12 is sleeping
+711 13 has taken a fork
+753 4 is thinking
+754 6 is thinking
+754 5 is sleeping
+754 6 has taken a fork
+773 8 is thinking
+773 8 has taken a fork
+773 6 has taken a fork
+773 6 is eating
+773 7 is sleeping
+792 1 is sleeping
+792 15 is thinking
+792 14 is sleeping
+792 2 is thinking
+792 2 has taken a fork
+792 13 has taken a fork
+792 13 is eating
+792 15 has taken a fork
+792 15 has taken a fork
+792 15 is eating
+792 4 has taken a fork
+792 4 has taken a fork
+792 4 is eating
+792 3 is sleeping
+792 2 has taken a fork
+792 2 is eating
+910 8 has taken a fork
+910 8 is eating
+910 10 is thinking
+910 10 has taken a fork
+910 9 is sleeping
+911 11 is sleeping
+911 10 has taken a fork
+911 10 is eating
+911 12 is thinking
+911 12 has taken a fork
+954 5 is thinking
+973 7 is thinking
+973 7 has taken a fork
+973 6 is sleeping
+992 15 is sleeping
+992 3 is thinking
+992 1 is thinking
+992 5 has taken a fork
+992 5 has taken a fork
+992 5 is eating
+992 14 is thinking
+992 14 has taken a fork
+992 14 has taken a fork
+992 14 is eating
+992 12 has taken a fork
+992 12 is eating
+992 4 is sleeping
+992 1 has taken a fork
+992 1 has taken a fork
+992 1 is eating
+992 13 is sleeping
+992 2 is sleeping
+992 3 has taken a fork
+992 3 has taken a fork
+993 3 is eating
+1110 9 is thinking
+1110 9 has taken a fork
+1110 7 has taken a fork
+1110 7 is eating
+1110 8 is sleeping
+1111 10 is sleeping
+1111 9 has taken a fork
+1111 9 is eating
+1111 11 is thinking
+1111 11 has taken a fork
+1173 6 is thinking
+1193 15 is thinking
+1194 2 is thinking
+1194 2 has taken a fork
+1194 2 has taken a fork
+1194 2 is eating
+1194 6 has taken a fork
+1194 4 is thinking
+1194 4 has taken a fork
+1194 12 is sleeping
+1194 11 has taken a fork
+1194 11 is eating
+1194 15 has taken a fork
+1194 15 has taken a fork
+1194 15 is eating
+1195 13 is thinking
+1195 13 has taken a fork
+1195 4 has taken a fork
+1195 4 is eating
+1195 13 has taken a fork
+1195 13 is eating
+1195 14 is sleeping
+1310 6 has taken a fork
+1310 6 is eating
+1310 8 is thinking
+1310 8 has taken a fork
+1311 10 is thinking
+1311 10 has taken a fork
+1311 8 has taken a fork
+1311 8 is eating
+1394 10 has taken a fork
+1394 10 is eating
+1394 12 is thinking
+1394 12 has taken a fork
+1395 12 has taken a fork
+1395 12 is eating
+1395 14 is thinking
+1395 14 has taken a fork
+1395 14 has taken a fork
+1395 14 is eating
+FIN monitor_death()
+FIN monitor_meals() -> TODOS HAN COMIDO
+Free
+ Total cleaning... OK
+==464849== 
+==464849== HEAP SUMMARY:
+==464849==     in use at exit: 0 bytes in 0 blocks
+==464849==   total heap usage: 23 allocs, 23 frees, 12,128 bytes allocated
+==464849== 
+==464849== All heap blocks were freed -- no leaks are possible
+==464849== 
+==464849== For lists of detected and suppressed errors, rerun with: -s
+==464849== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
