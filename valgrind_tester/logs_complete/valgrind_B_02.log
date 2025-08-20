@@ -1,51 +1,49 @@
-==814077== Memcheck, a memory error detector
-==814077== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==814077== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==814077== Command: ../philo 2 1000 200 200
-==814077== 
-==814077== 
-==814077== Process terminating with default action of signal 15 (SIGTERM)
-==814077==    at 0x49497F6: clock_nanosleep@@GLIBC_2.17 (clock_nanosleep.c:78)
-==814077==    by 0x494E676: nanosleep (nanosleep.c:25)
-==814077==    by 0x497FF2E: usleep (usleep.c:31)
-==814077==    by 0x10A607: set_delay_time (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077==    by 0x10A392: eating (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077==    by 0x109ECB: daily_routine (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077==    by 0x48F8AC2: start_thread (pthread_create.c:442)
-==814077==    by 0x4989A03: clone (clone.S:100)
-==814077== 
-==814077== HEAP SUMMARY:
-==814077==     in use at exit: 5,512 bytes in 9 blocks
-==814077==   total heap usage: 9 allocs, 0 frees, 5,512 bytes allocated
-==814077== 
-==814077== 272 bytes in 1 blocks are possibly lost in loss record 5 of 8
-==814077==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==814077==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==814077==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==814077==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==814077==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
-==814077==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==814077==    by 0x109D8F: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077==    by 0x10938C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077== 
-==814077== 544 bytes in 2 blocks are possibly lost in loss record 7 of 8
-==814077==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==814077==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==814077==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==814077==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==814077==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
-==814077==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==814077==    by 0x109D37: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077==    by 0x10938C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
-==814077== 
-==814077== LEAK SUMMARY:
-==814077==    definitely lost: 0 bytes in 0 blocks
-==814077==    indirectly lost: 0 bytes in 0 blocks
-==814077==      possibly lost: 816 bytes in 3 blocks
-==814077==    still reachable: 4,696 bytes in 6 blocks
-==814077==         suppressed: 0 bytes in 0 blocks
-==814077== Reachable blocks (those to which a pointer was found) are not shown.
-==814077== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==814077== 
-==814077== For lists of detected and suppressed errors, rerun with: -s
-==814077== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==918320== Memcheck, a memory error detector
+==918320== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==918320== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==918320== Command: ../philo 2 1000 200 200
+==918320== 
+==918320== 
+==918320== Process terminating with default action of signal 15 (SIGTERM)
+==918320==    at 0x48F5117: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==918320==    by 0x48F5117: __futex_abstimed_wait_common (futex-internal.c:87)
+==918320==    by 0x48F5117: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==918320==    by 0x48FA623: __pthread_clockjoin_ex (pthread_join_common.c:105)
+==918320==    by 0x10A1C3: wait_for_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320==    by 0x109398: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320== 
+==918320== HEAP SUMMARY:
+==918320==     in use at exit: 5,512 bytes in 9 blocks
+==918320==   total heap usage: 9 allocs, 0 frees, 5,512 bytes allocated
+==918320== 
+==918320== 272 bytes in 1 blocks are possibly lost in loss record 5 of 8
+==918320==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==918320==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==918320==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==918320==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==918320==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==918320==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==918320==    by 0x109D8F: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320==    by 0x10938C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320== 
+==918320== 544 bytes in 2 blocks are possibly lost in loss record 7 of 8
+==918320==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==918320==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==918320==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==918320==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==918320==    by 0x48F97B4: allocate_stack (allocatestack.c:430)
+==918320==    by 0x48F97B4: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==918320==    by 0x109D37: initialize_threads (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320==    by 0x10938C: main (in /home/naima/PROGRAMACION/CURSUS_42/03_PHILOSOPHERS_42/philo)
+==918320== 
+==918320== LEAK SUMMARY:
+==918320==    definitely lost: 0 bytes in 0 blocks
+==918320==    indirectly lost: 0 bytes in 0 blocks
+==918320==      possibly lost: 816 bytes in 3 blocks
+==918320==    still reachable: 4,696 bytes in 6 blocks
+==918320==         suppressed: 0 bytes in 0 blocks
+==918320== Reachable blocks (those to which a pointer was found) are not shown.
+==918320== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==918320== 
+==918320== For lists of detected and suppressed errors, rerun with: -s
+==918320== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

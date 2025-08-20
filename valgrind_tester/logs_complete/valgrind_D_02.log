@@ -1,202 +1,147 @@
-==814326== Helgrind, a thread error detector
-==814326== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
-==814326== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==814326== Command: ../philo 8 800 100 100 5
-==814326== 
-7 1 is thinking
-12 1 has taken a fork
-12 1 has taken a fork
-13 1 is eating
+==918753== Helgrind, a thread error detector
+==918753== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==918753== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==918753== Command: ../philo 8 800 100 100 5
+==918753== 
+8 1 is thinking
+13 1 has taken a fork
+14 1 has taken a fork
+14 1 is eating
 15 3 is thinking
-15 3 has taken a fork
-15 3 has taken a fork
-15 3 is eating
+16 3 has taken a fork
+16 3 has taken a fork
+16 3 is eating
 17 5 is thinking
-17 5 has taken a fork
-17 5 has taken a fork
-17 5 is eating
-20 7 is thinking
-20 7 has taken a fork
-20 7 has taken a fork
+19 7 is thinking
+19 7 has taken a fork
+19 7 has taken a fork
 20 7 is eating
+20 5 has taken a fork
+20 5 has taken a fork
+21 5 is eating
 104 2 is thinking
 106 4 is thinking
-109 6 is thinking
-111 8 is thinking
-113 1 is sleeping
-114 2 has taken a fork
+108 6 is thinking
+109 8 is thinking
+115 2 has taken a fork
+115 1 is sleeping
 116 4 has taken a fork
 116 3 is sleeping
-117 2 has taken a fork
-117 2 is eating
-118 6 has taken a fork
-119 5 is sleeping
-119 4 has taken a fork
-119 4 is eating
+116 2 has taken a fork
+116 2 is eating
+120 7 is sleeping
 120 8 has taken a fork
 120 8 has taken a fork
 120 8 is eating
-120 6 has taken a fork
+121 6 has taken a fork
+121 6 has taken a fork
 121 6 is eating
-121 7 is sleeping
-215 1 is thinking
+121 5 is sleeping
+122 4 has taken a fork
+122 4 is eating
 216 3 is thinking
-217 3 has taken a fork
-217 2 is sleeping
-217 1 has taken a fork
-219 3 has taken a fork
-219 3 is eating
-219 5 is thinking
-219 5 has taken a fork
-219 4 is sleeping
+216 1 is thinking
+218 3 has taken a fork
+218 2 is sleeping
+218 1 has taken a fork
 220 8 is sleeping
 220 1 has taken a fork
 220 1 is eating
-221 7 is thinking
+220 7 is thinking
 221 7 has taken a fork
 221 7 has taken a fork
 221 7 is eating
-222 6 is sleeping
+221 5 is thinking
+221 6 is sleeping
 222 5 has taken a fork
-223 5 is eating
-317 2 is thinking
-319 3 is sleeping
-319 4 is thinking
-319 4 has taken a fork
+222 5 has taken a fork
+222 5 is eating
+222 4 is sleeping
+223 3 has taken a fork
+223 3 is eating
+318 2 is thinking
 320 8 is thinking
-320 2 has taken a fork
-320 2 has taken a fork
-320 2 is eating
 321 1 is sleeping
-322 7 is sleeping
+321 6 is thinking
+321 2 has taken a fork
+321 7 is sleeping
 322 8 has taken a fork
 322 8 has taken a fork
 322 8 is eating
-323 6 is thinking
-324 6 has taken a fork
-324 6 has taken a fork
-324 6 is eating
-324 5 is sleeping
+322 5 is sleeping
+322 4 is thinking
+323 6 has taken a fork
+323 6 has taken a fork
+323 6 is eating
+323 3 is sleeping
+323 2 has taken a fork
+324 2 is eating
+324 4 has taken a fork
 324 4 has taken a fork
 324 4 is eating
-419 3 is thinking
-420 2 is sleeping
-420 3 has taken a fork
 421 1 is thinking
-421 1 has taken a fork
 422 7 is thinking
-422 8 is sleeping
-422 1 has taken a fork
-422 1 is eating
-424 5 is thinking
-425 6 is sleeping
-425 7 has taken a fork
-425 7 has taken a fork
-425 7 is eating
+422 5 is thinking
+423 8 is sleeping
+423 3 is thinking
+423 7 has taken a fork
+424 7 has taken a fork
+424 7 is eating
+424 3 has taken a fork
+424 6 is sleeping
+425 2 is sleeping
+425 1 has taken a fork
+425 1 has taken a fork
+425 1 is eating
 425 5 has taken a fork
 425 5 has taken a fork
-425 5 is eating
+426 5 is eating
 426 4 is sleeping
 426 3 has taken a fork
 426 3 is eating
-520 2 is thinking
-522 8 is thinking
-522 1 is sleeping
-523 2 has taken a fork
-525 6 is thinking
-526 5 is sleeping
+523 8 is thinking
+524 6 is thinking
+524 7 is sleeping
+524 8 has taken a fork
+525 2 is thinking
+525 2 has taken a fork
 526 4 is thinking
-527 7 is sleeping
+526 1 is sleeping
+526 8 has taken a fork
+527 8 is eating
+527 4 has taken a fork
 527 6 has taken a fork
 527 6 has taken a fork
 527 6 is eating
-527 4 has taken a fork
-527 4 has taken a fork
-528 4 is eating
-528 8 has taken a fork
-528 8 has taken a fork
-528 8 is eating
 528 3 is sleeping
-528 2 has taken a fork
+528 4 has taken a fork
+528 4 is eating
+529 5 is sleeping
+529 2 has taken a fork
 529 2 is eating
-624 1 is thinking
-626 5 is thinking
+624 7 is thinking
+626 1 is thinking
+627 8 is sleeping
 627 6 is sleeping
-627 7 is thinking
-627 7 has taken a fork
-628 8 is sleeping
 628 7 has taken a fork
-629 7 is eating
-629 5 has taken a fork
-629 5 has taken a fork
-629 5 is eating
-629 3 is thinking
-630 4 is sleeping
-630 3 has taken a fork
-630 3 has taken a fork
-630 3 is eating
-631 2 is sleeping
-631 1 has taken a fork
-631 1 has taken a fork
-631 1 is eating
-727 6 is thinking
-728 8 is thinking
-729 7 is sleeping
-729 8 has taken a fork
-729 6 has taken a fork
-729 6 has taken a fork
-730 6 is eating
-730 5 is sleeping
-731 3 is sleeping
-731 4 is thinking
-731 4 has taken a fork
-731 4 has taken a fork
-731 4 is eating
-731 1 is sleeping
-731 2 is thinking
-732 2 has taken a fork
-732 2 has taken a fork
-732 2 is eating
-733 8 has taken a fork
-733 8 is eating
-829 7 is thinking
-830 5 is thinking
-830 6 is sleeping
-830 7 has taken a fork
-831 3 is thinking
-831 1 is thinking
-831 4 is sleeping
-831 5 has taken a fork
-832 5 has taken a fork
-832 5 is eating
-832 3 has taken a fork
-832 3 has taken a fork
-832 3 is eating
-833 2 is sleeping
-833 1 has taken a fork
-833 1 has taken a fork
-833 1 is eating
-834 8 is sleeping
-834 7 has taken a fork
-834 7 is eating
-930 6 is thinking
-931 4 is thinking
-932 6 has taken a fork
-934 2 is thinking
-934 4 has taken a fork
-934 4 has taken a fork
-934 4 is eating
-934 8 is thinking
-935 8 has taken a fork
-935 2 has taken a fork
-935 2 has taken a fork
-935 2 is eating
-936 6 has taken a fork
-936 6 is eating
-936 8 has taken a fork
-937 8 is eating
-==814326== 
-==814326== Use --history-level=approx or =none to gain increased speed, at
-==814326== the cost of reduced accuracy of conflicting-access information
-==814326== For lists of detected and suppressed errors, rerun with: -s
-==814326== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 16532 from 99)
+628 7 has taken a fork
+628 7 is eating
+628 4 is sleeping
+628 3 is thinking
+2267 4 is thinking
+2267 5 is thinking
+2268 7 is sleeping
+2268 6 is thinking
+2268 8 is thinking
+2268 6 has taken a fork
+2268 6 has taken a fork
+2269 6 is eating
+2269 4 has taken a fork
+2269 4 has taken a fork
+2269 4 is eating
+2269 6 died
+==918753== 
+==918753== Use --history-level=approx or =none to gain increased speed, at
+==918753== the cost of reduced accuracy of conflicting-access information
+==918753== For lists of detected and suppressed errors, rerun with: -s
+==918753== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 9574 from 119)

@@ -1,115 +1,175 @@
-==814136== Memcheck, a memory error detector
-==814136== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==814136== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==814136== Command: ../philo 50 800 200 200 1
-==814136== 
-824 49 is thinking
-832 49 has taken a fork
-832 49 has taken a fork
-833 49 is eating
-833 13 is thinking
-833 13 has taken a fork
-833 13 has taken a fork
-833 13 is eating
-834 7 is thinking
-834 7 has taken a fork
-834 7 has taken a fork
-834 7 is eating
-834 27 is thinking
-834 27 has taken a fork
-834 27 has taken a fork
-834 27 is eating
-834 15 is thinking
-835 15 has taken a fork
-835 15 has taken a fork
-835 15 is eating
-835 31 is thinking
-835 31 has taken a fork
-835 31 has taken a fork
-835 31 is eating
-835 1 is thinking
-835 1 has taken a fork
-835 1 has taken a fork
-835 1 is eating
-835 33 is thinking
-835 33 has taken a fork
-835 33 has taken a fork
-835 33 is eating
-835 17 is thinking
-835 17 has taken a fork
-835 17 has taken a fork
-835 17 is eating
-835 9 is thinking
-835 9 has taken a fork
-835 9 has taken a fork
-835 9 is eating
-835 37 is thinking
-835 37 has taken a fork
-835 37 has taken a fork
-835 37 is eating
-835 19 is thinking
-836 19 has taken a fork
-836 19 has taken a fork
-836 19 is eating
-836 39 is thinking
-836 39 has taken a fork
-836 39 has taken a fork
-836 39 is eating
-836 3 is thinking
-836 3 has taken a fork
-836 3 has taken a fork
-836 3 is eating
-836 23 is thinking
-836 23 has taken a fork
-836 23 has taken a fork
-836 23 is eating
-854 29 is thinking
-854 29 has taken a fork
-854 29 has taken a fork
-854 29 is eating
-855 35 is thinking
-855 35 has taken a fork
-855 35 has taken a fork
-855 35 is eating
-855 5 is thinking
-855 5 has taken a fork
-855 5 has taken a fork
-855 5 is eating
-855 41 is thinking
-855 41 has taken a fork
-855 41 has taken a fork
-855 41 is eating
-855 11 is thinking
-855 11 has taken a fork
-855 11 has taken a fork
-855 11 is eating
-855 45 is thinking
-855 45 has taken a fork
-855 45 has taken a fork
-855 45 is eating
-892 21 is thinking
-892 21 has taken a fork
-892 21 has taken a fork
-892 21 is eating
-892 43 is thinking
-892 43 has taken a fork
-892 43 has taken a fork
-892 43 is eating
-892 47 is thinking
-892 47 has taken a fork
-892 47 has taken a fork
-892 47 is eating
-894 25 is thinking
-894 25 has taken a fork
-894 25 has taken a fork
-894 25 is eating
-898 1 died
-==814136== 
-==814136== HEAP SUMMARY:
-==814136==     in use at exit: 0 bytes in 0 blocks
-==814136==   total heap usage: 58 allocs, 58 frees, 29,208 bytes allocated
-==814136== 
-==814136== All heap blocks were freed -- no leaks are possible
-==814136== 
-==814136== For lists of detected and suppressed errors, rerun with: -s
-==814136== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==918418== Memcheck, a memory error detector
+==918418== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==918418== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==918418== Command: ../philo 50 800 200 200 1
+==918418== 
+185 7 is thinking
+192 1 is thinking
+192 9 is thinking
+192 5 is thinking
+193 1 has taken a fork
+193 1 has taken a fork
+193 1 is eating
+193 11 is thinking
+227 7 has taken a fork
+227 7 has taken a fork
+227 7 is eating
+227 9 has taken a fork
+227 9 has taken a fork
+227 9 is eating
+227 5 has taken a fork
+227 5 has taken a fork
+227 5 is eating
+228 11 has taken a fork
+228 11 has taken a fork
+228 11 is eating
+307 19 is thinking
+307 15 is thinking
+307 13 is thinking
+308 3 is thinking
+308 17 is thinking
+324 15 has taken a fork
+324 15 has taken a fork
+324 15 is eating
+324 3 has taken a fork
+324 3 has taken a fork
+324 3 is eating
+324 13 has taken a fork
+324 13 has taken a fork
+324 13 is eating
+324 17 has taken a fork
+325 17 has taken a fork
+325 17 is eating
+341 21 is thinking
+547 4 is thinking
+547 20 is thinking
+547 18 is thinking
+547 19 has taken a fork
+547 19 has taken a fork
+547 19 is eating
+547 23 is thinking
+547 21 has taken a fork
+548 21 has taken a fork
+548 21 is eating
+548 12 is thinking
+548 23 has taken a fork
+548 23 has taken a fork
+548 23 is eating
+548 25 is thinking
+548 12 has taken a fork
+548 16 is thinking
+548 27 is thinking
+548 8 is thinking
+548 27 has taken a fork
+548 27 has taken a fork
+548 27 is eating
+548 31 is thinking
+548 33 is thinking
+549 6 is thinking
+549 2 is thinking
+549 14 is thinking
+549 10 is thinking
+549 2 has taken a fork
+549 10 has taken a fork
+549 10 has taken a fork
+549 10 is eating
+549 16 has taken a fork
+549 29 is thinking
+549 31 has taken a fork
+549 31 has taken a fork
+549 31 is eating
+549 33 has taken a fork
+549 33 has taken a fork
+550 33 is eating
+550 4 has taken a fork
+550 29 has taken a fork
+550 29 has taken a fork
+550 29 is eating
+550 14 has taken a fork
+550 14 has taken a fork
+550 14 is eating
+550 12 has taken a fork
+550 12 is eating
+550 6 has taken a fork
+550 6 has taken a fork
+550 6 is eating
+551 8 has taken a fork
+551 8 has taken a fork
+551 8 is eating
+565 35 is thinking
+566 18 has taken a fork
+566 16 has taken a fork
+566 16 is eating
+566 25 has taken a fork
+566 25 has taken a fork
+566 25 is eating
+566 4 has taken a fork
+566 4 is eating
+673 39 is thinking
+673 2 has taken a fork
+673 2 is eating
+673 41 is thinking
+688 43 is thinking
+688 43 has taken a fork
+689 43 has taken a fork
+689 43 is eating
+689 37 is thinking
+689 35 has taken a fork
+689 35 has taken a fork
+689 35 is eating
+689 37 has taken a fork
+689 37 has taken a fork
+689 37 is eating
+689 41 has taken a fork
+689 41 has taken a fork
+689 41 is eating
+690 39 has taken a fork
+690 39 has taken a fork
+690 39 is eating
+833 22 is thinking
+833 30 is thinking
+834 45 is thinking
+835 28 is thinking
+835 22 has taken a fork
+835 22 has taken a fork
+835 22 is eating
+835 26 is thinking
+836 34 is thinking
+836 20 has taken a fork
+836 20 has taken a fork
+836 20 is eating
+836 47 is thinking
+836 34 has taken a fork
+836 45 has taken a fork
+836 45 has taken a fork
+836 45 is eating
+836 47 has taken a fork
+836 47 has taken a fork
+836 47 is eating
+836 32 is thinking
+837 28 has taken a fork
+837 26 has taken a fork
+837 26 has taken a fork
+837 26 is eating
+837 18 has taken a fork
+837 18 is eating
+837 30 has taken a fork
+837 30 has taken a fork
+837 30 is eating
+837 49 is thinking
+838 49 has taken a fork
+838 49 has taken a fork
+838 49 is eating
+838 32 has taken a fork
+838 32 has taken a fork
+838 32 is eating
+838 2 died
+==918418== 
+==918418== HEAP SUMMARY:
+==918418==     in use at exit: 0 bytes in 0 blocks
+==918418==   total heap usage: 58 allocs, 58 frees, 29,208 bytes allocated
+==918418== 
+==918418== All heap blocks were freed -- no leaks are possible
+==918418== 
+==918418== For lists of detected and suppressed errors, rerun with: -s
+==918418== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
